@@ -2105,13 +2105,20 @@ function renderQR(type) {
     const container = document.getElementById('qrcode');
     container.innerHTML = '';
     if (typeof QRCode === 'undefined') return;
-    qrInstance = new QRCode(container, {
-        text: qrData[type].url,
-        width: 180, height: 180,
-        colorDark: '#000000', colorLight: '#ffffff',
-        correctLevel: QRCode.CorrectLevel.H
-    });
-    document.getElementById('qrUrl').textContent = qrData[type].label;
+    try {
+        qrInstance = new QRCode(container, {
+            text: qrData[type].url,
+            width: 180, height: 180,
+            colorDark: '#000000', colorLight: '#ffffff',
+            correctLevel: QRCode.CorrectLevel.M
+        });
+        document.getElementById('qrUrl').textContent = qrData[type].label;
+    } catch (err) {
+        container.innerHTML = '';
+        document.getElementById('qrUrl').textContent = '⚠️ QR data too large to render';
+        if (typeof showToast === 'function') showToast('Could not generate this QR code.');
+        console.warn('QR generation failed:', err);
+    }
 }
 
 document.querySelectorAll('.qr-tab').forEach(tab => {
