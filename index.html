@@ -682,7 +682,9 @@ nav.scrolled { padding: 0.8rem 6%; background: rgba(5, 5, 5, 0.95); }
     background: rgba(13,13,13,0.85); border: 1px solid var(--border);
     border-radius: 8px; padding: 0.5rem 0.8rem; backdrop-filter: blur(10px);
     color: var(--muted); font-size: 0.75rem; cursor: pointer;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
 }
+body.share-in-view .cmdk-hint { opacity: 0; visibility: hidden; pointer-events: none; }
 .cmdk-hint kbd {
     font-family: 'DM Mono', monospace; background: rgba(255,255,255,0.06);
     border: 1px solid var(--border); border-radius: 4px; padding: 0.15rem 0.4rem;
@@ -788,7 +790,12 @@ nav.scrolled { padding: 0.8rem 6%; background: rgba(5, 5, 5, 0.95); }
     background: radial-gradient(circle at 50% 0%, rgba(184, 240, 60, 0.08), transparent 60%);
     pointer-events: none;
 }
-.qr-canvas { display: inline-block; padding: 14px; background: #fff; border-radius: 12px; margin-bottom: 1.4rem; }
+.qr-canvas {
+    display: inline-block; padding: 18px; background: #fff;
+    border-radius: 8px; margin-bottom: 1.4rem;
+    line-height: 0; max-width: 100%;
+}
+.qr-canvas canvas, .qr-canvas img { display: block; max-width: 100%; height: auto; }
 .qr-url {
     display: flex; align-items: center; gap: 0.5rem;
     background: rgba(0,0,0,0.3); border: 1px solid var(--border);
@@ -2092,7 +2099,7 @@ if (heroImage && window.matchMedia('(min-width: 901px)').matches) {
 const qrData = {
     site: { url: 'https://choumar.is-a.dev/', label: '🔗 choumar.is-a.dev' },
     vcard: {
-        url: 'BEGIN:VCARD\nVERSION:3.0\nFN:Mohamad Ali Choumar\nN:Choumar;Mohamad Ali;;\nTITLE:Software Engineering Student\nEMAIL:choumarmohamadali@gmail.com\nTEL:+4915752123177\nURL:https://github.com/MAliChoumar\nADR:Essen;Germany\nPHOTO;ENCODING=BASE64;TYPE=JPEG:/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCABgAGADASIAAhEBAxEB/8QAGwAAAwEBAQEBAAAAAAAAAAAAAgMEAQUABgf/xAAsEAABAwIGAQMEAgMAAAAAAAABAAIDBBEFEiEiMUFxMlFhBhOBkRQjFUKx/8QAGAEBAQEBAQAAAAAAAAAAAAAAAAEDAgT/xAAaEQEAAwEBAQAAAAAAAAAAAAAAAQIREiED/9oADAMBAAIRAxEAPwD89ARgLGhNDUANGpTWhCwalPa1BjQjAWgImhQDZEGosqKyALLLJllltECWjcVtkQG4rbIOe0JwGiW0JwGioGMXJ8qgBKiGp8qgBQYAjAXgEYCgwBbZFZbZAFlhGibbVYW6IJ2jc5FZa0bnLVRzWhOA0S2pw4VHoRz5VAFgkQ9+Uyc5aaQ+zSoJpqsgf1ua0Hhx7U/8lwOb7jifjRfYfS/0pDVUzJ8UjzAtvE1rujrcr6CT6dwmBjjHQx/kXXE/SIax8pl+ZQVsscm4l8ftyfwutE9sjA9huCnY7RMjbIYoWsI1bYLm4RIXtkaerK1t1GuLV5nHQXjwtXjwq5TgbnIrLzRud5WlUc1nKeOEhnKf0qNgHq8qgR/d/rtfPt/aRD35T2khwI5BuoPoI5MUjw+mipWzteWMAeyUgWt0AFPikuNSMpI6ipDmVBcAGDKbA6Em+txqujT4xRuwyAyvex79kjY76uHIsuDjVdXzvicY3CBgyAGIAge4HWixjderIwmooK2Kpa7K6GO9i7XcPm/Kho2iGtmibYjMb+Aq8RxZr6ZrYw9juw8WJScPjAhEp1fJqSu67nrK/MT4sWHhahPC6ZEtO9yIlA31ORHhUc5h3BPGoUzfUFQDoqCh78p4SIjz5TwVBThVb/jMSEzxenk9ZtfIfdFimMwy1LgK6pfANQ2wsqcKibJSVr9CWNYSD/szNdw/QU1b9LZ6oCjZdr9WgHSyztnXrak258fO1U7qypz3IYNAT7L6CGnyYcJicu4ANPTbAD83/wCo6PA6amc6eoma5kXLydgPx7+VDilf/LeIaYFtO0315cffwtIhlMqgVhUtPO4WbLr8qtwOW/IPYTEIHqcvErwO5ywlBzm+oJxBskt9QTxwqCh7PymjlKYbCw7KaFYQ+GompniSnflcCD5VL8crHBuaCncWG4GU2/V7KC6wlTDQ1M1TVkfffsb6WAWa3wEDYwE1Zeyo8GiyAVEkB2u2no9onvDW698KaR21z3daNQWMeJWmRoy35HsvdKKlm+3NlcdrtCrDpdcyr//Z\nEND:VCARD',
+        url: 'BEGIN:VCARD\nVERSION:3.0\nFN:Mohamad Ali Choumar\nN:Choumar;Mohamad Ali;;\nTITLE:Software Engineering Student\nEMAIL:choumarmohamadali@gmail.com\nTEL:+4915752123177\nURL:https://github.com/MAliChoumar\nADR:Essen;Germany\nPHOTO;TYPE=JPEG;VALUE=URI:https://choumar.is-a.dev/assets/profile.jpg\nEND:VCARD',
         label: '👤 Mohamad Ali Choumar · vCard'
     },
     linkedin: { url: 'https://www.linkedin.com/in/mohamad-ali-choumar-b425693a9', label: '💼 linkedin.com/in/mohamad-ali-choumar' }
@@ -2108,7 +2115,7 @@ function renderQR(type) {
     try {
         qrInstance = new QRCode(container, {
             text: qrData[type].url,
-            width: 180, height: 180,
+            width: 280, height: 280,
             colorDark: '#000000', colorLight: '#ffffff',
             correctLevel: QRCode.CorrectLevel.M
         });
@@ -2128,6 +2135,14 @@ document.querySelectorAll('.qr-tab').forEach(tab => {
         renderQR(tab.dataset.qr);
     });
 });
+
+const shareSection = document.getElementById('share');
+if (shareSection && 'IntersectionObserver' in window) {
+    const shareObserver = new IntersectionObserver(([entry]) => {
+        document.body.classList.toggle('share-in-view', entry.isIntersecting);
+    }, { threshold: 0.15 });
+    shareObserver.observe(shareSection);
+}
 
 window.addEventListener('load', () => {
     setTimeout(() => renderQR('site'), 800);
