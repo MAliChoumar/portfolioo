@@ -814,7 +814,11 @@ buildQrTabs();
 
 /* ══ CONTACT FORM ═══════════════════════════════════════════════ */
 
-var ENDPOINT = ""; /* set to the Vercel function URL once deployed */
+/* The relay that turns a submitted form into an e-mail in his inbox.
+   Assembled from mail() rather than written out, so the address is not
+   sitting in the source for scrapers. If the relay is ever unreachable
+   the form falls back to a pre-filled draft instead of dead-ending. */
+function endpoint() { return "https://formsubmit.co/ajax/" + mail(); }
 var form = $("#contactForm"), fmsg = $("#formMsg");
 
 function ref() {
@@ -853,11 +857,21 @@ form.addEventListener("submit", function (e) {
     fmsg.innerHTML = esc(u.errH) + " " + esc(u.errP) + ' <a href="' + mailtoFallback(name, email, topic, msg, r) + '">' + esc(mail()) + "</a>.";
   };
 
-  if (!ENDPOINT) { fail(); return; }
-  fetch(ENDPOINT, {
-    method: "POST", headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ name: name, email: email, topic: topic, message: msg, ref: r, lang: lang })
-  }).then(function (res) { res.ok ? done() : fail(); }).catch(fail);
+  fetch(endpoint(), {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify({
+      name: name, email: email, topic: topic, message: msg, ref: r, lang: lang,
+      _subject: "[" + topic + "] " + name + " · " + r,
+      _template: "table",
+      _captcha: "false"
+    })
+  }).then(function (res) {
+    /* A 200 alone is not proof the mail left: the relay answers 200 while an
+       address is still awaiting confirmation. Only success:"true" counts, so
+       the visitor is never told "sent" when nothing was. */
+    return res.json().then(function (d) { String(d.success) === "true" ? done() : fail(); });
+  }).catch(fail);
 });
 
 
