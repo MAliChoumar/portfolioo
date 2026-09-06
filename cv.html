@@ -55,10 +55,14 @@
     border: .8pt solid var(--rule); margin-bottom: 4mm;
     filter: grayscale(.15) contrast(1.03);
   }
-  .kontakt { font-family: var(--f-mono); font-size: 7.5pt; line-height: 1.6; }
-  .kontakt div { display: flex; gap: 2mm; }
-  .kontakt span { color: var(--ink-3); flex: 0 0 13mm; }
-  .kontakt a { color: var(--ink); text-decoration: none; word-break: break-all; }
+  /* The value column is only ~39mm wide. At 7.5pt mono the e-mail does not
+     fit and Chrome breaks it mid-word, which also breaks copy-paste out of
+     the PDF. Narrower labels plus a slightly smaller value size keep every
+     line intact. */
+  .kontakt { font-family: var(--f-mono); font-size: 6.8pt; line-height: 1.6; }
+  .kontakt div { display: flex; gap: 1.5mm; white-space: nowrap; }
+  .kontakt span { color: var(--ink-3); flex: 0 0 12mm; font-size: 6.5pt; }
+  .kontakt a { color: var(--ink); text-decoration: none; word-break: normal; }
 
   .skill { margin-bottom: 2.4mm; }
   .skill b {
