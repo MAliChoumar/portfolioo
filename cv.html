@@ -151,6 +151,18 @@
     background: #C0714A; color: #0B1114; border: 0;
   }
   .bar a { color: #C9CDD1; }
+  .bar button.ghost { background: none; color: #C9CDD1; border: 1px solid #354744; }
+  .bar button.ghost:hover { border-color: #C0714A; color: #C0714A; }
+  .bar button[disabled] { opacity: .55; cursor: progress; }
+  .hint-pdf { color: #7E8A88; }
+  /* html2canvas mis-measures variable-font text and collapses the spaces
+     between words. During capture only, fall back to static metrics. */
+  .png-mode .name, .png-mode .item-h h3, .png-mode .edu-h h3, .png-mode h2 {
+    font-variation-settings: normal !important;
+    font-family: "IBM Plex Sans", Arial, sans-serif !important;
+    letter-spacing: 0 !important;
+  }
+  .png-mode .name { font-weight: 700; font-size: 20pt; }
 
   @media print {
     @page { size: A4; margin: 0; }
@@ -168,8 +180,9 @@
 <div class="bar">
   <b>Lebenslauf</b>
   <button onclick="window.print()">Als PDF speichern</button>
+  <button class="ghost" id="pngBtn">Als PNG speichern</button>
   <a href="index.html">← Portfolio</a>
-  <span>Drucken → Ziel „Als PDF speichern“ → A4, Ränder: keine</span>
+  <span class="hint-pdf">PDF für Bewerbungen · PNG zum schnellen Teilen</span>
 </div>
 
 <div class="sheet">
@@ -312,6 +325,36 @@
   document.getElementById("tel").textContent = TEL;
   var ma = document.getElementById("mail");
   ma.textContent = ML; ma.href = "mailto:" + ML;
+
+  /* PNG export: html2canvas is only fetched when the button is actually used,
+     so the page stays light for everyone who just reads the CV. */
+  document.getElementById("pngBtn").addEventListener("click", function () {
+    var btn = this;
+    var run = function () {
+      btn.textContent = "Wird erstellt …"; btn.disabled = true;
+      document.body.classList.add("png-mode");
+      window.html2canvas(document.querySelector(".sheet"), {
+        scale: 2, backgroundColor: "#FFFFFF", useCORS: true, logging: false
+      }).then(function (canvas) {
+        document.body.classList.remove("png-mode");
+        var a = document.createElement("a");
+        a.download = "Lebenslauf-Mohamad-Ali-Choumar.png";
+        a.href = canvas.toDataURL("image/png");
+        a.click();
+        btn.textContent = "Als PNG speichern"; btn.disabled = false;
+      }).catch(function () {
+        document.body.classList.remove("png-mode");
+        btn.textContent = "PNG fehlgeschlagen — bitte PDF nutzen"; btn.disabled = false;
+      });
+    };
+    if (window.html2canvas) return run();
+    var sc = document.createElement("script");
+    sc.src = "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js";
+    sc.onload = run;
+    sc.onerror = function () { btn.textContent = "PNG nicht verfügbar — bitte PDF nutzen"; };
+    btn.textContent = "Lädt …"; btn.disabled = true;
+    document.head.appendChild(sc);
+  });
 
   var d = new Date();
   var m = ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"];
