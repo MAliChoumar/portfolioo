@@ -166,12 +166,26 @@
 
   @media print {
     @page { size: A4; margin: 0; }
-    body { background: #fff; }
-    .bar { display: none; }
-    .sheet { margin: 0; box-shadow: none; width: auto; min-height: auto; }
+    html, body { background: #fff; width: 210mm; }
+    .bar { display: none !important; }
+    .sheet {
+      margin: 0; box-shadow: none;
+      width: 210mm; min-height: 0; height: auto;
+      grid-template-columns: 54mm 1fr;   /* pinned: never inherit a fallback */
+      page-break-after: avoid;
+    }
+    /* Chrome drops background colours when printing unless told otherwise. */
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    .item, .edu, section { break-inside: avoid; page-break-inside: avoid; }
   }
-  @media (max-width: 800px) {
+  /* Between the A4 width and the phone layout the sheet must shrink, not
+     force the page to scroll sideways. Two columns are kept. */
+  @media screen and (max-width: 860px) {
+    .sheet { width: auto; max-width: 794px; margin: 12px; }
+  }
+  @media screen and (max-width: 760px) {
     .sheet { width: auto; margin: 12px; padding: 18px; grid-template-columns: 1fr; gap: 20px; }
+    .foto { max-width: 220px; }
   }
 </style>
 </head>
