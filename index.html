@@ -1,2175 +1,361 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="de" class="no-js">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Mohamad Ali Choumar — B.Sc. Software Engineering Student at University of Duisburg-Essen. Full-Stack Enthusiast. Open to Werkstudent & Internship positions.">
-<meta name="keywords" content="Mohamad Ali Choumar, Software Engineer, Full-Stack, Java, Spring Boot, Backend, Cloud, Werkstudent, Intern, Duisburg, Essen">
-<meta name="author" content="Mohamad Ali Choumar">
-<meta property="og:title" content="Mohamad Ali Choumar — Software Engineer">
-<meta property="og:description" content="Full-Stack Enthusiast | B.Sc. Software Engineering @ UDE | Open to Werkstudent positions">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohamad Ali Choumar — Software Engineering, Essen</title>
+<meta name="description" content="Mohamad Ali Choumar — Software-Engineering-Student an der Universität Duisburg-Essen. Baut Systeme, die in Produktion laufen. TypeScript, Next.js, PostgreSQL. Verfügbar für Werkstudent und Praktikum im Ruhrgebiet.">
 <link rel="canonical" href="https://choumar.is-a.dev/">
+<meta name="theme-color" content="#0B1114">
+
+<meta property="og:type" content="website">
 <meta property="og:url" content="https://choumar.is-a.dev/">
-<meta property="og:image" content="https://choumar.is-a.dev/assets/og-preview.png">
+<meta property="og:title" content="Mohamad Ali Choumar — Software Engineering, Essen">
+<meta property="og:description" content="Noch kein Job-Titel. Aber Systeme, die laufen. Werkstudent und Praktikum im Ruhrgebiet.">
+<meta property="og:image" content="https://choumar.is-a.dev/assets/og-preview.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:locale" content="de_DE">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://choumar.is-a.dev/assets/og-preview.png">
-<meta name="theme-color" content="#b8f03c">
-<title>Mohamad Ali Choumar — Software Engineer</title>
+<meta name="twitter:image" content="https://choumar.is-a.dev/assets/og-preview.jpg">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230B1114'/%3E%3Ccircle cx='16' cy='16' r='6' fill='none' stroke='%23C0714A' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23C0714A'/%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23050505'/%3E%3Ctext x='50' y='68' font-family='Arial, Helvetica, sans-serif' font-size='58' font-weight='900' fill='%23b8f03c' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
-<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700;800&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/app.css?v=1788726734">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.net.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
-
-<style>
-/* ============================================================
-   RESET & ROOT
-   ============================================================ */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-:root {
-    --bg: #050505;
-    --bg2: #0a0a0a;
-    --lime: #b8f03c;
-    --cyan: #00f3ff;
-    --magenta: #ff4dff;
-    --text: #e2e8f0;
-    --muted: #94a3b8;
-    --border: rgba(255, 255, 255, 0.08);
-    --card: rgba(255, 255, 255, 0.03);
-    --glow: 0 0 20px rgba(184, 240, 60, 0.3);
-    --glow-cyan: 0 0 20px rgba(0, 243, 255, 0.3);
-}
-
-html { scroll-behavior: smooth; }
-body {
-    font-family: 'Outfit', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    overflow-x: hidden;
-    line-height: 1.6;
-}
-body.custom-cursor-on { cursor: none; }
-body[data-lang="ar"] { font-family: 'Cairo', 'Outfit', sans-serif; }
-body[data-lang="ar"] .hero-name { font-family: 'Cairo', serif; }
-body[data-lang="ar"] .sec-title { font-family: 'Cairo', serif; }
-
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--lime); border-radius: 10px; }
-
-/* ============================================================
-   LOADING SCREEN
-   ============================================================ */
-#loader {
-    position: fixed; inset: 0; z-index: 9999;
-    background: var(--bg);
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    transition: opacity 0.6s ease, visibility 0.6s ease;
-}
-#loader.hidden { opacity: 0; visibility: hidden; }
-.loader-content { text-align: center; }
-.loader-logo {
-    font-family: 'DM Mono', monospace;
-    font-size: 2.5rem; color: var(--lime);
-    margin-bottom: 1.5rem; letter-spacing: 0.1em;
-    text-shadow: var(--glow);
-    animation: pulse 1.5s ease-in-out infinite;
-}
-.loader-bar {
-    width: 200px; height: 2px;
-    background: var(--border);
-    border-radius: 2px; overflow: hidden;
-    margin: 0 auto;
-}
-.loader-bar-fill {
-    height: 100%; width: 0%;
-    background: var(--lime);
-    box-shadow: var(--glow);
-    transition: width 0.3s ease;
-}
-.loader-text {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.75rem; color: var(--muted);
-    margin-top: 1rem; letter-spacing: 0.2em;
-}
-@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
-
-/* ============================================================
-   CUSTOM CURSOR
-   ============================================================ */
-.cursor-dot, .cursor-ring {
-    position: fixed; top: 0; left: 0;
-    pointer-events: none; z-index: 9998;
-    transform: translate(-50%, -50%);
-    will-change: transform;
-}
-.cursor-dot {
-    width: 6px; height: 6px;
-    background: var(--lime);
-    border-radius: 50%;
-    box-shadow: 0 0 10px var(--lime);
-    transition: transform 0.1s ease, background 0.2s;
-}
-.cursor-ring {
-    width: 36px; height: 36px;
-    border: 1.5px solid var(--lime);
-    border-radius: 50%;
-    transition: transform 0.25s ease, width 0.25s ease, height 0.25s ease, border-color 0.2s;
-    opacity: 0.6;
-}
-.cursor-ring.hovering {
-    width: 60px; height: 60px;
-    border-color: var(--cyan);
-    background: rgba(0, 243, 255, 0.05);
-    opacity: 0.8;
-}
-.cursor-ring.clicking {
-    width: 24px; height: 24px;
-    border-color: var(--magenta);
-}
-@media (max-width: 900px) {
-    body { cursor: auto; }
-    .cursor-dot, .cursor-ring { display: none; }
-}
-
-/* ============================================================
-   SCROLL PROGRESS
-   ============================================================ */
-#scrollProgress {
-    position: fixed; top: 0; left: 0;
-    height: 2px; width: 0%;
-    background: linear-gradient(90deg, var(--lime), var(--cyan));
-    z-index: 1001;
-    box-shadow: 0 0 10px var(--lime);
-    transition: width 0.1s linear;
-}
-
-/* ============================================================
-   NAVIGATION
-   ============================================================ */
-nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 1.2rem 6%;
-    background: rgba(5, 5, 5, 0.7);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-    transition: all 0.3s ease;
-}
-nav.scrolled { padding: 0.8rem 6%; background: rgba(5, 5, 5, 0.95); }
-
-.nav-logo {
-    font-family: 'DM Mono', monospace;
-    font-size: 1.1rem; color: var(--lime);
-    text-decoration: none; letter-spacing: 0.05em;
-    text-shadow: var(--glow);
-}
-
-.nav-links { display: flex; gap: 1.5rem; align-items: center; }
-.nav-links a {
-    color: var(--muted); text-decoration: none;
-    font-size: 0.85rem; font-weight: 500;
-    text-transform: uppercase; letter-spacing: 0.05em;
-    transition: color 0.3s; position: relative;
-}
-.nav-links a:hover { color: var(--lime); }
-.nav-links a::after {
-    content: ''; position: absolute; bottom: -5px; left: 0;
-    width: 0; height: 2px; background: var(--lime);
-    transition: width 0.3s ease; box-shadow: var(--glow);
-}
-.nav-links a:hover::after { width: 100%; }
-
-.nav-hire {
-    padding: 0.6rem 1.5rem !important;
-    background: transparent !important;
-    border: 1px solid var(--lime) !important;
-    color: var(--lime) !important;
-    border-radius: 4px !important;
-    font-weight: 600 !important;
-    transition: all 0.3s !important;
-}
-.nav-hire:hover {
-    background: var(--lime) !important;
-    color: #000 !important;
-    box-shadow: var(--glow) !important;
-}
-.nav-hire::after { display: none !important; }
-
-.lang-toggle {
-    padding: 0.4rem 0.8rem;
-    background: transparent;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    font-family: 'DM Mono', monospace;
-    font-size: 0.75rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-}
-.lang-toggle:hover {
-    border-color: var(--cyan);
-    color: var(--cyan);
-    box-shadow: var(--glow-cyan);
-}
-
-.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-.hamburger span { width: 25px; height: 2px; background: var(--lime); transition: 0.3s; }
-.mobile-menu {
-    display: none; position: fixed; top: 70px; left: 0; right: 0;
-    background: rgba(5,5,5,0.98); padding: 2rem; flex-direction: column; gap: 1.5rem;
-    border-bottom: 1px solid var(--border); z-index: 999;
-}
-.mobile-menu.open { display: flex; }
-.mobile-menu a { color: var(--text); text-decoration: none; font-size: 1.1rem; }
-
-/* ============================================================
-   HERO SECTION
-   ============================================================ */
-.hero {
-    min-height: 100vh; display: flex; align-items: center;
-    justify-content: space-between; padding: 0 6%;
-    position: relative; overflow: hidden;
-}
-#vanta-bg {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    z-index: -1; opacity: 0.5;
-}
-
-.hero-left { max-width: 620px; flex: 1; z-index: 2; }
-.status-badge {
-    display: inline-flex; align-items: center; gap: 0.6rem;
-    padding: 0.5rem 1.2rem;
-    background: rgba(184, 240, 60, 0.05);
-    border: 1px solid rgba(184, 240, 60, 0.2);
-    border-radius: 50px;
-    font-family: 'DM Mono', monospace; font-size: 0.75rem;
-    color: var(--lime); letter-spacing: 0.1em;
-    margin-bottom: 2rem;
-    animation: floatBadge 3s ease-in-out infinite;
-}
-@keyframes floatBadge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
-.badge-pulse {
-    width: 8px; height: 8px; background: var(--lime);
-    border-radius: 50%; box-shadow: var(--glow);
-    animation: pulse 2s infinite;
-    position: relative;
-}
-.badge-pulse::before {
-    content: ''; position: absolute; inset: -4px;
-    border-radius: 50%; border: 1px solid var(--lime);
-    animation: ripple 2s ease-out infinite;
-}
-@keyframes ripple { 0% { transform: scale(0.5); opacity: 1; } 100% { transform: scale(2); opacity: 0; } }
-@keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
-
-.hero-name {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(3rem, 6vw, 5.5rem);
-    font-weight: 700; line-height: 1.05;
-    margin-bottom: 1rem;
-    letter-spacing: -0.02em;
-}
-.hero-name .name-first { display: block; }
-.hero-name .name-last {
-    font-style: italic; font-weight: 400;
-    color: transparent;
-    -webkit-text-stroke: 1px var(--lime);
-    display: block;
-    background: linear-gradient(90deg, var(--lime), var(--cyan));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200% 100%;
-    animation: gradient-shift 6s linear infinite;
-}
-@keyframes gradient-shift { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
-
-.hero-role {
-    font-family: 'DM Mono', monospace;
-    font-size: 1rem; color: var(--cyan);
-    margin-bottom: 1.5rem; letter-spacing: 0.05em;
-}
-.hero-role .typing-cursor {
-    display: inline-block; width: 8px; height: 1em;
-    background: var(--cyan); margin-left: 2px;
-    animation: term-blink 0.9s step-end infinite;
-    vertical-align: text-bottom;
-}
-@keyframes term-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
-
-.hero-desc {
-    font-size: 1.05rem; color: var(--muted);
-    max-width: 520px; margin-bottom: 2.5rem;
-    line-height: 1.7;
-}
-
-.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
-.chip {
-    padding: 0.35rem 0.85rem;
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 6px; font-family: 'DM Mono', monospace;
-    font-size: 0.72rem; color: var(--muted); transition: all 0.22s;
-}
-.chip:hover {
-    border-color: var(--lime); color: var(--lime);
-    background: rgba(184, 240, 60, 0.1); transform: translateY(-2px);
-}
-
-.btn-row { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem; }
-.btn-main {
-    padding: 1rem 2rem; background: var(--lime); color: #000;
-    border: none; border-radius: 6px; font-weight: 700; font-size: 0.95rem;
-    cursor: pointer; text-decoration: none; transition: all 0.3s;
-    position: relative; overflow: hidden;
-}
-.btn-main::before {
-    content: ''; position: absolute; inset: 0;
-    background: var(--cyan);
-    transform: translateX(-100%);
-    transition: transform 0.4s ease;
-    z-index: 0;
-}
-.btn-main:hover::before { transform: translateX(0); }
-.btn-main span { position: relative; z-index: 1; }
-.btn-main:hover { box-shadow: var(--glow-cyan); }
-
-.btn-ghost {
-    padding: 1rem 2rem; background: transparent; color: var(--text);
-    border: 1px solid var(--border); border-radius: 6px;
-    font-weight: 600; cursor: pointer; text-decoration: none; transition: 0.3s;
-    display: inline-flex; align-items: center; gap: 0.5rem;
-}
-.btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); box-shadow: var(--glow-cyan); }
-
-.magnetic { will-change: transform; }
-.magnetic.magnet-reset { transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
-
-/* ============================================================
-   HERO IMAGE (3D PARALLAX)
-   ============================================================ */
-.hero-right { flex-shrink: 0; position: relative; z-index: 2; }
-.img-frame {
-    position: relative; width: 340px; border-radius: 24px;
-    background: linear-gradient(135deg, var(--lime), var(--cyan), var(--magenta));
-    background-size: 200% 200%;
-    padding: 3px; box-shadow: 0 0 60px rgba(0, 243, 255, 0.2);
-    animation: float 6s ease-in-out infinite, gradientBorder 8s ease infinite;
-    transform-style: preserve-3d;
-}
-@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-@keyframes gradientBorder { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-
-.img-inner { background: #111; border-radius: 21px; overflow: hidden; position: relative; aspect-ratio: 3/4; }
-.img-inner img { width: 100%; height: 100%; display: block; object-fit: cover; filter: contrast(1.05) saturate(1.05); transition: transform 0.4s ease; }
-.img-frame:hover .img-inner img { transform: scale(1.05); }
-
-.img-tag {
-    position: absolute; top: 1rem; right: -0.9rem;
-    background: var(--lime); color: #000;
-    font-family: 'DM Mono', monospace; font-size: 0.65rem;
-    font-weight: 700; padding: 0.32rem 0.85rem;
-    border-radius: 999px; letter-spacing: 0.1em;
-    transform: rotate(5deg); z-index: 3;
-    box-shadow: 0 4px 20px rgba(184, 240, 60, 0.4);
-    animation: floatBadge 3s ease-in-out infinite;
-}
-.float-card {
-    position: absolute; bottom: 2rem; left: -3rem;
-    background: rgba(10,10,10,0.85); border: 1px solid var(--border);
-    border-radius: 12px; padding: 0.8rem 1rem; z-index: 3;
-    backdrop-filter: blur(10px);
-    animation: floatCard 4s ease-in-out infinite;
-}
-@keyframes floatCard { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-8px) rotate(-2deg); } }
-.fc-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--muted); margin-bottom: 2px; }
-.fc-val { font-size: 1.1rem; font-weight: 700; color: var(--lime); }
-
-/* Floating orbs around the image */
-.orb {
-    position: absolute; border-radius: 50%;
-    background: var(--lime);
-    box-shadow: var(--glow);
-    filter: blur(2px);
-    animation: floatOrb 8s ease-in-out infinite;
-    z-index: 1;
-}
-.orb-1 { width: 14px; height: 14px; top: -20px; left: -20px; background: var(--lime); }
-.orb-2 { width: 10px; height: 10px; bottom: 30%; right: -25px; background: var(--cyan); animation-delay: -2s; }
-.orb-3 { width: 8px; height: 8px; top: 40%; left: -30px; background: var(--magenta); animation-delay: -4s; }
-@keyframes floatOrb { 0%, 100% { transform: translate(0, 0); } 33% { transform: translate(10px, -15px); } 66% { transform: translate(-10px, 10px); } }
-
-/* ============================================================
-   SECTIONS GENERAL
-   ============================================================ */
-.section { padding: 6rem 6%; position: relative; }
-.sec-eyebrow {
-    font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--lime);
-    letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem; display: block;
-    position: relative; padding-left: 60px;
-}
-.sec-eyebrow::before {
-    content: ''; position: absolute; left: 0; top: 50%;
-    width: 50px; height: 1px; background: var(--lime);
-    transform: translateY(-50%);
-}
-.sec-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.2rem, 4.5vw, 3.8rem); margin-bottom: 3rem; line-height: 1.1;
-    letter-spacing: -0.02em;
-}
-.sec-title em { color: var(--cyan); font-style: italic; }
-
-/* ============================================================
-   PROJECTS & CARDS
-   ============================================================ */
-.proj-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-    gap: 1.8rem; perspective: 1500px;
-}
-.proj-card, .tech-card {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 16px; padding: 2rem; position: relative; overflow: hidden;
-    transform-style: preserve-3d; cursor: pointer;
-    transition: border-color 0.3s, transform 0.35s ease;
-}
-.proj-card::before, .tech-card::before {
-    content: ''; position: absolute; inset: 0;
-    background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 50%),
-        rgba(184, 240, 60, 0.08), transparent 40%);
-    opacity: 0; transition: opacity 0.3s;
-    pointer-events: none;
-}
-.proj-card:hover::before, .tech-card:hover::before { opacity: 1; }
-.proj-card:hover, .tech-card:hover { border-color: rgba(184, 240, 60, 0.4); }
-
-.proj-num { font-family: 'DM Mono'; color: var(--muted); font-size: 0.7rem; margin-bottom: 1rem; letter-spacing: 0.15em; }
-.proj-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
-.proj-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.8rem; color: #fff; }
-.proj-desc { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.2rem; line-height: 1.7; }
-.proj-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.ptag {
-    padding: 0.3rem 0.8rem; background: rgba(0, 243, 255, 0.05);
-    border: 1px solid rgba(0, 243, 255, 0.2); border-radius: 4px;
-    font-size: 0.7rem; color: var(--cyan); font-family: 'DM Mono';
-}
-.proj-link-line { margin-top: 1rem; }
-.proj-link-line a {
-    font-size: 0.8rem; font-family: 'DM Mono', monospace;
-    color: var(--lime); text-decoration: none;
-    border-bottom: 1px solid rgba(184, 240, 60, 0.3); padding-bottom: 2px;
-    transition: all 0.2s;
-}
-.proj-link-line a:hover { border-color: var(--lime); text-shadow: var(--glow); }
-.proj-arrow {
-    position: absolute; top: 1.5rem; right: 1.5rem;
-    color: var(--muted); font-size: 1rem; transition: all 0.28s;
-}
-.proj-card:hover .proj-arrow { color: var(--lime); transform: translate(3px, -3px); }
-
-/* Project metrics */
-.proj-metrics {
-    display: flex; gap: 1.2rem; margin: 1rem 0 1.4rem;
-    padding: 0.8rem; background: rgba(184, 240, 60, 0.03);
-    border: 1px solid rgba(184, 240, 60, 0.1); border-radius: 10px;
-}
-.proj-metric { text-align: center; flex: 1; }
-.pm-num { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--lime); font-weight: 700; line-height: 1; }
-.pm-lbl { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--muted); margin-top: 0.2rem; letter-spacing: 0.1em; text-transform: uppercase; }
-
-/* Featured project (Milano) */
-.proj-card.featured {
-    border: 1px solid rgba(184, 240, 60, 0.2);
-    background: linear-gradient(135deg, rgba(184, 240, 60, 0.04), rgba(0, 243, 255, 0.04));
-}
-.proj-card.featured::after {
-    content: '★ FEATURED'; position: absolute; top: 1.5rem; left: 1.5rem;
-    font-family: 'DM Mono', monospace; font-size: 0.6rem;
-    color: var(--lime); background: rgba(184, 240, 60, 0.1);
-    padding: 0.2rem 0.6rem; border-radius: 4px; letter-spacing: 0.15em;
-}
-
-/* Project screenshot preview */
-.proj-preview {
-    width: calc(100% + 4rem); margin: -2rem -2rem 1.5rem;
-    height: 160px; background: #1a1a1a; border-radius: 0;
-    overflow: hidden; position: relative;
-}
-.proj-preview img {
-    width: 100%; height: 100%; object-fit: cover;
-    transition: transform 0.5s ease;
-    opacity: 0.9;
-}
-.proj-preview-fallback {
-    width: 100%; height: 100%; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; gap: 0.5rem;
-    background: linear-gradient(135deg, rgba(184,240,60,0.08), rgba(0,243,255,0.06));
-    transition: transform 0.5s ease;
-}
-.ppf-icon { font-size: 2.6rem; }
-.ppf-url {
-    font-family: 'DM Mono', monospace; font-size: 0.75rem;
-    color: var(--muted); letter-spacing: 0.03em;
-}
-.proj-card:hover .proj-preview-fallback { transform: scale(1.05); }
-.proj-card:hover .proj-preview img { transform: scale(1.05); opacity: 1; }
-.proj-preview::after {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(180deg, transparent 50%, var(--card) 100%);
-}
-
-/* ============================================================
-   TECH STACK
-   ============================================================ */
-.tech-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 1.2rem;
-}
-.tech-card { padding: 1.4rem 1rem; text-align: center; }
-.tech-icon { font-size: 2rem; margin-bottom: 0.5rem; display: block; }
-.tech-name { font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem; }
-.tech-lvl { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--lime); }
-.tech-bar {
-    height: 3px; background: var(--border);
-    border-radius: 2px; margin-top: 0.6rem; overflow: hidden;
-    position: relative;
-}
-.tech-bar-fill {
-    height: 100%; background: linear-gradient(90deg, var(--lime), var(--cyan));
-    width: 0; transition: width 1.5s ease;
-    box-shadow: var(--glow);
-}
-
-/* ============================================================
-   ABOUT
-   ============================================================ */
-.about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: center; }
-.about-text p { color: var(--muted); margin-bottom: 1.2rem; font-size: 1rem; line-height: 1.8; }
-.about-text p:last-child { margin-bottom: 0; }
-.about-text strong { color: var(--lime); font-weight: 600; }
-
-.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.stat {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 14px; padding: 1.5rem 1.2rem; text-align: center; transition: 0.3s;
-    position: relative; overflow: hidden;
-}
-.stat::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-    background: linear-gradient(90deg, transparent, var(--lime), transparent);
-    transform: translateX(-100%); transition: transform 0.6s;
-}
-.stat:hover::before { transform: translateX(0); }
-.stat:hover { border-color: rgba(184, 240, 60, 0.3); transform: translateY(-3px); }
-.stat-n { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--lime); line-height: 1; font-weight: 700; }
-.stat-l { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
-
-/* ============================================================
-   TERMINAL
-   ============================================================ */
-.term-section {
-    padding: 5rem 6%; display: flex; justify-content: center;
-}
-.term-frame {
-    position: relative; width: 100%; max-width: 720px; border-radius: 16px;
-    padding: 2px; overflow: hidden;
-    opacity: 0; transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.term-frame.in-view { opacity: 1; transform: translateY(0); }
-.term-frame::before {
-    content: ''; position: absolute; inset: -60%;
-    background: conic-gradient(from 0deg,
-        transparent 0deg, var(--lime) 40deg, transparent 100deg,
-        transparent 220deg, var(--cyan) 280deg, transparent 340deg);
-    animation: term-rotate 6s linear infinite paused;
-}
-.term-frame.glow::before { animation-play-state: running; }
-@keyframes term-rotate { to { transform: rotate(360deg); } }
-.term-window {
-    position: relative; z-index: 1; width: 100%; border-radius: 14px; overflow: hidden;
-    background: #0a0a0a; border: 1px solid var(--border);
-    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
-    transition: box-shadow 1.5s ease;
-}
-.term-window.glow {
-    box-shadow: 0 0 40px rgba(184,240,60,0.1), 0 30px 80px rgba(0,0,0,0.6);
-}
-.term-bar {
-    display: flex; align-items: center; gap: 0.6rem;
-    padding: 0.8rem 1.1rem; background: #131313; border-bottom: 1px solid var(--border);
-}
-.term-dots { display: flex; gap: 0.4rem; }
-.term-dots span { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
-.term-dots span:nth-child(1) { background: #ff5f56; }
-.term-dots span:nth-child(2) { background: #ffbd2e; }
-.term-dots span:nth-child(3) { background: #27c93f; }
-.term-title {
-    flex: 1; text-align: center; font-family: 'DM Mono', monospace;
-    font-size: 0.72rem; color: var(--muted); margin-right: 2.5rem;
-}
-.term-body { padding: 1.8rem 1.6rem 2.2rem; min-height: 300px; }
-.term-lines {
-    font-family: 'DM Mono', monospace; font-size: clamp(0.8rem, 1.6vw, 0.95rem);
-    line-height: 1.9; color: #d5d5d5; white-space: pre-wrap; word-break: break-word;
-    margin: 0;
-}
-.term-lines .t-cmd { color: var(--lime); }
-.term-lines .t-out { color: #8ab4f8; }
-.term-lines .t-ok { color: var(--lime); }
-.term-lines .t-mute { color: var(--muted); }
-.term-cursor {
-    display: inline-block; width: 8px; height: 1.1em; background: var(--lime);
-    vertical-align: text-bottom; margin-left: 2px;
-    animation: term-blink 0.9s step-end infinite;
-}
-
-/* ============================================================
-   COMMAND PALETTE
-   ============================================================ */
-.cmdk-overlay {
-    display: none; position: fixed; inset: 0; z-index: 2000;
-    background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
-    padding: 12vh 1.5rem 0; justify-content: center;
-}
-.cmdk-overlay.open { display: flex; }
-.cmdk-box {
-    width: 100%; max-width: 560px; height: fit-content; max-height: 60vh;
-    background: #0d0d0d; border: 1px solid var(--border); border-radius: 12px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5); overflow: hidden;
-    animation: cmdkIn 0.18s ease;
-}
-@keyframes cmdkIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
-.cmdk-input-row {
-    display: flex; align-items: center; gap: 0.7rem;
-    padding: 1rem 1.2rem; border-bottom: 1px solid var(--border);
-}
-.cmdk-icon { color: var(--lime); font-size: 1rem; }
-.cmdk-input {
-    flex: 1; background: none; border: none; outline: none;
-    color: var(--text); font-family: 'Outfit', sans-serif; font-size: 1rem;
-}
-.cmdk-input::placeholder { color: var(--muted); }
-.cmdk-esc {
-    font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--muted);
-    border: 1px solid var(--border); border-radius: 4px; padding: 0.15rem 0.4rem;
-}
-.cmdk-list { max-height: calc(60vh - 60px); overflow-y: auto; padding: 0.5rem; }
-.cmdk-item {
-    display: flex; align-items: center; gap: 0.8rem;
-    padding: 0.8rem 1rem; border-radius: 8px; cursor: pointer;
-    color: var(--text); font-size: 0.9rem; transition: background 0.15s;
-}
-.cmdk-item .cmdk-item-icon { font-size: 1rem; width: 1.3rem; text-align: center; }
-.cmdk-item .cmdk-item-hint { margin-left: auto; color: var(--muted); font-size: 0.75rem; font-family: 'DM Mono', monospace; }
-.cmdk-item:hover, .cmdk-item.active { background: rgba(184, 240, 60, 0.08); color: var(--lime); }
-.cmdk-empty { padding: 1.5rem 1rem; text-align: center; color: var(--muted); font-size: 0.85rem; }
-
-.cmdk-hint {
-    position: fixed; bottom: 2rem; left: 2rem; z-index: 500;
-    display: flex; align-items: center; gap: 0.4rem;
-    background: rgba(13,13,13,0.85); border: 1px solid var(--border);
-    border-radius: 8px; padding: 0.5rem 0.8rem; backdrop-filter: blur(10px);
-    color: var(--muted); font-size: 0.75rem; cursor: pointer;
-    transition: opacity 0.2s ease, visibility 0.2s ease;
-}
-body.share-in-view .cmdk-hint { opacity: 0; visibility: hidden; pointer-events: none; }
-.cmdk-hint kbd {
-    font-family: 'DM Mono', monospace; background: rgba(255,255,255,0.06);
-    border: 1px solid var(--border); border-radius: 4px; padding: 0.15rem 0.4rem;
-    color: var(--text);
-}
-@media(max-width: 900px) {
-    .cmdk-hint { display: none; }
-    .term-body { padding: 1.2rem 1rem 1.6rem; min-height: 230px; }
-    .term-title { font-size: 0.62rem; margin-right: 1.5rem; }
-}
-
-.contact-row { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-.contact-row a {
-    color: var(--muted); text-decoration: none;
-    font-family: 'DM Mono', monospace; font-size: 0.8rem; transition: 0.3s;
-}
-.contact-row a:hover { color: var(--lime); }
-
-/* ============================================================
-   TIMELINE (NEW)
-   ============================================================ */
-.timeline { position: relative; max-width: 880px; margin: 0 auto; padding: 1rem 0; }
-.timeline::before {
-    content: ''; position: absolute; left: 20px; top: 0; bottom: 0;
-    width: 2px; background: linear-gradient(180deg, var(--lime), var(--cyan), transparent);
-}
-.tl-item {
-    position: relative; padding-left: 60px; margin-bottom: 2.5rem;
-    opacity: 0; transform: translateX(-20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.tl-item.in-view { opacity: 1; transform: translateX(0); }
-.tl-dot {
-    position: absolute; left: 11px; top: 5px; width: 20px; height: 20px;
-    background: var(--bg); border: 2px solid var(--lime); border-radius: 50%;
-    box-shadow: var(--glow);
-}
-.tl-dot::after {
-    content: ''; position: absolute; inset: 3px; background: var(--lime); border-radius: 50%;
-}
-.tl-year {
-    font-family: 'DM Mono', monospace; font-size: 0.75rem;
-    color: var(--lime); margin-bottom: 0.3rem; letter-spacing: 0.1em;
-}
-.tl-title { font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem; }
-.tl-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
-
-/* ============================================================
-   WHY ME (NEW)
-   ============================================================ */
-.why-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem; margin-top: 1rem;
-}
-.why-card {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 16px; padding: 1.8rem;
-    position: relative; overflow: hidden;
-    transition: all 0.3s;
-}
-.why-card::before {
-    content: ''; position: absolute; top: 0; left: 0;
-    width: 100%; height: 3px;
-    background: linear-gradient(90deg, var(--lime), var(--cyan));
-    transform: scaleX(0); transform-origin: left;
-    transition: transform 0.4s ease;
-}
-.why-card:hover { border-color: rgba(184, 240, 60, 0.3); transform: translateY(-4px); }
-.why-card:hover::before { transform: scaleX(1); }
-.why-icon { font-size: 1.8rem; margin-bottom: 1rem; }
-.why-title { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.6rem; }
-.why-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
-
-/* ============================================================
-   LANGUAGES (NEW)
-   ============================================================ */
-.lang-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.2rem;
-}
-.lang-card {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 14px; padding: 1.4rem;
-    display: flex; align-items: center; gap: 1rem;
-    transition: 0.3s;
-}
-.lang-card:hover { border-color: var(--lime); }
-.lang-flag { font-size: 2rem; line-height: 1; }
-.lang-info { flex: 1; }
-.lang-name { font-weight: 700; color: #fff; }
-.lang-lvl { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--lime); margin-top: 0.2rem; }
-.lang-dots { display: flex; gap: 4px; margin-top: 0.5rem; }
-.lang-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); transition: 0.3s; }
-.lang-dot.active { background: var(--lime); box-shadow: var(--glow); }
-
-/* ============================================================
-   QR & SHARE
-   ============================================================ */
-.qr-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 900px; margin: 0 auto; }
-.qr-box { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; text-align: center; position: relative; overflow: hidden; }
-.qr-box::before {
-    content: ''; position: absolute; inset: 0;
-    background: radial-gradient(circle at 50% 0%, rgba(184, 240, 60, 0.08), transparent 60%);
-    pointer-events: none;
-}
-.qr-canvas {
-    display: inline-block; padding: 18px; background: #fff;
-    border-radius: 8px; margin-bottom: 1.4rem;
-    line-height: 0; max-width: 100%;
-}
-.qr-canvas canvas, .qr-canvas img { display: block; max-width: 100%; height: auto; }
-.qr-url {
-    display: flex; align-items: center; gap: 0.5rem;
-    background: rgba(0,0,0,0.3); border: 1px solid var(--border);
-    border-radius: 8px; padding: 0.62rem 0.9rem;
-    font-family: 'DM Mono', monospace; font-size: 0.68rem;
-    color: var(--lime); margin-bottom: 1rem; word-break: break-all;
-    text-align: left;
-}
-.qr-tabs { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
-.qr-tab {
-    flex: 1; padding: 0.5rem; background: transparent;
-    border: 1px solid var(--border); color: var(--muted);
-    font-family: 'DM Mono', monospace; font-size: 0.7rem;
-    border-radius: 6px; cursor: pointer; transition: 0.2s;
-    text-transform: uppercase; letter-spacing: 0.1em;
-}
-.qr-tab.active { background: var(--lime); color: #000; border-color: var(--lime); }
-.dl-btn {
-    width: 100%; padding: 0.85rem; background: var(--lime); color: #000;
-    border: none; border-radius: 10px; font-weight: 700; font-size: 0.9rem;
-    cursor: pointer; transition: 0.22s;
-}
-.dl-btn:hover { box-shadow: var(--glow); transform: translateY(-1px); }
-.qr-info h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: 1rem; }
-.qr-info h3 em { font-style: italic; color: var(--lime); }
-.qr-info p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.8rem; }
-
-/* ============================================================
-   FOOTER
-   ============================================================ */
-footer {
-    border-top: 1px solid var(--border); padding: 3rem 6%;
-    display: flex; justify-content: space-between; align-items: center;
-    flex-wrap: wrap; gap: 2rem; background: #020202;
-    position: relative;
-}
-footer::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-    background: linear-gradient(90deg, transparent, var(--lime), transparent);
-}
-.footer-logo { font-family: 'DM Mono'; color: var(--lime); font-size: 1.2rem; }
-footer p { color: var(--muted); font-size: 0.8rem; }
-.footer-links a { color: var(--muted); text-decoration: none; margin-left: 1.5rem; transition: 0.3s; font-size: 0.85rem; }
-.footer-links a:hover { color: var(--cyan); }
-
-.scroll-top {
-    position: fixed; bottom: 2rem; right: 2rem; width: 44px; height: 44px;
-    background: var(--lime); color: #000; border: none; border-radius: 12px;
-    font-size: 1.1rem; cursor: pointer; z-index: 300;
-    display: flex; align-items: center; justify-content: center;
-    opacity: 0; pointer-events: none; transition: all 0.3s; transform: translateY(10px);
-}
-.scroll-top.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
-.scroll-top:hover { transform: translateY(-3px); box-shadow: var(--glow); }
-
-/* Toast notification (replaces native alert()) */
-.toast {
-    position: fixed; bottom: 2rem; left: 50%; z-index: 3000;
-    transform: translate(-50%, 20px); opacity: 0; pointer-events: none;
-    background: #0d0d0d; border: 1px solid var(--lime); border-radius: 10px;
-    padding: 0.85rem 1.4rem; color: var(--text); font-size: 0.88rem;
-    font-family: 'DM Mono', monospace; box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    max-width: 90vw; text-align: center;
-}
-.toast.show { opacity: 1; transform: translate(-50%, 0); }
-
-/* ============================================================
-   ARABIC RTL
-   ============================================================ */
-body[data-lang="ar"] { direction: rtl; text-align: right; }
-body[data-lang="ar"] .sec-eyebrow { padding-left: 0; padding-right: 60px; }
-body[data-lang="ar"] .sec-eyebrow::before { left: auto; right: 0; }
-body[data-lang="ar"] .timeline::before { left: auto; right: 20px; }
-body[data-lang="ar"] .tl-item { padding-left: 0; padding-right: 60px; transform: translateX(20px); }
-body[data-lang="ar"] .tl-item.in-view { transform: translateX(0); }
-body[data-lang="ar"] .tl-dot { left: auto; right: 11px; }
-body[data-lang="ar"] .qr-url { text-align: right; }
-body[data-lang="ar"] .footer-links a { margin-left: 0; margin-right: 1.5rem; }
-
-/* ============================================================
-   REVEAL ANIMATIONS
-   ============================================================ */
-.reveal {
-    opacity: 0; transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.reveal.in-view { opacity: 1; transform: translateY(0); }
-
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
-@media(max-width: 900px) {
-    .hero { flex-direction: column; text-align: center; padding-top: 8rem; gap: 3rem; }
-    .hero-left { max-width: 100%; }
-    .btn-row, .contact-row, .chips { justify-content: center; }
-    .img-frame { width: 260px; margin: 0 auto; }
-    .float-card { left: 50%; transform: translateX(-50%); bottom: -1rem; }
-    .about-grid, .qr-grid { grid-template-columns: 1fr; }
-    .nav-links { display: none; }
-    .nav-links.show { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
-    .hamburger { display: flex; }
-    .section { padding: 4rem 5%; }
-    .orbs { display: none; }
-}
-@media (max-width: 600px) {
-    .nav-logo { font-size: 0.95rem; }
-    .lang-toggle { font-size: 0.65rem; padding: 0.3rem 0.6rem; }
-    .float-card { left: 50%; transform: translateX(-50%); }
-}
-
-/* Print friendly */
-@media print {
-    body { background: white; color: black; cursor: auto; }
-    nav, .cursor-dot, .cursor-ring, #scrollProgress, .scroll-top, .cmdk-hint, #vanta-bg, footer::before { display: none; }
-    .hero { min-height: auto; padding: 2rem 0; }
-    .section { padding: 2rem 0; page-break-inside: avoid; }
-    .proj-card, .tech-card, .stat, .why-card, .lang-card { break-inside: avoid; border: 1px solid #ccc; }
-}
-</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mohamad Ali Choumar",
+  "url": "https://choumar.is-a.dev/",
+  "image": "https://choumar.is-a.dev/assets/profile.jpg",
+  "jobTitle": "Software Engineering Student",
+  "email": "mailto:choumarmohamadali@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Essen", "addressRegion": "NRW", "addressCountry": "DE" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universität Duisburg-Essen", "url": "https://www.uni-due.de/" },
+  "knowsLanguage": [
+    { "@type": "Language", "name": "Arabic", "alternateName": "ar" },
+    { "@type": "Language", "name": "German", "alternateName": "de" },
+    { "@type": "Language", "name": "English", "alternateName": "en" }
+  ],
+  "knowsAbout": ["TypeScript","Next.js","PostgreSQL","React","Drizzle ORM","Supabase","Software Engineering"],
+  "seeks": { "@type": "Demand", "name": "Werkstudent / Praktikum, Ruhrgebiet" },
+  "sameAs": [
+    "https://github.com/MAliChoumar",
+    "https://www.linkedin.com/in/mohamad-ali-choumar-b425693a9/"
+  ]
+}
+</script>
 </head>
-<body data-lang="en">
+<body>
+<script>document.documentElement.classList.remove('no-js');</script>
 
-<!-- LOADING SCREEN -->
-<div id="loader">
-    <div class="loader-content">
-        <div class="loader-logo">MAC //</div>
-        <div class="loader-bar"><div class="loader-bar-fill" id="loaderBar"></div></div>
-        <div class="loader-text" data-i18n="loading">INITIALIZING PORTFOLIO</div>
-    </div>
+<a class="skip" href="#main" data-i18n="skip">Zum Inhalt springen</a>
+
+<canvas id="bgfx" aria-hidden="true"></canvas>
+
+<div class="progress" id="progress"></div>
+<div class="cur-dot" id="curDot" aria-hidden="true"></div>
+<div class="cur-ring" id="curRing" aria-hidden="true"></div>
+
+<header class="topbar">
+  <a class="brand" href="#top">WERK<b>//</b></a>
+  <nav class="navlinks" id="navlinks" aria-label="Abschnitte">
+    <a href="#about"   data-i18n="nav.about">Über mich</a>
+    <a href="#whoami"  data-i18n="nav.whoami">whoami</a>
+    <a href="#bench"   data-i18n="nav.bench">Prüfstand</a>
+    <a href="#work"    data-i18n="nav.work">Projekte</a>
+    <a href="#study"   data-i18n="nav.study">Studium</a>
+    <a href="#tools"   data-i18n="nav.tools">Werkzeuge</a>
+    <a href="#ai"      data-i18n="nav.ai">Arbeitsweise</a>
+    <a href="#path"    data-i18n="nav.path">Weg</a>
+    <a href="#lang"    data-i18n="nav.lang">Sprachen</a>
+    <a href="#seo"     data-i18n="nav.seo">Auffindbarkeit</a>
+    <a href="#kontakt" data-i18n="nav.kontakt">Kontakt</a>
+  </nav>
+  <span class="spring"></span>
+  <span class="status"><i class="led"></i><span data-i18n="status">Verfügbar · Werkstudent</span></span>
+  <button class="cmdk-btn" id="cmdkOpen" aria-label="Suche öffnen">⌘K</button>
+  <div class="langtog" role="group" aria-label="Sprache">
+    <button id="btnDe" aria-pressed="true">DE</button>
+    <button id="btnEn" aria-pressed="false">EN</button>
+  </div>
+  <button class="burger" id="burger" aria-expanded="false" data-i18n="menu">Menü</button>
+</header>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Navigation">
+  <button class="sheet-close" id="sheetClose" data-i18n="close">Schliessen</button>
+  <a href="#about"><span>01</span><em data-i18n="nav.about" style="font-style:normal">Über mich</em></a>
+  <a href="#whoami"><span>02</span><em data-i18n="nav.whoami" style="font-style:normal">whoami</em></a>
+  <a href="#bench"><span>03</span><em data-i18n="nav.bench" style="font-style:normal">Prüfstand</em></a>
+  <a href="#work"><span>04</span><em data-i18n="nav.work" style="font-style:normal">Projekte</em></a>
+  <a href="#study"><span>05</span><em data-i18n="nav.study" style="font-style:normal">Studium</em></a>
+  <a href="#tools"><span>06</span><em data-i18n="nav.tools" style="font-style:normal">Werkzeuge</em></a>
+  <a href="#ai"><span>07</span><em data-i18n="nav.ai" style="font-style:normal">Arbeitsweise</em></a>
+  <a href="#path"><span>08</span><em data-i18n="nav.path" style="font-style:normal">Weg</em></a>
+  <a href="#lang"><span>09</span><em data-i18n="nav.lang" style="font-style:normal">Sprachen</em></a>
+  <a href="#seo"><span>10</span><em data-i18n="nav.seo" style="font-style:normal">Auffindbarkeit</em></a>
+  <a href="#kontakt"><span>11</span><em data-i18n="nav.kontakt" style="font-style:normal">Kontakt</em></a>
 </div>
 
-<!-- CUSTOM CURSOR -->
-<div class="cursor-dot" id="cursorDot"></div>
-<div class="cursor-ring" id="cursorRing"></div>
-
-<!-- SCROLL PROGRESS -->
-<div id="scrollProgress"></div>
-
-<!-- VANTA BACKGROUND -->
-<div id="vanta-bg"></div>
-
-<!-- NAVIGATION -->
-<nav id="navbar">
-    <a href="#home" class="nav-logo">MAC //</a>
-    <div class="nav-links">
-        <a href="#about" data-i18n="nav_about">About</a>
-        <a href="#why" data-i18n="nav_why">Why Me</a>
-        <a href="#projects" data-i18n="nav_projects">Projects</a>
-        <a href="#stack" data-i18n="nav_stack">Stack</a>
-        <a href="#ai-workflow" data-i18n="nav_ai">AI Workflow</a>
-        <a href="#journey" data-i18n="nav_journey">Journey</a>
-        <a href="#share" data-i18n="nav_share">Share</a>
-        <button class="lang-toggle" id="langToggle" aria-label="Toggle language">AR</button>
-        <a href="mailto:choumarmohamadali@gmail.com" class="nav-hire magnetic" data-i18n="nav_hire">Hire Me</a>
-    </div>
-    <div class="hamburger" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
-    </div>
-</nav>
-
-<div class="mobile-menu" id="mobileMenu">
-    <a href="#about" onclick="closeMenu()" data-i18n="nav_about">About</a>
-    <a href="#why" onclick="closeMenu()" data-i18n="nav_why">Why Me</a>
-    <a href="#projects" onclick="closeMenu()" data-i18n="nav_projects">Projects</a>
-    <a href="#stack" onclick="closeMenu()" data-i18n="nav_stack">Stack</a>
-    <a href="#ai-workflow" onclick="closeMenu()" data-i18n="nav_ai">AI Workflow</a>
-    <a href="#journey" onclick="closeMenu()" data-i18n="nav_journey">Journey</a>
-    <a href="#share" onclick="closeMenu()" data-i18n="nav_share">Share</a>
-    <button class="lang-toggle" onclick="toggleLang()" style="margin-top:1rem;">AR / EN</button>
+<div class="cmdk" id="cmdk" role="dialog" aria-modal="true" aria-label="Befehle">
+  <div class="cmdk-panel">
+    <input id="cmdkInput" type="text" autocomplete="off" placeholder="Springen zu …" aria-label="Suchen">
+    <div class="cmdk-list" id="cmdkList"></div>
+  </div>
 </div>
 
-<!-- HERO SECTION -->
-<section class="hero" id="home">
-    <div class="hero-left">
-        <div class="status-badge">
-            <span class="badge-pulse"></span>
-            <span data-i18n="badge">Open to Werkstudent & Internship positions</span>
-        </div>
-        <h1 class="hero-name">
-            <span class="name-first" data-i18n="name_first">Mohamad Ali</span>
-            <span class="name-last" data-i18n="name_last">Choumar</span>
-        </h1>
-        <p class="hero-role" id="heroRole">
-            <span data-i18n="role">// B.Sc. Software Engineering · Full-Stack Development</span><span class="typing-cursor"></span>
-        </p>
-        <p class="hero-desc" data-i18n="hero_desc">
-            Software Engineering student at the University of Duisburg-Essen,
-            focused on backend systems, clean architecture, and scalable application design.
-            Building real production systems and learning fast through AI-assisted workflows.
-        </p>
+<main id="main">
 
-        <div class="chips">
-            <span class="chip">Java</span>
-            <span class="chip">Spring Boot</span>
-            <span class="chip">Python</span>
-            <span class="chip">React</span>
-            <span class="chip">Next.js</span>
-            <span class="chip">TypeScript</span>
-            <span class="chip">PostgreSQL</span>
-            <span class="chip">Docker</span>
-            <span class="chip">Git</span>
-            <span class="chip">REST APIs</span>
-            <span class="chip">JWT Auth</span>
-            <span class="chip">OOP & SOLID</span>
-        </div>
-
-        <div class="btn-row">
-            <a href="mailto:choumarmohamadali@gmail.com" class="btn-main magnetic">
-                <span>✉ <span data-i18n="btn_contact">Contact Me</span></span>
-            </a>
-            <a href="assets/CV.pdf" download="Mohamad-Ali-Choumar-CV.pdf" class="btn-ghost magnetic">
-                <span>↓ <span data-i18n="btn_cv">Download CV</span></span>
-            </a>
-            <a href="#projects" class="btn-ghost magnetic">
-                <span>→ <span data-i18n="btn_projects">View Projects</span></span>
-            </a>
-        </div>
-        <div class="contact-row">
-            <a href="mailto:choumarmohamadali@gmail.com">✉ choumarmohamadali@gmail.com</a>
-            <a href="tel:+4915752123177">📱 +49 1575 2123177</a>
-            <a href="https://github.com/MAliChoumar" target="_blank" rel="noopener" style="color:var(--lime)">GitHub ↗</a>
-            <a href="https://www.linkedin.com/in/mohamad-ali-choumar-b425693a9" target="_blank" rel="noopener" style="color:var(--lime)">LinkedIn ↗</a>
-        </div>
-    </div>
-
-    <div class="hero-right">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-        <div class="img-frame" id="heroImageFrame">
-            <div class="img-tag">AVAILABLE ✓</div>
-            <div class="img-inner">
-                <img src="assets/profile.jpg" alt="Mohamad Ali Choumar" loading="eager">
-            </div>
-            <div class="float-card">
-                <div class="fc-label">FOCUS</div>
-                <div class="fc-val">Full-Stack</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ABOUT SECTION -->
-<section class="section" id="about">
-    <span class="sec-eyebrow" data-i18n="about_eyebrow">About Me</span>
-    <h2 class="sec-title"><span data-i18n="about_title_1">Who is</span><br><em data-i18n="about_title_2">behind the code?</em></h2>
-
-    <div class="about-grid">
-        <div class="about-text">
-            <p data-i18n="about_p1">
-                I'm a <strong>5th-semester Software Engineering student</strong> at the University of Duisburg-Essen,
-                with a strong focus on <strong>full-stack development, clean architecture, and cloud-ready systems</strong>.
-                I learn by building real production software — not just by reading about it.
-            </p>
-            <p data-i18n="about_p2">
-                My main stack revolves around <strong>Java and Spring Boot</strong> for backend APIs, with
-                <strong>PostgreSQL, Docker, and Next.js</strong> when the system needs a frontend.
-                I care about SOLID principles, clean code, and shipping things that actually work for real users.
-            </p>
-            <p data-i18n="about_p3">
-                I'm actively looking for a <strong>Werkstudent or internship position</strong> in Germany
-                where I can contribute to a real engineering team, learn from senior developers, and keep building.
-            </p>
-        </div>
-
-        <div class="stats">
-            <div class="stat">
-                <div class="stat-n" data-target="5" data-suffix="th">5th</div>
-                <div class="stat-l" data-i18n="stat_semester">Semester · UDE</div>
-            </div>
-            <div class="stat">
-                <div class="stat-n" data-target="1">0</div>
-                <div class="stat-l" data-i18n="stat_live">Live Production App</div>
-            </div>
-            <div class="stat">
-                <div class="stat-n" data-target="10" data-suffix="+">0+</div>
-                <div class="stat-l" data-i18n="stat_tech">Technologies</div>
-            </div>
-            <div class="stat">
-                <div class="stat-n" data-target="3">0</div>
-                <div class="stat-l" data-i18n="stat_lang">Languages Spoken</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- WHY ME SECTION (NEW) -->
-<section class="section" id="why">
-    <span class="sec-eyebrow" data-i18n="why_eyebrow">What I Bring</span>
-    <h2 class="sec-title"><span data-i18n="why_title_1">Why work</span><br><em data-i18n="why_title_2">with me?</em></h2>
-
-    <div class="why-grid">
-        <div class="why-card">
-            <div class="why-icon">🚀</div>
-            <h3 class="why-title" data-i18n="why1_title">Production Experience</h3>
-            <p class="why-desc" data-i18n="why1_desc">I built and shipped a real restaurant platform serving actual customers. I know what "done" means in production, not just in a tutorial.</p>
-        </div>
-        <div class="why-card">
-            <div class="why-icon">🧠</div>
-            <h3 class="why-title" data-i18n="why2_title">AI-First Mindset</h3>
-            <p class="why-desc" data-i18n="why2_desc">I use AI tools to move faster and think sharper — Claude, prompt engineering, and automation. This is a real skill, not a shortcut.</p>
-        </div>
-        <div class="why-card">
-            <div class="why-icon">🌍</div>
-            <h3 class="why-title" data-i18n="why3_title">Multilingual & Local</h3>
-            <p class="why-desc" data-i18n="why3_desc">Arabic (native), English (fluent), German (working). I understand both the technical language and the German work culture.</p>
-        </div>
-        <div class="why-card">
-            <div class="why-icon">📐</div>
-            <h3 class="why-title" data-i18n="why4_title">Clean Code Habits</h3>
-            <p class="why-desc" data-i18n="why4_desc">SOLID, design patterns, layered architecture, readable naming. I write code that other developers don't have to apologize for.</p>
-        </div>
-        <div class="why-card">
-            <div class="why-icon">⚡</div>
-            <h3 class="why-title" data-i18n="why5_title">Fast Learner</h3>
-            <p class="why-desc" data-i18n="why5_desc">New framework? New language? I'll be productive in it within a week. I learn by doing, not by collecting certificates.</p>
-        </div>
-        <div class="why-card">
-            <div class="why-icon">🤝</div>
-            <h3 class="why-title" data-i18n="why6_title">Team Player</h3>
-            <p class="why-desc" data-i18n="why6_desc">I ask good questions, write clear commit messages, and don't disappear during code reviews. Communication is part of the job.</p>
-        </div>
-    </div>
-</section>
-
-<!-- TERMINAL SECTION -->
-<section class="term-section" id="terminal">
-    <div class="term-frame reveal" id="termFrame">
-        <div class="term-window" id="termWindow">
-            <div class="term-bar">
-                <div class="term-dots"><span></span><span></span><span></span></div>
-                <div class="term-title">~/philosophy.txt — zsh</div>
-            </div>
-            <div class="term-body">
-                <p class="term-lines" id="termLines"></p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- PROJECTS SECTION -->
-<section class="section" id="projects">
-    <span class="sec-eyebrow" data-i18n="projects_eyebrow">Featured Work</span>
-    <h2 class="sec-title"><span data-i18n="projects_title_1">Selected</span><br><em data-i18n="projects_title_2">Projects</em></h2>
-
-    <div class="proj-grid">
-        <!-- Milano Pizzeria - Featured -->
-        <div class="proj-card tilt-card featured">
-            <div class="proj-preview">
-                <div class="proj-preview-fallback">
-                    <span class="ppf-icon">🍕</span>
-                    <span class="ppf-url">milano-pizzeria-duisburg.dev</span>
-                </div>
-            </div>
-            <div class="proj-num">01 / PROJECT</div>
-            <div class="proj-icon">🍕</div>
-            <h3 class="proj-title" data-i18n="p1_title">Milano Pizzeria — Restaurant Platform</h3>
-            <p class="proj-desc" data-i18n="p1_desc">
-                Full-stack restaurant platform built for a real local business in Duisburg.
-                Online ordering, WhatsApp-based table reservations, and Stripe payments —
-                currently serving real customers with a 4.9 Google rating.
-            </p>
-            <div class="proj-metrics">
-                <div class="proj-metric">
-                    <div class="pm-num">4.9★</div>
-                    <div class="pm-lbl" data-i18n="p1_m1">Google Rating</div>
-                </div>
-                <div class="proj-metric">
-                    <div class="pm-num">2009</div>
-                    <div class="pm-lbl" data-i18n="p1_m2">Since</div>
-                </div>
-                <div class="proj-metric">
-                    <div class="pm-num">LIVE</div>
-                    <div class="pm-lbl" data-i18n="p1_m3">Production</div>
-                </div>
-            </div>
-            <div class="proj-tags">
-                <span class="ptag">Next.js</span>
-                <span class="ptag">TypeScript</span>
-                <span class="ptag">PostgreSQL</span>
-                <span class="ptag">Stripe</span>
-                <span class="ptag">WhatsApp API</span>
-            </div>
-            <div class="proj-link-line">
-                <a href="https://milano-pizzeria-duisburg.dev/" target="_blank" rel="noopener" data-i18n="p1_link">Visit Live Site ↗</a>
-            </div>
-            <a class="proj-arrow" href="https://milano-pizzeria-duisburg.dev/" target="_blank" rel="noopener" aria-label="View live site">↗</a>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="proj-card tilt-card">
-            <div class="proj-num">02 / PROJECT</div>
-            <div class="proj-icon">⚙️</div>
-            <h3 class="proj-title" data-i18n="p2_title">Backend REST API</h3>
-            <p class="proj-desc" data-i18n="p2_desc">
-                Production-ready Spring Boot application with JWT authentication,
-                role-based access control, and MySQL integration.
-                Built with a clean layered architecture and Swagger documentation.
-            </p>
-            <div class="proj-tags">
-                <span class="ptag">Spring Boot</span>
-                <span class="ptag">Java</span>
-                <span class="ptag">MySQL</span>
-                <span class="ptag">JWT</span>
-                <span class="ptag">Swagger</span>
-            </div>
-            <div class="proj-arrow">↗</div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="proj-card tilt-card">
-            <div class="proj-num">03 / PROJECT</div>
-            <div class="proj-icon">☁️</div>
-            <h3 class="proj-title" data-i18n="p3_title">Cloud Deployment Pipeline</h3>
-            <p class="proj-desc" data-i18n="p3_desc">
-                Dockerized microservice deployed via CI/CD with GitHub Actions.
-                Multi-stage Docker builds, automated testing, linting, and zero-downtime deployment.
-            </p>
-            <div class="proj-tags">
-                <span class="ptag">Docker</span>
-                <span class="ptag">CI/CD</span>
-                <span class="ptag">GitHub Actions</span>
-            </div>
-            <div class="proj-arrow">↗</div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="proj-card tilt-card">
-            <div class="proj-num">04 / PROJECT</div>
-            <div class="proj-icon">📊</div>
-            <h3 class="proj-title" data-i18n="p4_title">Frontend Dashboard</h3>
-            <p class="proj-desc" data-i18n="p4_desc">
-                Responsive React dashboard consuming REST APIs in real time.
-                Component-based architecture with clean state management, charts integration, and mobile-first design.
-            </p>
-            <div class="proj-tags">
-                <span class="ptag">React</span>
-                <span class="ptag">JavaScript</span>
-                <span class="ptag">REST APIs</span>
-            </div>
-            <div class="proj-arrow">↗</div>
-        </div>
-    </div>
-</section>
-
-<!-- TECH STACK -->
-<section class="section" id="stack">
-    <span class="sec-eyebrow" data-i18n="stack_eyebrow">Technologies</span>
-    <h2 class="sec-title"><span data-i18n="stack_title_1">Tech</span><br><em data-i18n="stack_title_2">Stack</em></h2>
-
-    <div class="tech-grid">
-        <div class="tech-card tilt-card" data-level="90">
-            <div class="tech-icon">☕</div>
-            <div class="tech-name">Java</div>
-            <div class="tech-lvl" data-i18n="lvl_adv">Advanced</div>
-            <div class="tech-bar"><div class="tech-bar-fill"></div></div>
-        </div>
-        <div class="tech-card tilt-card" data-level="85">
-            <div class="tech-icon">🌿</div>
-            <div class="tech-name">Spring Boot</div>
-            <div class="tech-lvl" data-i18n="lvl_adv">Advanced</div>
-            <div class="tech-bar"><div class="tech-bar-fill"></div></div>
-        </div>
-        <div class="tech-card tilt-card" data-level="80">
-            <div class="tech-icon">🐍</div>
-            <div class="tech-name">Python</div>
-            <div class="tech-lvl" data-i18n="lvl_int">Intermediate</div>
-            <div class="tech-bar"><div class="tech-bar-fill"></div></div>
-        </div>
-        <div class="tech-card tilt-card" data-level="75">
-            <div class="tech-icon">⚛️</div>
-            <div class="tech-name">React</div>
-            <div class="tech-lvl" data-i18n="lvl_int">Intermediate</div>
-            <div class="tech-bar"><div class="tech-bar-fill"></div></div>
-        </div>
-        <div class="tech-card tilt-card" data-level="70">
-            <div class="tech-icon">▲</div>
-            <div class="tech-name">Next.js</div>
-            <div class="tech-lvl" data-i18n="lvl_int">Intermediate</div>
-            <div class="tech-bar"><div class="tech-bar-fill"></div></div>
-        </div>
-        <div class="tech-card tilt-card" data-level="70">
-            <div class="tech-icon">🐳</div>
-            <div class="tech-name">Docker</div>
-            <div class="tech-lvl" data-i18n="lvl_int">Intermediate</div>
-            <div class="tech-bar"><div class="tech-bar-fill"></div></div>
-        </div>
-        <div class="tech-card tilt-card" data-level="85">
-            <div class="tech-icon">🗄️</div>
-            <div class="tech-name">SQL</div>
-            <div class="tech-lvl" data-i18n="lvl_adv">Advanced</div>
-            <div class="tech-bar"><div class="tech-bar-fill"></div></div>
-        </div>
-        <div class="tech-card tilt-card" data-level="90">
-            <div class="tech-icon">🔗</div>
-            <div class="tech-name">Git</div>
-            <div class="tech-lvl" data-i18n="lvl_adv">Advanced</div>
-            <div class="tech-bar"><div class="tech-bar-fill"></div></div>
-        </div>
-        <div class="tech-card tilt-card" data-level="80">
-            <div class="tech-icon">🌐</div>
-            <div class="tech-name">REST APIs</div>
-            <div class="tech-lvl" data-i18n="lvl_adv">Advanced</div>
-            <div class="tech-bar"><div class="tech-bar-fill"></div></div>
-        </div>
-        <div class="tech-card tilt-card" data-level="85">
-            <div class="tech-icon">📐</div>
-            <div class="tech-name">SOLID</div>
-            <div class="tech-lvl" data-i18n="lvl_adv">Advanced</div>
-            <div class="tech-bar"><div class="tech-bar-fill"></div></div>
-        </div>
-        <div class="tech-card tilt-card" data-level="70">
-            <div class="tech-icon">📜</div>
-            <div class="tech-name">TypeScript</div>
-            <div class="tech-lvl" data-i18n="lvl_int">Intermediate</div>
-            <div class="tech-bar"><div class="tech-bar-fill"></div></div>
-        </div>
-        <div class="tech-card tilt-card" data-level="75">
-            <div class="tech-icon">⚡</div>
-            <div class="tech-name">JavaScript</div>
-            <div class="tech-lvl" data-i18n="lvl_int">Intermediate</div>
-            <div class="tech-bar"><div class="tech-bar-fill"></div></div>
-        </div>
-    </div>
-</section>
-
-<!-- AI WORKFLOW -->
-<section class="section" id="ai-workflow">
-    <span class="sec-eyebrow" data-i18n="ai_eyebrow">Modern Workflow</span>
-    <h2 class="sec-title"><span data-i18n="ai_title_1">AI-Assisted</span><br><em data-i18n="ai_title_2">Development</em></h2>
-    <div style="max-width:680px; color:var(--muted); font-size:0.95rem; line-height:1.75; margin-bottom:2.5rem;" data-i18n="ai_intro">
-        Comfortable working alongside AI tools as part of a modern engineering workflow —
-        using them deliberately to move faster, debug smarter, and automate the repetitive parts of building software.
-    </div>
-
-    <div class="proj-grid">
-        <div class="proj-card tilt-card">
-            <div class="proj-icon">🧠</div>
-            <h3 class="proj-title" data-i18n="ai1_title">Claude AI & Skills</h3>
-            <p class="proj-desc" data-i18n="ai1_desc">Hands-on experience with Claude, including building and using custom Skills to structure repeatable, reliable AI-assisted workflows.</p>
-        </div>
-        <div class="proj-card tilt-card">
-            <div class="proj-icon">✍️</div>
-            <h3 class="proj-title" data-i18n="ai2_title">Prompt Engineering</h3>
-            <p class="proj-desc" data-i18n="ai2_desc">Writing clear, structured prompts to get accurate, production-ready output — from code generation to debugging and documentation.</p>
-        </div>
-        <div class="proj-card tilt-card">
-            <div class="proj-icon">⚙️</div>
-            <h3 class="proj-title" data-i18n="ai3_title">Workflow Automation</h3>
-            <p class="proj-desc" data-i18n="ai3_desc">Using AI tools to automate repetitive development tasks, speed up code review, and streamline day-to-day engineering work.</p>
-        </div>
-    </div>
-</section>
-
-<!-- JOURNEY / TIMELINE (NEW) -->
-<section class="section" id="journey">
-    <span class="sec-eyebrow" data-i18n="journey_eyebrow">My Path</span>
-    <h2 class="sec-title"><span data-i18n="journey_title_1">The</span><br><em data-i18n="journey_title_2">Journey</em></h2>
-
-    <div class="timeline">
-        <div class="tl-item reveal">
-            <div class="tl-dot"></div>
-            <div class="tl-year">2023</div>
-            <div class="tl-title" data-i18n="j1_title">Started B.Sc. Software Engineering @ UDE</div>
-            <div class="tl-desc" data-i18n="j1_desc">Began my bachelor's degree at the University of Duisburg-Essen. First taste of Java, algorithms, and the German engineering mindset.</div>
-        </div>
-        <div class="tl-item reveal">
-            <div class="tl-dot"></div>
-            <div class="tl-year">2024</div>
-            <div class="tl-title" data-i18n="j2_title">Deep Dive into Backend</div>
-            <div class="tl-desc" data-i18n="j2_desc">Mastered Spring Boot, REST APIs, JWT auth, and clean architecture patterns. Built several academic projects that taught me the fundamentals.</div>
-        </div>
-        <div class="tl-item reveal">
-            <div class="tl-dot"></div>
-            <div class="tl-year">2025</div>
-            <div class="tl-title" data-i18n="j3_title">Milano Pizzeria Goes Live</div>
-            <div class="tl-desc" data-i18n="j3_desc">Designed, built, and deployed a real restaurant platform for a Duisburg client. First time seeing my code serve real customers with real money on the line.</div>
-        </div>
-        <div class="tl-item reveal">
-            <div class="tl-dot"></div>
-            <div class="tl-year">2026</div>
-            <div class="tl-title" data-i18n="j4_title">AI-Assisted Engineering</div>
-            <div class="tl-desc" data-i18n="j4_desc">Integrated Claude, prompt engineering, and AI workflows into my daily development. Built this portfolio and several private projects using AI as a co-pilot.</div>
-        </div>
-        <div class="tl-item reveal">
-            <div class="tl-dot"></div>
-            <div class="tl-year" data-i18n="j5_year">NOW → NEXT</div>
-            <div class="tl-title" data-i18n="j5_title">Ready for the next step</div>
-            <div class="tl-desc" data-i18n="j5_desc">Looking for a Werkstudent or internship role where I can contribute, learn from senior engineers, and grow into a solid backend developer.</div>
-        </div>
-    </div>
-</section>
-
-<!-- LANGUAGES (NEW) -->
-<section class="section" id="languages">
-    <span class="sec-eyebrow" data-i18n="lang_eyebrow">Languages</span>
-    <h2 class="sec-title"><span data-i18n="lang_title_1">What I</span><br><em data-i18n="lang_title_2">Speak</em></h2>
-
-    <div class="lang-grid">
-        <div class="lang-card">
-            <div class="lang-flag">🇱🇧</div>
-            <div class="lang-info">
-                <div class="lang-name" data-i18n="lang1_name">Arabic</div>
-                <div class="lang-lvl" data-i18n="lang1_lvl">Native Speaker</div>
-                <div class="lang-dots">
-                    <span class="lang-dot active"></span>
-                    <span class="lang-dot active"></span>
-                    <span class="lang-dot active"></span>
-                    <span class="lang-dot active"></span>
-                    <span class="lang-dot active"></span>
-                </div>
-            </div>
-        </div>
-        <div class="lang-card">
-            <div class="lang-flag">🇬🇧</div>
-            <div class="lang-info">
-                <div class="lang-name" data-i18n="lang2_name">English</div>
-                <div class="lang-lvl" data-i18n="lang2_lvl">Learning · B1</div>
-                <div class="lang-dots">
-                    <span class="lang-dot active"></span>
-                    <span class="lang-dot active"></span>
-                    <span class="lang-dot active"></span>
-                    <span class="lang-dot active"></span>
-                    <span class="lang-dot"></span>
-                </div>
-            </div>
-        </div>
-        <div class="lang-card">
-            <div class="lang-flag">🇩🇪</div>
-            <div class="lang-info">
-                <div class="lang-name" data-i18n="lang3_name">German</div>
-                <div class="lang-lvl" data-i18n="lang3_lvl">Fluent · C1</div>
-                <div class="lang-dots">
-                    <span class="lang-dot active"></span>
-                    <span class="lang-dot active"></span>
-                    <span class="lang-dot active"></span>
-                    <span class="lang-dot"></span>
-                    <span class="lang-dot"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- COMMAND PALETTE OVERLAY -->
-<div class="cmdk-overlay" id="cmdkOverlay">
-    <div class="cmdk-box">
-        <div class="cmdk-input-row">
-            <span class="cmdk-icon">⌘</span>
-            <input type="text" id="cmdkInput" class="cmdk-input" placeholder="Type a command or search..." autocomplete="off">
-            <span class="cmdk-esc">ESC</span>
-        </div>
-        <div class="cmdk-list" id="cmdkList"></div>
-    </div>
-</div>
-
-<!-- COMMAND PALETTE HINT -->
-<div class="cmdk-hint" id="cmdkHint">
-    Press <kbd>⌘</kbd> <kbd>K</kbd> to open command palette
-</div>
-
-<!-- SHARE / QR SECTION -->
-<section class="section" id="share">
-    <span class="sec-eyebrow" data-i18n="share_eyebrow">Share Portfolio</span>
-    <h2 class="sec-title"><span data-i18n="share_title_1">Scan &</span><br><em data-i18n="share_title_2">Connect</em></h2>
-
-    <div class="qr-grid">
-        <div class="qr-box">
-            <div class="qr-tabs">
-                <button class="qr-tab active" data-qr="site" data-i18n="qr_tab_site">Portfolio</button>
-                <button class="qr-tab" data-qr="vcard" data-i18n="qr_tab_vcard">vCard</button>
-                <button class="qr-tab" data-qr="linkedin" data-i18n="qr_tab_linkedin">LinkedIn</button>
-            </div>
-            <div class="qr-canvas" id="qrcode"></div>
-            <div class="qr-url" id="qrUrl">🔗 choumar.is-a.dev</div>
-            <button class="dl-btn" onclick="downloadQR()">↓ <span data-i18n="qr_download">Download QR Code</span></button>
-        </div>
-        <div class="qr-info">
-            <h3 data-i18n="qr_info_title">Visit My Portfolio<br><em>Anywhere</em></h3>
-            <p data-i18n="qr_info_p1">Scan the QR code with your phone camera — no app needed. Works on any device: mobile, tablet, or laptop.</p>
-            <p data-i18n="qr_info_p2">Share it on your CV, business card, or presentations for instant access to your work.</p>
-            <div class="btn-row" style="margin-top:1.5rem;margin-bottom:0;">
-                <a href="https://choumar.is-a.dev/" target="_blank" rel="noopener" class="btn-main magnetic"><span>Live Site ↗</span></a>
-                <a href="mailto:choumarmohamadali@gmail.com" class="btn-ghost magnetic"><span>✉ Email Me</span></a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
     <div>
-        <div class="footer-logo">MAC //</div>
-        <p data-i18n="footer">© 2025 Mohamad Ali Choumar — Built with passion & too much coffee</p>
+      <p class="eyebrow">Essen · Ruhrgebiet</p>
+      <h1 class="name">Mohamad Ali<em>Choumar</em></h1>
+      <p class="hero-lede" data-i18n="hero.lede">Software-Engineering-Student, der <strong class="em">echte Systeme baut</strong> — eines läuft in Produktion für einen Betrieb in Duisburg, eines ist ein Objektsystem aus 87 Commits.</p>
+      <dl class="specs">
+        <div class="spec"><dt data-i18n="spec.studium">Studium</dt><dd data-i18n="spec.studium.v">B.Sc. Uni Duisburg-Essen · 6. Semester</dd></div>
+        <div class="spec"><dt data-i18n="spec.sprachen">Sprachen</dt><dd><span class="ar">العربية</span> · Deutsch C1 · English A2</dd></div>
+        <div class="spec"><dt data-i18n="spec.stack">Stack</dt><dd>TypeScript · Next.js · PostgreSQL</dd></div>
+        <div class="spec"><dt data-i18n="spec.status">Status</dt><dd data-i18n="spec.status.v">Werkstudent · Praktikum · ab sofort</dd></div>
+      </dl>
+      <div class="cta-row">
+        <a class="btn primary" href="#kontakt" data-i18n="cta.contact">Nachricht senden</a>
+        <a class="btn" href="#work" data-i18n="cta.work">Projekte ansehen</a>
+      </div>
     </div>
-    <div class="footer-links">
-        <a href="mailto:choumarmohamadali@gmail.com">Email</a>
-        <a href="https://github.com/MAliChoumar" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/mohamad-ali-choumar-b425693a9" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="assets/CV.pdf" download>CV</a>
+
+    <div class="plate schema">
+      <div class="plate-head">
+        <span data-i18n="schema.head">Anlagenschema</span><span class="spring"></span><span id="nodeCount">15 Objekte</span>
+      </div>
+      <div class="stage" id="stage"><canvas id="cv"></canvas></div>
+      <div class="readout" id="readout"></div>
     </div>
+  </div>
+</section>
+
+<!-- ═══ ÜBER MICH ═══ -->
+<section class="section" id="about">
+  <div class="wrap two-col">
+    <div class="rise">
+      <p class="eyebrow" data-i18n="eb.about">Über mich</p>
+      <h2 class="title" data-i18n="about.h">Noch kein Job-Titel.<em>Aber Systeme, die laufen.</em></h2>
+      <p class="lede" data-i18n="about.p1">Ich bin im sechsten Semester Software Engineering an der Universität Duisburg-Essen. Ein Thema verstehe ich dann richtig, wenn ich damit etwas gebaut habe, das andere Menschen tatsächlich benutzen.</p>
+      <p class="lede" data-i18n="about.p2">Daraus sind zwei Systeme entstanden. <strong class="em">Milano Pizzeria</strong> läuft in Produktion für einen Betrieb in Duisburg — auf Deutsch, mobile-first, mit Impressum und Datenschutz, und einer Reservierung, die vorausgefüllt in WhatsApp ankommt. <strong class="em">ChoumarOS</strong> ist eine geschichtete Plattform aus 87 Commits: eine Objekt-Engine mit Relationen, Versionen und Event-Timeline, abgesichert durch End-to-End-Tests.</p>
+      <p class="lede" data-i18n="about.p3">Gebaut habe ich beides, indem ich <strong class="em">KI-Agenten gezielt geführt</strong> habe: Spezifikation schreiben, Ausführung steuern, Ergebnis selbst prüfen. Die Werkzeuge wechseln alle paar Monate — ein System präzise zu spezifizieren und zu prüfen, ob es hält, bleibt.</p>
+      <p class="lede" data-i18n="about.p4">Ich spreche fließend Deutsch, Arabisch als Muttersprache und arbeite auf Englisch. Ich suche eine Werkstudenten- oder Praktikumsstelle im Ruhrgebiet, in einem Team, von dem ich lernen kann.</p>
+    </div>
+
+    <div class="rise">
+      <div class="photo-wrap">
+        <span class="ph-badge"><i class="led"></i><span data-i18n="ph.badge">Verfügbar</span></span>
+        <span class="ph-chip"><small data-i18n="ph.focus">Fokus</small><b>Full-Stack</b></span>
+        <div class="photo-plate">
+          <div class="portrait" id="portrait">
+            <img src="assets/profile.jpg" alt="Mohamad Ali Choumar" width="800" height="800">
+            <i class="tick tl"></i><i class="tick tr"></i><i class="tick bl"></i><i class="tick br"></i>
+          </div>
+          <div class="portrait-cap"><span>M. A. Choumar</span><span>Essen · DE</span></div>
+        </div>
+      </div>
+      <dl class="specs" style="margin-top:22px">
+        <div class="spec"><dt data-i18n="spec.studium">Studium</dt><dd data-i18n="spec.studium.long">B.Sc. Software Engineering · Uni Duisburg-Essen</dd></div>
+        <div class="spec"><dt data-i18n="spec.sprachen">Sprachen</dt><dd data-i18n="spec.sprachen.long">Deutsch C1 · <span class="ar">العربية</span> Muttersprache · English A2</dd></div>
+        <div class="spec"><dt data-i18n="spec.stack">Stack</dt><dd>TypeScript · Next.js · PostgreSQL</dd></div>
+        <div class="spec"><dt data-i18n="spec.ort">Standort</dt><dd data-i18n="spec.ort.v">Essen · Ruhrgebiet · Remote möglich</dd></div>
+        <div class="spec"><dt data-i18n="spec.status">Status</dt><dd data-i18n="spec.status.v">Werkstudent · Praktikum · ab sofort</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHOAMI ═══ -->
+<section class="section" id="whoami">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="eb.whoami">whoami</p>
+    <h2 class="title" data-i18n="whoami.h">Kurz gesagt —<em>im Terminal.</em></h2>
+    <div class="term-shell rise" id="termShell">
+      <div class="term">
+        <div class="term-bar">
+          <i style="background:#A5543C"></i><i style="background:#E8B93A"></i><i style="background:#4E8C7D"></i>
+          <span class="t">choumar@essen : ~</span>
+        </div>
+        <div class="term-body" id="termBody"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRÜFSTAND ═══ -->
+<section class="section" id="bench">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="eb.bench">Prüfstand · 09 Positionen</p>
+    <h2 class="title" data-i18n="bench.h">Was ich mitbringe —<em>und woran man es prüfen kann.</em></h2>
+    <p class="lede" data-i18n="bench.lede">Jede Position hängt an etwas Nachprüfbarem. Adjektive kann jeder schreiben.</p>
+    <div class="bench" id="benchGrid"></div>
+  </div>
+</section>
+
+<!-- ═══ PROJEKTE ═══ -->
+<section class="section" id="work">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="eb.work">Projekte</p>
+    <h2 class="title" data-i18n="work.h">Zwei Systeme.<em>Eines läuft in Produktion.</em></h2>
+    <div class="projects" id="projGrid"></div>
+  </div>
+</section>
+
+<!-- ═══ STUDIUM ═══ -->
+<section class="section" id="study">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="eb.study">Studienverlauf</p>
+    <h2 class="title" data-i18n="study.h">Was das Studium<em>abdeckt.</em></h2>
+    <p class="lede" data-i18n="study.lede">Der offizielle Verlaufsplan des B.Sc. Software Engineering an der Universität Duisburg-Essen. Ich bin im sechsten Fachsemester.</p>
+    <div class="core-wrap">
+      <div class="core" id="core"></div>
+      <div>
+        <div class="mods" id="mods"></div>
+        <div class="fach-legend" id="fachLegend"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WERKZEUGE ═══ -->
+<section class="section" id="tools">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="eb.tools">Werkzeugwand</p>
+    <h2 class="title" data-i18n="tools.h">Die Werkzeuge,<em>die tatsächlich hängen.</em></h2>
+    <p class="lede" data-i18n="tools.lede">Keine Prozentbalken. Statt einer Selbsteinschätzung steht bei jedem Werkzeug, wo ich es benutzt habe.</p>
+    <div class="board" id="board"></div>
+  </div>
+</section>
+
+<!-- ═══ ARBEITSWEISE ═══ -->
+<section class="section" id="ai">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="eb.ai">Leitstand</p>
+    <h2 class="title" data-i18n="ai.h">Ich schreibe nicht jede Zeile.<em>Ich verantworte jede Zeile.</em></h2>
+    <p class="lede" data-i18n="ai.lede">Zwei Systeme sind aus dieser Arbeitsweise entstanden — eines davon läuft in Produktion für einen zahlenden Betrieb. Die Methode ist der Punkt, nicht das Werkzeug.</p>
+    <div class="loop" id="loop"></div>
+    <div class="channels" id="channels"></div>
+  </div>
+</section>
+
+<!-- ═══ WEG ═══ -->
+<section class="section" id="path">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="eb.path">Der Weg</p>
+    <h2 class="title" data-i18n="path.h">Studieren —<em>und dabei zweimal liefern.</em></h2>
+    <div class="rail-wrap" id="railWrap">
+      <div class="study" id="studyBar"></div>
+      <div class="rail-line"></div>
+      <div class="rail-fill" id="railFill"></div>
+      <div id="events"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SPRACHEN ═══ -->
+<section class="section" id="lang">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="eb.lang">Sprachen</p>
+    <h2 class="title" data-i18n="lang.h">Drei Sprachen,<em>eine davon zählt hier besonders.</em></h2>
+    <p class="lede" data-i18n="lang.lede">Nach dem Gemeinsamen Europäischen Referenzrahmen — dem Maßstab, den Sie ohnehin kennen.</p>
+    <div class="cefr" id="cefr"></div>
+  </div>
+</section>
+
+<!-- ═══ AUFFINDBARKEIT ═══ -->
+<section class="section" id="seo">
+  <div class="wrap two-col">
+    <div class="rise">
+      <p class="eyebrow" data-i18n="eb.seo">Prüfprotokoll</p>
+      <h2 class="title" data-i18n="seo.h">Suchmaschinen können<em>alles lesen, was ich baue.</em></h2>
+      <p class="lede" data-i18n="seo.p1">Kein Marketing-Versprechen, sondern eine Konfiguration, die man nachsehen kann: verifizierte Search-Console-Property, eingereichte Sitemap, saubere Indexierung, erzwungenes HTTPS, strukturierte Daten.</p>
+      <p class="lede" data-i18n="seo.p2">Bei Milano kam der lokale Teil dazu: deutschsprachige, serverseitig gerenderte Seiten mit Impressum und Datenschutz — weil ein Betrieb in Duisburg von Menschen in Duisburg gefunden werden muss.</p>
+    </div>
+    <div class="plate proto rise" id="proto">
+      <div class="stamp" id="stamp">GEPRÜFT<small id="stampDate">06.09.2026</small></div>
+      <div class="plate-head" style="border:0;padding:0 0 6px">choumar.is-a.dev</div>
+      <ul class="checks" id="checks"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ KONTAKT ═══ -->
+<section class="section" id="kontakt">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="eb.kontakt">Kontakt</p>
+    <h2 class="title" data-i18n="kontakt.h">Schreiben Sie mir —<em>oder nehmen Sie die Karte mit.</em></h2>
+
+    <div class="kontakt">
+      <div class="plate rise">
+        <div class="plate-head"><span data-i18n="form.head">Auftrag</span><span class="spring"></span><span id="formRef">AUF-—</span></div>
+        <form class="form-body" id="contactForm" novalidate>
+          <div class="field">
+            <label for="fName" data-i18n="form.name">Name</label>
+            <input id="fName" name="name" type="text" required maxlength="120" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="fMail" data-i18n="form.mail">E-Mail</label>
+            <input id="fMail" name="email" type="email" required maxlength="180" autocomplete="email">
+          </div>
+          <div class="field">
+            <label data-i18n="form.topic">Worum geht es?</label>
+            <div class="topics" id="topics"></div>
+          </div>
+          <div class="field">
+            <label for="fMsg" data-i18n="form.msg">Nachricht</label>
+            <textarea id="fMsg" name="message" required maxlength="4000"></textarea>
+          </div>
+          <input class="hp" type="text" name="company" id="fHp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <p class="privacy" data-i18n="form.privacy">Ihre Angaben werden ausschließlich verwendet, um Ihnen zu antworten, und nicht gespeichert oder weitergegeben. Mehr dazu im <a href="datenschutz.html">Datenschutzhinweis</a>.</p>
+          <button class="btn primary" type="submit" id="fSend" data-i18n="form.send">Auftrag senden</button>
+          <div class="formmsg" id="formMsg" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+
+      <div class="plate karte rise">
+        <i class="rivet a"></i><i class="rivet b"></i><i class="rivet c"></i><i class="rivet d"></i>
+        <div class="karte-id">MOHAMAD ALI CHOUMAR</div>
+        <div class="karte-sub" data-i18n="karte.sub">Software Engineering · Essen</div>
+        <div class="qrtabs" id="qrtabs"></div>
+        <div class="qrbox"><canvas id="qr" width="190" height="190" role="img" aria-label="QR-Code"></canvas></div>
+        <p class="karte-note" id="qrNote" data-i18n="karte.note">Scannen speichert meine Kontaktdaten direkt im Telefon.</p>
+        <a class="btn" id="dlKarte" href="#" download="choumar-visitenkarte.png" data-i18n="karte.dl">Karte herunterladen</a>
+        <div class="direct" id="direct"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div>© <span id="year">2026</span> Mohamad Ali Choumar</div>
+        <div class="colophon" data-i18n="colophon">Gebaut in Essen · Bricolage Grotesque &amp; IBM Plex · Quellcode auf GitHub</div>
+      </div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="https://github.com/MAliChoumar" rel="me noopener" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/mohamad-ali-choumar-b425693a9/" rel="me noopener" target="_blank">LinkedIn</a>
+        <a href="cv.html">Lebenslauf</a>
+        <a href="datenschutz.html" data-i18n="foot.datenschutz">Datenschutz</a>
+      </nav>
+    </div>
+  </div>
 </footer>
 
-<!-- SCROLL TO TOP -->
-<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
-<div class="toast" id="toast"></div>
-
-<!-- JAVASCRIPT -->
-<script>
-/* ============================================================
-   i18n - LANGUAGE TOGGLE
-   ============================================================ */
-const i18n = {
-    en: {
-        loading: 'INITIALIZING PORTFOLIO',
-        nav_about: 'About', nav_why: 'Why Me', nav_projects: 'Projects',
-        nav_stack: 'Stack', nav_ai: 'AI Workflow', nav_journey: 'Journey',
-        nav_share: 'Share', nav_hire: 'Hire Me',
-        badge: 'Open to Werkstudent & Internship positions',
-        name_first: 'Mohamad Ali', name_last: 'Choumar',
-        role: '// B.Sc. Software Engineering · Full-Stack Development',
-        hero_desc: 'Software Engineering student at the University of Duisburg-Essen, focused on full-stack systems, clean architecture, and scalable application design. Building real production systems and learning fast through AI-assisted workflows.',
-        btn_contact: 'Contact Me', btn_cv: 'Download CV', btn_projects: 'View Projects',
-        about_eyebrow: 'About Me',
-        about_title_1: 'Who is', about_title_2: 'behind the code?',
-        about_p1: "I'm a <strong>5th-semester Software Engineering student</strong> at the University of Duisburg-Essen, with a strong focus on <strong>full-stack development, clean architecture, and cloud-ready systems</strong>. I learn by building real production software — not just by reading about it.",
-        about_p2: "My main stack revolves around <strong>Java and Spring Boot</strong> for backend APIs, with <strong>PostgreSQL, Docker, and Next.js</strong> when the system needs a frontend. I care about SOLID principles, clean code, and shipping things that actually work for real users.",
-        about_p3: "I'm actively looking for a <strong>Werkstudent or internship position</strong> in Germany where I can contribute to a real engineering team, learn from senior developers, and keep building.",
-        stat_semester: 'Semester · UDE', stat_live: 'Live Production App',
-        stat_tech: 'Technologies', stat_lang: 'Languages Spoken',
-        why_eyebrow: 'What I Bring',
-        why_title_1: 'Why work', why_title_2: 'with me?',
-        why1_title: 'Production Experience', why1_desc: 'I built and shipped a real restaurant platform serving actual customers. I know what "done" means in production, not just in a tutorial.',
-        why2_title: 'AI-First Mindset', why2_desc: 'I use AI tools to move faster and think sharper — Claude, prompt engineering, and automation. This is a real skill, not a shortcut.',
-        why3_title: 'Multilingual & Local', why3_desc: 'Arabic (native), English (fluent), German (working). I understand both the technical language and the German work culture.',
-        why4_title: 'Clean Code Habits', why4_desc: 'SOLID, design patterns, layered architecture, readable naming. I write code that other developers don\'t have to apologize for.',
-        why5_title: 'Fast Learner', why5_desc: 'New framework? New language? I\'ll be productive in it within a week. I learn by doing, not by collecting certificates.',
-        why6_title: 'Team Player', why6_desc: 'I ask good questions, write clear commit messages, and don\'t disappear during code reviews. Communication is part of the job.',
-        projects_eyebrow: 'Featured Work',
-        projects_title_1: 'Selected', projects_title_2: 'Projects',
-        p1_title: 'Milano Pizzeria — Restaurant Platform',
-        p1_desc: 'Full-stack restaurant platform built for a real local business in Duisburg. Online ordering, WhatsApp-based table reservations, and Stripe payments — currently serving real customers with a 4.9 Google rating.',
-        p1_m1: 'Google Rating', p1_m2: 'Since', p1_m3: 'Production',
-        p1_link: 'Visit Live Site ↗',
-        p2_title: 'Backend REST API',
-        p2_desc: 'Production-ready Spring Boot application with JWT authentication, role-based access control, and MySQL integration. Built with a clean layered architecture and Swagger documentation.',
-        p3_title: 'Cloud Deployment Pipeline',
-        p3_desc: 'Dockerized microservice deployed via CI/CD with GitHub Actions. Multi-stage Docker builds, automated testing, linting, and zero-downtime deployment.',
-        p4_title: 'Frontend Dashboard',
-        p4_desc: 'Responsive React dashboard consuming REST APIs in real time. Component-based architecture with clean state management, charts integration, and mobile-first design.',
-        stack_eyebrow: 'Technologies',
-        stack_title_1: 'Tech', stack_title_2: 'Stack',
-        lvl_adv: 'Advanced', lvl_int: 'Intermediate',
-        ai_eyebrow: 'Modern Workflow',
-        ai_title_1: 'AI-Assisted', ai_title_2: 'Development',
-        ai_intro: 'Comfortable working alongside AI tools as part of a modern engineering workflow — using them deliberately to move faster, debug smarter, and automate the repetitive parts of building software.',
-        ai1_title: 'Claude AI & Skills', ai1_desc: 'Hands-on experience with Claude, including building and using custom Skills to structure repeatable, reliable AI-assisted workflows.',
-        ai2_title: 'Prompt Engineering', ai2_desc: 'Writing clear, structured prompts to get accurate, production-ready output — from code generation to debugging and documentation.',
-        ai3_title: 'Workflow Automation', ai3_desc: 'Using AI tools to automate repetitive development tasks, speed up code review, and streamline day-to-day engineering work.',
-        journey_eyebrow: 'My Path',
-        journey_title_1: 'The', journey_title_2: 'Journey',
-        j1_title: 'Started B.Sc. Software Engineering @ UDE',
-        j1_desc: "Began my bachelor's degree at the University of Duisburg-Essen. First taste of Java, algorithms, and the German engineering mindset.",
-        j2_title: 'Deep Dive into Backend',
-        j2_desc: 'Mastered Spring Boot, REST APIs, JWT auth, and clean architecture patterns. Built several academic projects that taught me the fundamentals.',
-        j3_title: 'Milano Pizzeria Goes Live',
-        j3_desc: 'Designed, built, and deployed a real restaurant platform for a Duisburg client. First time seeing my code serve real customers with real money on the line.',
-        j4_title: 'AI-Assisted Engineering',
-        j4_desc: 'Integrated Claude, prompt engineering, and AI workflows into my daily development. Built this portfolio and several private projects using AI as a co-pilot.',
-        j5_year: 'NOW → NEXT',
-        j5_title: 'Ready for the next step',
-        j5_desc: 'Looking for a Werkstudent or internship role where I can contribute, learn from senior engineers, and grow into a solid backend developer.',
-        lang_eyebrow: 'Languages',
-        lang_title_1: 'What I', lang_title_2: 'Speak',
-        lang1_name: 'Arabic', lang1_lvl: 'Native Speaker',
-        lang2_name: 'English', lang2_lvl: 'Learning · B1',
-        lang3_name: 'German', lang3_lvl: 'Fluent · C1',
-        share_eyebrow: 'Share Portfolio',
-        share_title_1: 'Scan &', share_title_2: 'Connect',
-        qr_tab_site: 'Portfolio', qr_tab_vcard: 'vCard', qr_tab_linkedin: 'LinkedIn',
-        qr_download: 'Download QR Code',
-        qr_info_title: 'Visit My Portfolio<br><em>Anywhere</em>',
-        qr_info_p1: 'Scan the QR code with your phone camera — no app needed. Works on any device: mobile, tablet, or laptop.',
-        qr_info_p2: 'Share it on your CV, business card, or presentations for instant access to your work.',
-        footer: '© 2025 Mohamad Ali Choumar — Built with passion & too much coffee'
-    },
-    ar: {
-        loading: 'جاري تحضير الملف',
-        nav_about: 'نبذة', nav_why: 'لماذا أنا', nav_projects: 'المشاريع',
-        nav_stack: 'التقنيات', nav_ai: 'الذكاء الاصطناعي', nav_journey: 'المسيرة',
-        nav_share: 'مشاركة', nav_hire: 'وظّفني',
-        badge: 'متاح لوظائف الطالب العامل والتدريب',
-        name_first: 'محمد علي', name_last: 'شومار',
-        role: '// بكالوريوس هندسة برمجيات · الباك إند والكلاود',
-        hero_desc: 'طالب هندسة برمجيات في جامعة دويزبورغ إيسن، متخصص في أنظمة الباك إند، البنية النظيفة، وتصميم التطبيقات القابلة للتوسع. أبني أنظمة إنتاجية حقيقية وأتعلم بسرعة عبر أدوات الذكاء الاصطناعي.',
-        btn_contact: 'تواصل معي', btn_cv: 'تحميل السيرة الذاتية', btn_projects: 'عرض المشاريع',
-        about_eyebrow: 'نبذة عني',
-        about_title_1: 'من', about_title_2: 'خلف الكود؟',
-        about_p1: 'أنا <strong>طالب في الفصل الخامس من بكالوريوس هندسة البرمجيات</strong> في جامعة دويزبورغ إيسن، متخصص في <strong>التطوير الشامل (Full-Stack)، البنية النظيفة، والأنظمة الجاهزة للكلاود</strong>. أتعلم من خلال بناء برامج إنتاجية حقيقية، وليس فقط من القراءة عنها.',
-        about_p2: 'مجموعة تقنياتي الأساسية تدور حول <strong>جافا وسبرينغ بوت</strong> لواجهات الباك إند، مع <strong>بوستجرس، دوكر، ونيكست جي إس</strong> عندما يحتاج النظام واجهة أمامية. أهتم بمبادئ سوليد، الكود النظيف، وتسليم أشياء تعمل فعلاً للمستخدمين الحقيقيين.',
-        about_p3: 'أبحث حالياً عن <strong>وظيفة طالب عامل أو تدريب</strong> في ألمانيا حيث يمكنني المساهمة في فريق هندسي حقيقي، التعلم من المطورين ذوي الخبرة، والاستمرار في البناء.',
-        stat_semester: 'الفصل · دويزبورغ إيسن', stat_live: 'تطبيق إنتاجي مباشر',
-        stat_tech: 'تقنية', stat_lang: 'لغات',
-        why_eyebrow: 'ما الذي أقدمه',
-        why_title_1: 'لماذا تعمل', why_title_2: 'معي؟',
-        why1_title: 'خبرة إنتاجية', why1_desc: 'بنيت وأطلقت منصة مطعم حقيقية تخدم زبائن فعليين. أعرف معنى "منتهي" في الإنتاج، وليس فقط في الدروس.',
-        why2_title: 'عقلية الذكاء الاصطناعي أولاً', why2_desc: 'أستخدم أدوات الذكاء الاصطناعي للتحرك بشكل أسرع والتفكير بحدّة أكبر — كلاود، هندسة الأوامر، والأتمتة. هذه مهارة حقيقية، ليست اختصاراً.',
-        why3_title: 'متعدد اللغات ومحلي', why3_desc: 'عربية (لغة أم)، إنجليزية (بطلاقة)، ألمانية (جيد). أفهم اللغة التقنية وثقافة العمل الألمانية.',
-        why4_title: 'عادات كود نظيف', why4_desc: 'سوليد، أنماط التصميم، البنية الطبقية، تسمية واضحة. أكتب كوداً لا يحتاج المطورون الآخرون للاعتذار عنه.',
-        why5_title: 'متعلم سريع', why5_desc: 'إطار عمل جديد؟ لغة جديدة؟ سأكون منتجاً فيه خلال أسبوع. أتعلم بالممارسة، وليس بجمع الشهادات.',
-        why6_title: 'لاعب فريق', why6_desc: 'أطرح أسئلة جيدة، أكتب رسائل كوميت واضحة، ولا أختفي أثناء مراجعات الكود. التواصل جزء من العمل.',
-        projects_eyebrow: 'أعمال مختارة',
-        projects_title_1: 'المشاريع', projects_title_2: 'المختارة',
-        p1_title: 'ميلانو بيتسيريا — منصة المطعم',
-        p1_desc: 'منصة مطعم متكاملة بنيت لعميل حقيقي في دويزبورغ. طلبات أونلاين، حجز طاولات عبر واتساب، ومدفوعات سترايب — تخدم حالياً زبائن حقيقيين بتقييم 4.9 على قوقل.',
-        p1_m1: 'تقييم قوقل', p1_m2: 'منذ', p1_m3: 'إنتاج',
-        p1_link: 'زيارة الموقع ↗',
-        p2_title: 'واجهة باك إند',
-        p2_desc: 'تطبيق سبرينغ بوت جاهز للإنتاج مع مصادقة JWT، تحكم بالوصول حسب الدور، وتكامل مع MySQL. مبني ببنية طبقية نظيفة وتوثيق Swagger.',
-        p3_title: 'خط أنابيب النشر السحابي',
-        p3_desc: 'خدمة مصغرة مع دوكر عبر CI/CD مع إجراءات قيت هاب. بناء متعدد المراحل، اختبارات آلية، فحص، ونشر بدون توقف.',
-        p4_title: 'لوحة تحكم أمامية',
-        p4_desc: 'لوحة معلومات متجاوبة بـ React تستهلك واجهات REST في الوقت الفعلي. بنية قائمة على المكونات مع إدارة حالة نظيفة، تكامل الرسوم البيانية، وتصميم متجاوب.',
-        stack_eyebrow: 'التقنيات',
-        stack_title_1: 'مجموعة', stack_title_2: 'التقنيات',
-        lvl_adv: 'متقدم', lvl_int: 'متوسط',
-        ai_eyebrow: 'سير العمل الحديث',
-        ai_title_1: 'تطوير بمساعدة', ai_title_2: 'الذكاء الاصطناعي',
-        ai_intro: 'مرتاح للعمل جنباً إلى جنب مع أدوات الذكاء الاصطناعي كجزء من سير عمل هندسي حديث — أستخدمها بوعي للتحرك بشكل أسرع، تصحيح أذكى، وأتمتة الأجزاء المتكررة من بناء البرمجيات.',
-        ai1_title: 'كلاود والمهارات', ai1_desc: 'خبرة عملية مع كلاود، بما في ذلك بناء واستخدام مهارات مخصصة لهيكلة سير عمل متكرر وموثوق بمساعدة الذكاء الاصطناعي.',
-        ai2_title: 'هندسة الأوامر', ai2_desc: 'كتابة أوامر واضحة ومنظمة للحصول على مخرجات دقيقة وجاهزة للإنتاج — من توليد الكود إلى التصحيح والتوثيق.',
-        ai3_title: 'أتمتة سير العمل', ai3_desc: 'استخدام أدوات الذكاء الاصطناعي لأتمتة المهام المتكررة، تسريع مراجعة الكود، وتبسيط العمل الهندسي اليومي.',
-        journey_eyebrow: 'مسيرتي',
-        journey_title_1: 'الرحلة', journey_title_2: 'التي قطعتها',
-        j1_title: 'بدأت بكالوريوس هندسة البرمجيات في دويزبورغ إيسن',
-        j1_desc: 'بدأت دراستي الجامعية في جامعة دويزبورغ إيسن. أول تذوق لجافا، الخوارزميات، وعقلية الهندسة الألمانية.',
-        j2_title: 'تعمق في الباك إند',
-        j2_desc: 'أتقنت سبرينغ بوت، واجهات REST، مصادقة JWT، وأنماط البنية النظيفة. بنيت عدة مشاريع أكاديمية علمتني الأساسيات.',
-        j3_title: 'ميلانو بيتسيريا ينطلق',
-        j3_desc: 'صممت وبنيت ونشرت منصة مطعم حقيقية لعميل في دويزبورغ. أول مرة أرى كودي يخدم زبائن حقيقيين بأموال حقيقية.',
-        j4_title: 'هندسة بمساعدة الذكاء الاصطناعي',
-        j4_desc: 'دمجت كلاود، هندسة الأوامر، وسير عمل الذكاء الاصطناعي في تطويري اليومي. بنيت هذا الملف الشخصي وعدة مشاريع خاصة باستخدام الذكاء الاصطناعي كمساعد طيار.',
-        j5_year: 'الآن → القادم',
-        j5_title: 'جاهز للخطوة التالية',
-        j5_desc: 'أبحث عن دور طالب عامل أو تدريب حيث يمكنني المساهمة، التعلم من مهندسين كبار، والنمو كمطور باك إند قوي.',
-        lang_eyebrow: 'اللغات',
-        lang_title_1: 'ما الذي', lang_title_2: 'أتحدث به',
-        lang1_name: 'العربية', lang1_lvl: 'لغة أم',
-        lang2_name: 'الإنجليزية', lang2_lvl: 'قيد التعلم · B1',
-        lang3_name: 'الألمانية', lang3_lvl: 'بطلاقة · C1',
-        share_eyebrow: 'مشاركة الملف',
-        share_title_1: 'امسح', share_title_2: 'وتواصل',
-        qr_tab_site: 'الملف', qr_tab_vcard: 'بطاقة', qr_tab_linkedin: 'لينكد إن',
-        qr_download: 'تحميل رمز الاستجابة',
-        qr_info_title: 'زُر ملفي<br><em>في أي مكان</em>',
-        qr_info_p1: 'امسح رمز الاستجابة بكاميرا هاتفك — بدون تطبيق. يعمل على أي جهاز: موبايل، تابلت، أو لابتوب.',
-        qr_info_p2: 'شاركه على سيرتك الذاتية، بطاقة العمل، أو العروض التقديمية للوصول الفوري إلى عملك.',
-        footer: '© 2025 محمد علي شومار — بُني بشغف وكثير من القهوة'
-    }
-};
-
-let currentLang = localStorage.getItem('lang') || 'en';
-
-function toggleLang() {
-    currentLang = currentLang === 'en' ? 'ar' : 'en';
-    localStorage.setItem('lang', currentLang);
-    applyLang();
-}
-
-function applyLang() {
-    document.body.setAttribute('data-lang', currentLang);
-    document.documentElement.lang = currentLang;
-    document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-    document.getElementById('langToggle').textContent = currentLang === 'en' ? 'AR' : 'EN';
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (i18n[currentLang][key]) el.innerHTML = i18n[currentLang][key];
-    });
-}
-
-/* ============================================================
-   LOADING SCREEN
-   ============================================================ */
-window.addEventListener('load', () => {
-    const bar = document.getElementById('loaderBar');
-    let progress = 0;
-    const tick = setInterval(() => {
-        progress += Math.random() * 20 + 10;
-        if (progress >= 100) {
-            progress = 100;
-            bar.style.width = '100%';
-            clearInterval(tick);
-            setTimeout(() => {
-                document.getElementById('loader').classList.add('hidden');
-                setTimeout(initHeroAnimations, 200);
-            }, 400);
-        } else {
-            bar.style.width = progress + '%';
-        }
-    }, 150);
-});
-
-function initHeroAnimations() {
-    if (typeof gsap === 'undefined') return;
-    gsap.from('.hero-name', { duration: 1, y: 50, opacity: 0, ease: 'power3.out' });
-    gsap.from('.hero-role', { duration: 1, y: 30, opacity: 0, ease: 'power3.out', delay: 0.2 });
-    gsap.from('.hero-desc', { duration: 1, y: 30, opacity: 0, ease: 'power3.out', delay: 0.3 });
-    gsap.from('.btn-row, .contact-row, .chips', { duration: 1, y: 30, opacity: 0, ease: 'power3.out', delay: 0.4, stagger: 0.1 });
-    gsap.from('.img-frame', { duration: 1.2, scale: 0.8, opacity: 0, ease: 'power3.out', delay: 0.3 });
-}
-
-/* ============================================================
-   CUSTOM CURSOR
-   ============================================================ */
-const cursorDot = document.getElementById('cursorDot');
-const cursorRing = document.getElementById('cursorRing');
-let mouseX = 0, mouseY = 0;
-let ringX = 0, ringY = 0;
-
-try {
-    if (cursorDot && cursorRing && window.matchMedia('(min-width: 901px)').matches) {
-        document.body.classList.add('custom-cursor-on');
-
-        let dotRafId = null;
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            if (dotRafId) return;
-            dotRafId = requestAnimationFrame(() => {
-                cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
-                dotRafId = null;
-            });
-        });
-
-        function animateRing() {
-            ringX += (mouseX - ringX) * 0.15;
-            ringY += (mouseY - ringY) * 0.15;
-            cursorRing.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
-            requestAnimationFrame(animateRing);
-        }
-        animateRing();
-
-        // Hover states
-        document.addEventListener('mouseover', (e) => {
-            if (e.target.closest('a, button, .tilt-card, .chip, .ptag, .lang-toggle, .qr-tab, .cmdk-hint, .scroll-top, .img-frame')) {
-                cursorRing.classList.add('hovering');
-            }
-        });
-        document.addEventListener('mouseout', (e) => {
-            if (e.target.closest('a, button, .tilt-card, .chip, .ptag, .lang-toggle, .qr-tab, .cmdk-hint, .scroll-top, .img-frame')) {
-                cursorRing.classList.remove('hovering');
-            }
-        });
-    document.addEventListener('mousedown', () => cursorRing.classList.add('clicking'));
-    document.addEventListener('mouseup', () => cursorRing.classList.remove('clicking'));
-    }
-} catch (err) {
-    document.body.classList.remove('custom-cursor-on');
-    console.warn('Custom cursor failed to initialize, using default cursor:', err);
-}
-
-/* ============================================================
-   SCROLL PROGRESS
-   ============================================================ */
-/* ============================================================
-   SCROLL PROGRESS + NAVBAR + SCROLL-TOP (merged, cached, rAF-throttled)
-   ============================================================ */
-const scrollProgressEl = document.getElementById('scrollProgress');
-const navbarEl = document.getElementById('navbar');
-const scrollTopBtn = document.getElementById('scrollTop');
-let scrollRafId = null;
-
-function handleScroll() {
-    const winHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = winHeight > 0 ? (window.scrollY / winHeight) * 100 : 0;
-    scrollProgressEl.style.width = progress + '%';
-    navbarEl.classList.toggle('scrolled', window.scrollY > 50);
-    scrollTopBtn.classList.toggle('show', window.scrollY > 400);
-}
-
-window.addEventListener('scroll', () => {
-    if (scrollRafId) return;
-    scrollRafId = requestAnimationFrame(() => {
-        handleScroll();
-        scrollRafId = null;
-    });
-}, { passive: true });
-
-/* ============================================================
-   VANTA BACKGROUND
-   ============================================================ */
-window.addEventListener('load', () => {
-    if (typeof VANTA === 'undefined') return;
-    try {
-        VANTA.NET({
-            el: '#vanta-bg',
-            mouseControls: true,
-            touchControls: false,
-            gyroControls: false,
-            minHeight: 200,
-            minWidth: 200,
-            scale: 1,
-            scaleMobile: 1,
-            color: 0xb8f03c,
-            backgroundColor: 0x050505,
-            points: 10,
-            maxDistance: 20,
-            spacing: 20,
-            showDots: true
-        });
-    } catch (e) { console.log('Vanta failed'); }
-});
-
-/* ============================================================
-   3D TILT + SPOTLIGHT
-   ============================================================ */
-const cards = document.querySelectorAll('.tilt-card');
-cards.forEach(card => {
-    let rafId = null;
-    card.addEventListener('mousemove', (e) => {
-        card.classList.remove('tilt-reset');
-        if (rafId) cancelAnimationFrame(rafId);
-        rafId = requestAnimationFrame(() => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const rotateX = ((y - centerY) / centerY) * -6;
-            const rotateY = ((x - centerX) / centerX) * 6;
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.015)`;
-            card.style.setProperty('--mx', x + 'px');
-            card.style.setProperty('--my', y + 'px');
-        });
-    });
-    card.addEventListener('mouseleave', () => {
-        if (rafId) cancelAnimationFrame(rafId);
-        card.classList.add('tilt-reset');
-        card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale(1)`;
-    });
-});
-
-/* ============================================================
-   MAGNETIC BUTTONS
-   ============================================================ */
-document.querySelectorAll('.magnetic').forEach(btn => {
-    let rafId = null;
-    const strength = 0.35;
-    btn.addEventListener('mousemove', (e) => {
-        btn.classList.remove('magnet-reset');
-        if (rafId) cancelAnimationFrame(rafId);
-        rafId = requestAnimationFrame(() => {
-            const rect = btn.getBoundingClientRect();
-            const x = (e.clientX - rect.left - rect.width / 2) * strength;
-            const y = (e.clientY - rect.top - rect.height / 2) * strength;
-            btn.style.transform = `translate(${x}px, ${y}px)`;
-        });
-    });
-    btn.addEventListener('mouseleave', () => {
-        if (rafId) cancelAnimationFrame(rafId);
-        btn.classList.add('magnet-reset');
-        btn.style.transform = 'translate(0, 0)';
-    });
-});
-
-/* ============================================================
-   COMMAND PALETTE
-   ============================================================ */
-const cmdkActions = [
-    { icon: '🏠', label: 'Go to Home', key: 'home', action: () => scrollToId('home') },
-    { icon: '👤', label: 'Go to About', key: 'about', action: () => scrollToId('about') },
-    { icon: '💡', label: 'Go to Why Me', key: 'why', action: () => scrollToId('why') },
-    { icon: '💼', label: 'Go to Projects', key: 'projects', action: () => scrollToId('projects') },
-    { icon: '⚙️', label: 'Go to Tech Stack', key: 'stack', action: () => scrollToId('stack') },
-    { icon: '🧠', label: 'Go to AI Workflow', key: 'ai', action: () => scrollToId('ai-workflow') },
-    { icon: '🛤️', label: 'Go to Journey', key: 'journey', action: () => scrollToId('journey') },
-    { icon: '🌍', label: 'Go to Languages', key: 'lang', action: () => scrollToId('languages') },
-    { icon: '🔗', label: 'Go to Share / QR', key: 'share', action: () => scrollToId('share') },
-    { icon: '📄', label: 'Download CV', key: 'cv', action: () => { const a = document.createElement('a'); a.href = 'assets/CV.pdf'; a.download = 'Mohamad-Ali-Choumar-CV.pdf'; a.click(); } },
-    { icon: '✉️', label: 'Copy Email', key: 'email', action: () => { navigator.clipboard?.writeText('choumarmohamadali@gmail.com'); closeCmdk(); } },
-    { icon: '🔗', label: 'Open GitHub', key: 'github', action: () => window.open('https://github.com/MAliChoumar', '_blank', 'noopener,noreferrer') },
-    { icon: '🔗', label: 'Open LinkedIn', key: 'linkedin', action: () => window.open('https://www.linkedin.com/in/mohamad-ali-choumar-b425693a9', '_blank', 'noopener,noreferrer') },
-    { icon: '🍕', label: 'Visit Milano Pizzeria', key: 'milano', action: () => window.open('https://milano-pizzeria-duisburg.dev/', '_blank', 'noopener,noreferrer') },
-    { icon: '🌐', label: 'Toggle Language (AR/EN)', key: 'lang_toggle', action: () => { toggleLang(); closeCmdk(); } }
-];
-
-function scrollToId(id) {
-    closeCmdk();
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-}
-
-let cmdkActiveIndex = 0;
-let cmdkFiltered = cmdkActions;
-
-function renderCmdkList(filter = '') {
-    const lang = currentLang === 'ar' ? 'ar' : 'en';
-    const labels = {
-        home: { en: 'Go to Home', ar: 'الذهاب للرئيسية' },
-        about: { en: 'Go to About', ar: 'الذهاب للنبذة' },
-        why: { en: 'Go to Why Me', ar: 'لماذا أنا' },
-        projects: { en: 'Go to Projects', ar: 'المشاريع' },
-        stack: { en: 'Go to Tech Stack', ar: 'التقنيات' },
-        ai: { en: 'Go to AI Workflow', ar: 'الذكاء الاصطناعي' },
-        journey: { en: 'Go to Journey', ar: 'المسيرة' },
-        lang: { en: 'Go to Languages', ar: 'اللغات' },
-        share: { en: 'Go to Share / QR', ar: 'المشاركة' },
-        cv: { en: 'Download CV', ar: 'تحميل السيرة' },
-        email: { en: 'Copy Email', ar: 'نسخ الإيميل' },
-        github: { en: 'Open GitHub', ar: 'فتح قيت هاب' },
-        linkedin: { en: 'Open LinkedIn', ar: 'فتح لينكد إن' },
-        milano: { en: 'Visit Milano Pizzeria', ar: 'زيارة ميلانو' },
-        lang_toggle: { en: 'Toggle Language (AR/EN)', ar: 'تبديل اللغة' }
-    };
-    cmdkFiltered = cmdkActions.filter(a => labels[a.key][lang].toLowerCase().includes(filter.toLowerCase()) || a.key.includes(filter.toLowerCase()));
-    cmdkActiveIndex = 0;
-    const list = document.getElementById('cmdkList');
-    if (cmdkFiltered.length === 0) { list.innerHTML = '<div class="cmdk-empty">No matching commands</div>'; return; }
-    list.innerHTML = cmdkFiltered.map((a, i) => `
-        <div class="cmdk-item${i === 0 ? ' active' : ''}" data-index="${i}">
-            <span class="cmdk-item-icon">${a.icon}</span>
-            <span>${labels[a.key][lang]}</span>
-            <span class="cmdk-item-hint">${a.key}</span>
-        </div>
-    `).join('');
-    list.querySelectorAll('.cmdk-item').forEach(el => {
-        el.addEventListener('click', () => cmdkFiltered[+el.dataset.index].action());
-        el.addEventListener('mousemove', () => setCmdkActive(+el.dataset.index));
-    });
-}
-
-function setCmdkActive(i) {
-    cmdkActiveIndex = i;
-    document.querySelectorAll('.cmdk-item').forEach((el, idx) => el.classList.toggle('active', idx === i));
-}
-
-function openCmdk() {
-    document.getElementById('cmdkOverlay').classList.add('open');
-    document.getElementById('cmdkInput').value = '';
-    renderCmdkList('');
-    setTimeout(() => document.getElementById('cmdkInput').focus(), 10);
-}
-
-function closeCmdk() { document.getElementById('cmdkOverlay').classList.remove('open'); }
-
-document.getElementById('cmdkHint').addEventListener('click', openCmdk);
-document.getElementById('cmdkOverlay').addEventListener('click', (e) => { if (e.target === e.currentTarget) closeCmdk(); });
-document.getElementById('langToggle').addEventListener('click', toggleLang);
-document.getElementById('cmdkInput').addEventListener('input', (e) => renderCmdkList(e.target.value));
-
-document.addEventListener('keydown', (e) => {
-    const overlay = document.getElementById('cmdkOverlay');
-    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
-        e.preventDefault();
-        overlay.classList.contains('open') ? closeCmdk() : openCmdk();
-    }
-    if (!overlay.classList.contains('open')) return;
-    if (e.key === 'Escape') closeCmdk();
-    if (e.key === 'ArrowDown') { e.preventDefault(); setCmdkActive(Math.min(cmdkActiveIndex + 1, cmdkFiltered.length - 1)); }
-    if (e.key === 'ArrowUp') { e.preventDefault(); setCmdkActive(Math.max(cmdkActiveIndex - 1, 0)); }
-    if (e.key === 'Enter' && cmdkFiltered[cmdkActiveIndex]) cmdkFiltered[cmdkActiveIndex].action();
-});
-
-/* ============================================================
-   TERMINAL TYPEWRITER
-   ============================================================ */
-const termFrame = document.getElementById('termFrame');
-const termLines = document.getElementById('termLines');
-
-const termScript = [
-    { text: '$ whoami', type: 'cmd', pause: 300 },
-    { text: 'mohamad-ali — software engineer @ UDE', type: 'out', pause: 500 },
-    { text: '', type: 'break', pause: 200 },
-    { text: '$ life --undo', type: 'cmd', pause: 300 },
-    { text: 'zsh: command not found — no Ctrl+Z in real life', type: 'mute', pause: 600 },
-    { text: '', type: 'break', pause: 200 },
-    { text: '$ git add lessons/', type: 'cmd', pause: 250 },
-    { text: '$ git commit -m "grow"', type: 'cmd', pause: 250 },
-    { text: '$ git push --always', type: 'cmd', pause: 500 },
-    { text: '✓ every version better than the last', type: 'ok', pause: 400 },
-    { text: '', type: 'break', pause: 200 },
-    { text: '$ ls production/', type: 'cmd', pause: 300 },
-    { text: 'milano-pizzeria-duisburg.dev  ✓ live, serving real customers', type: 'out', pause: 0 }
-];
-
-let termStarted = false;
-function typeTerminal() {
-    if (termStarted) return;
-    termStarted = true;
-    termFrame.classList.add('in-view');
-    setTimeout(() => termFrame.classList.add('glow'), 400);
-    let lineIndex = 0;
-    function typeLine() {
-        if (lineIndex >= termScript.length) {
-            const cursor = document.createElement('span');
-            cursor.className = 'term-cursor';
-            termLines.appendChild(cursor);
-            return;
-        }
-        const line = termScript[lineIndex];
-        if (line.type === 'break') {
-            termLines.appendChild(document.createTextNode('\n'));
-            lineIndex++;
-            setTimeout(typeLine, line.pause);
-            return;
-        }
-        const span = document.createElement('span');
-        span.className = 't-' + line.type;
-        termLines.appendChild(span);
-        let charIndex = 0;
-        function typeChar() {
-            if (charIndex < line.text.length) {
-                span.textContent += line.text[charIndex];
-                charIndex++;
-                setTimeout(typeChar, line.type === 'cmd' ? 32 : 18);
-            } else {
-                termLines.appendChild(document.createTextNode('\n'));
-                lineIndex++;
-                setTimeout(typeLine, line.pause);
-            }
-        }
-        typeChar();
-    }
-    typeLine();
-}
-
-const termObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) typeTerminal(); });
-}, { threshold: 0.4 });
-termObserver.observe(termFrame);
-
-/* ============================================================
-   REVEAL ON SCROLL + ANIMATED COUNTERS
-   ============================================================ */
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-            // Animated counters
-            entry.target.querySelectorAll?.('[data-target]').forEach(counter => {
-                if (counter.dataset.counted) return;
-                counter.dataset.counted = 'true';
-                const target = +counter.dataset.target;
-                const suffix = counter.dataset.suffix || '';
-                const duration = 1500;
-                const start = performance.now();
-                function step(now) {
-                    const progress = Math.min((now - start) / duration, 1);
-                    const val = Math.floor(progress * target);
-                    counter.textContent = val + (progress === 1 ? suffix : '');
-                    if (progress < 1) requestAnimationFrame(step);
-                }
-                requestAnimationFrame(step);
-            });
-            // Tech bars
-            entry.target.querySelectorAll?.('.tech-card').forEach(card => {
-                if (card.dataset.barFilled) return;
-                card.dataset.barFilled = 'true';
-                const level = +card.dataset.level || 50;
-                setTimeout(() => {
-                    const fill = card.querySelector('.tech-bar-fill');
-                    if (fill) fill.style.width = level + '%';
-                }, 200);
-            });
-        }
-    });
-}, { threshold: 0.15 });
-
-document.querySelectorAll('.section, .stat, .tl-item, .tech-card, .reveal').forEach(el => revealObserver.observe(el));
-
-/* ============================================================
-   MOBILE MENU + SCROLL HANDLERS
-   ============================================================ */
-function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
-function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
-
-document.getElementById('scrollTop').addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-/* ============================================================
-   HERO IMAGE PARALLAX
-   ============================================================ */
-const heroImage = document.getElementById('heroImageFrame');
-if (heroImage && window.matchMedia('(min-width: 901px)').matches) {
-    let parallaxRafId = null;
-    document.addEventListener('mousemove', (e) => {
-        if (parallaxRafId) return;
-        parallaxRafId = requestAnimationFrame(() => {
-            const x = (e.clientX / window.innerWidth - 0.5) * 10;
-            const y = (e.clientY / window.innerHeight - 0.5) * 10;
-            heroImage.style.transform = `translate(${x}px, ${y}px)`;
-            parallaxRafId = null;
-        });
-    });
-}
-
-/* ============================================================
-   QR CODE
-   ============================================================ */
-const qrData = {
-    site: { url: 'https://choumar.is-a.dev/', label: '🔗 choumar.is-a.dev' },
-    vcard: {
-        url: 'BEGIN:VCARD\nVERSION:3.0\nFN:Mohamad Ali Choumar\nN:Choumar;Mohamad Ali;;\nTITLE:Software Engineering Student\nEMAIL:choumarmohamadali@gmail.com\nTEL:+4915752123177\nURL:https://github.com/MAliChoumar\nADR:Essen;Germany\nPHOTO;TYPE=JPEG;VALUE=URI:https://choumar.is-a.dev/assets/profile.jpg\nEND:VCARD',
-        label: '👤 Mohamad Ali Choumar · vCard'
-    },
-    linkedin: { url: 'https://www.linkedin.com/in/mohamad-ali-choumar-b425693a9', label: '💼 linkedin.com/in/mohamad-ali-choumar' }
-};
-let currentQR = 'site';
-let qrInstance = null;
-
-function renderQR(type) {
-    currentQR = type;
-    const container = document.getElementById('qrcode');
-    container.innerHTML = '';
-    if (typeof QRCode === 'undefined') return;
-    try {
-        qrInstance = new QRCode(container, {
-            text: qrData[type].url,
-            width: 280, height: 280,
-            colorDark: '#000000', colorLight: '#ffffff',
-            correctLevel: QRCode.CorrectLevel.M
-        });
-        document.getElementById('qrUrl').textContent = qrData[type].label;
-    } catch (err) {
-        container.innerHTML = '';
-        document.getElementById('qrUrl').textContent = '⚠️ QR data too large to render';
-        if (typeof showToast === 'function') showToast('Could not generate this QR code.');
-        console.warn('QR generation failed:', err);
-    }
-}
-
-document.querySelectorAll('.qr-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-        document.querySelectorAll('.qr-tab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        renderQR(tab.dataset.qr);
-    });
-});
-
-const shareSection = document.getElementById('share');
-if (shareSection && 'IntersectionObserver' in window) {
-    const shareObserver = new IntersectionObserver(([entry]) => {
-        document.body.classList.toggle('share-in-view', entry.isIntersecting);
-    }, { threshold: 0.15 });
-    shareObserver.observe(shareSection);
-}
-
-window.addEventListener('load', () => {
-    setTimeout(() => renderQR('site'), 800);
-});
-
-let toastTimer = null;
-function showToast(message) {
-    const toast = document.getElementById('toast');
-    toast.textContent = message;
-    toast.classList.add('show');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
-}
-
-function downloadQR() {
-    const canvas = document.querySelector('#qrcode canvas');
-    if (!canvas) { showToast('QR is still generating, please try again.'); return; }
-    const a = document.createElement('a');
-    a.download = 'mohamadali-' + currentQR + '-qr.png';
-    a.href = canvas.toDataURL('image/png');
-    a.click();
-}
-
-/* ============================================================
-   INIT LANGUAGE
-   ============================================================ */
-applyLang();
-</script>
+<script src="assets/app.js?v=1788726734"></script>
 </body>
 </html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lebenslauf — Mohamad Ali Choumar</title>
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230B1114'/%3E%3Ccircle cx='16' cy='16' r='6' fill='none' stroke='%23C0714A' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23C0714A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+
+<style>
+  /* A printed CV must be light: German employers print them, and a dark PDF
+     wastes ink and reads badly in applicant tracking systems. The WERK palette
+     is inverted here — copper on paper instead of copper on steel. */
+  :root {
+    --ink:      #16211F;
+    --ink-2:    #40514E;
+    --ink-3:    #6E7B79;
+    --rule:     #D9DCDA;
+    --paper:    #FFFFFF;
+    --paper-2:  #F4F5F3;
+    --kupfer:   #A85832;
+    --gruenspan:#3E7365;
+    --f-display:"Bricolage Grotesque","Arial Narrow",sans-serif;
+    --f-body:"IBM Plex Sans","Segoe UI",sans-serif;
+    --f-mono:"IBM Plex Mono",monospace;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: #2A3033;
+    font-family: var(--f-body); color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .sheet {
+    width: 210mm; min-height: 297mm;
+    margin: 24px auto; padding: 11mm 12mm 9mm;
+    background: var(--paper);
+    box-shadow: 0 24px 60px rgba(0,0,0,.45);
+    display: grid; grid-template-columns: 54mm 1fr; gap: 7mm;
+    font-size: 8.7pt; line-height: 1.38;
+  }
+
+  /* ── left rail ── */
+  .rail > section { margin-bottom: 4.6mm; }
+  .rail h2, .main h2 {
+    font-family: var(--f-mono); font-size: 7.4pt;
+    letter-spacing: .19em; text-transform: uppercase;
+    color: var(--kupfer); margin: 0 0 1.9mm;
+    padding-bottom: 1mm; border-bottom: .6pt solid var(--kupfer);
+  }
+  .foto {
+    width: 100%; aspect-ratio: 4/5; object-fit: cover;
+    border: .8pt solid var(--rule); margin-bottom: 4mm;
+    filter: grayscale(.15) contrast(1.03);
+  }
+  .kontakt { font-family: var(--f-mono); font-size: 7.5pt; line-height: 1.6; }
+  .kontakt div { display: flex; gap: 2mm; }
+  .kontakt span { color: var(--ink-3); flex: 0 0 13mm; }
+  .kontakt a { color: var(--ink); text-decoration: none; word-break: break-all; }
+
+  .skill { margin-bottom: 2.4mm; }
+  .skill b {
+    display: block; font-family: var(--f-mono); font-size: 7.4pt;
+    letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3);
+    font-weight: 400; margin-bottom: .8mm;
+  }
+  .skill p { margin: 0; font-size: 8.2pt; line-height: 1.36; }
+
+  .lang { display: flex; justify-content: space-between; align-items: baseline;
+          padding: 1mm 0; border-bottom: .5pt dotted var(--rule); font-size: 8.4pt; }
+  .lang:last-child { border-bottom: 0; }
+  .lang b { font-weight: 500; }
+  .lang i { font-style: normal; font-family: var(--f-mono); font-size: 8.4pt; color: var(--kupfer); }
+
+  /* ── main column ── */
+  .name {
+    font-family: var(--f-display); font-variation-settings: "wdth" 84, "opsz" 60;
+    font-weight: 800; font-size: 21pt; line-height: 1; letter-spacing: -.015em;
+    margin: 0; color: var(--ink);
+  }
+  .role {
+    font-family: var(--f-mono); font-size: 7.8pt; letter-spacing: .17em;
+    text-transform: uppercase; color: var(--kupfer); margin: 1.5mm 0 3mm;
+  }
+  .profil { margin: 0 0 4.4mm; font-size: 8.8pt; line-height: 1.45; color: var(--ink-2); }
+  .profil strong { color: var(--ink); font-weight: 600; }
+
+  .main > section { margin-bottom: 4.2mm; }
+  .item { margin-bottom: 3.4mm; page-break-inside: avoid; }
+  .item:last-child { margin-bottom: 0; }
+  .item-h { display: flex; align-items: baseline; gap: 2mm; }
+  .item-h h3 {
+    font-family: var(--f-display); font-variation-settings: "wdth" 92;
+    font-size: 10pt; font-weight: 700; margin: 0; color: var(--ink);
+  }
+  .item-h .tag {
+    font-family: var(--f-mono); font-size: 6.8pt; letter-spacing: .13em;
+    text-transform: uppercase; padding: .5mm 1.5mm; border: .5pt solid currentColor;
+  }
+  .tag.live { color: var(--gruenspan); }
+  .tag.privat { color: var(--ink-3); }
+  .item-h .when {
+    margin-left: auto; font-family: var(--f-mono); font-size: 8pt; color: var(--ink-3);
+  }
+  .item ul { margin: 1mm 0 0; padding-left: 3.8mm; }
+  .item li { margin-bottom: .5mm; color: var(--ink-2); }
+  .item li::marker { color: var(--kupfer); }
+  .stack {
+    margin-top: 1mm; font-family: var(--f-mono); font-size: 7.4pt; color: var(--ink-3);
+  }
+  .stack b { color: var(--ink-2); font-weight: 400; }
+
+  .edu-h { display: flex; align-items: baseline; gap: 2mm; }
+  .edu-h h3 { font-family: var(--f-display); font-variation-settings:"wdth" 92;
+              font-size: 10pt; font-weight: 700; margin: 0; }
+  .edu-h .when { margin-left: auto; font-family: var(--f-mono); font-size: 8pt; color: var(--ink-3); }
+  .edu p { margin: 1mm 0 0; color: var(--ink-2); }
+
+  .staerken { display: grid; grid-template-columns: 1fr 1fr; gap: 1mm 4mm; margin: 0; padding: 0; list-style: none; }
+  .staerken li { display: flex; gap: 2mm; align-items: baseline; color: var(--ink-2); font-size: 8.4pt; }
+  .staerken b { font-family: var(--f-mono); font-size: 9pt; color: var(--kupfer); font-weight: 500; flex: none; }
+
+  .gesucht {
+    margin-top: 3.4mm; padding: 2.4mm 3mm;
+    background: var(--paper-2); border-left: 1.4pt solid var(--kupfer);
+    font-size: 8.6pt; color: var(--ink-2);
+  }
+  .gesucht b { color: var(--ink); font-weight: 600; }
+
+  .foot {
+    grid-column: 1 / -1; margin-top: 4mm; padding-top: 2.5mm;
+    border-top: .5pt solid var(--rule);
+    font-family: var(--f-mono); font-size: 7.4pt; color: var(--ink-3);
+    display: flex; justify-content: space-between;
+  }
+
+  /* ── screen-only helper bar ── */
+  .bar {
+    position: sticky; top: 0; z-index: 5;
+    background: #16201F; color: #C9CDD1;
+    font-family: var(--f-mono); font-size: 12px; letter-spacing: .1em;
+    padding: 11px 18px; display: flex; gap: 14px; align-items: center;
+    border-bottom: 1px solid #2A3A38;
+  }
+  .bar b { color: #C0714A; font-weight: 500; }
+  .bar span { margin-left: auto; color: #7E8A88; }
+  .bar button {
+    font: inherit; cursor: pointer; padding: 6px 14px;
+    background: #C0714A; color: #0B1114; border: 0;
+  }
+  .bar a { color: #C9CDD1; }
+
+  @media print {
+    @page { size: A4; margin: 0; }
+    body { background: #fff; }
+    .bar { display: none; }
+    .sheet { margin: 0; box-shadow: none; width: auto; min-height: auto; }
+  }
+  @media (max-width: 800px) {
+    .sheet { width: auto; margin: 12px; padding: 18px; grid-template-columns: 1fr; gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <b>Lebenslauf</b>
+  <button onclick="window.print()">Als PDF speichern</button>
+  <a href="index.html">← Portfolio</a>
+  <span>Drucken → Ziel „Als PDF speichern“ → A4, Ränder: keine</span>
+</div>
+
+<div class="sheet">
+
+  <!-- ═══ LINKE SPALTE ═══ -->
+  <aside class="rail">
+    <img class="foto" src="assets/profile.jpg" alt="Mohamad Ali Choumar">
+
+    <section>
+      <h2>Kontakt</h2>
+      <div class="kontakt">
+        <div><span>Ort</span>45127 Essen</div>
+        <div><span>Telefon</span><span id="tel"></span></div>
+        <div><span>E-Mail</span><a id="mail" href="#"></a></div>
+        <div><span>Web</span><a href="https://choumar.is-a.dev">choumar.is-a.dev</a></div>
+        <div><span>GitHub</span><a href="https://github.com/MAliChoumar">github.com/MAliChoumar</a></div>
+        <div><span>LinkedIn</span><a href="https://www.linkedin.com/in/mohamad-ali-choumar-b425693a9/">mohamad-ali-choumar</a></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Technische Kenntnisse</h2>
+      <div class="skill"><b>Sprachen</b><p>TypeScript, JavaScript, SQL, HTML/CSS · Java und Python aus dem Studium</p></div>
+      <div class="skill"><b>Framework &amp; UI</b><p>Next.js (App Router), React, Tailwind CSS</p></div>
+      <div class="skill"><b>Daten</b><p>PostgreSQL, Drizzle ORM, Supabase, Zod</p></div>
+      <div class="skill"><b>Betrieb</b><p>Vercel, Git, GitHub, GitHub Pages, Docker (Grundlagen)</p></div>
+      <div class="skill"><b>Qualität</b><p>Playwright, Vitest, ESLint, TypeScript strict</p></div>
+      <div class="skill"><b>Web &amp; Recht</b><p>SEO (Sitemap, robots, canonical, Open Graph, strukturierte Daten), Impressum und Datenschutz nach DSGVO</p></div>
+      <div class="skill"><b>Arbeitsweise</b><p>Claude, Codex, Gemini — Spezifikation, Ausführung, Prüfung; eigene Skills für wiederholbare Abläufe</p></div>
+    </section>
+
+    <section>
+      <h2>Sprachen</h2>
+      <div class="lang"><b>Arabisch</b><i>Muttersprache</i></div>
+      <div class="lang"><b>Deutsch</b><i>C1 — fließend</i></div>
+      <div class="lang"><b>Englisch</b><i>A2</i></div>
+    </section>
+  </aside>
+
+  <!-- ═══ HAUPTSPALTE ═══ -->
+  <main class="main">
+    <h1 class="name">Mohamad Ali Choumar</h1>
+    <p class="role">Software Engineering · Full-Stack · Essen</p>
+
+    <p class="profil">
+      Software-Engineering-Student im sechsten Semester an der Universität Duisburg-Essen.
+      Ich baue Systeme, die tatsächlich benutzt werden — <strong>eines läuft seit 2026 in
+      Produktion für einen Betrieb in Duisburg</strong>. Stack: TypeScript, Next.js,
+      PostgreSQL. Komplexe Systeme entwickle ich, indem ich <strong>KI-Agenten gezielt
+      führe</strong>: spezifizieren, ausführen lassen, selbst prüfen.
+    </p>
+
+    <section>
+      <h2>Projekte</h2>
+
+      <div class="item">
+        <div class="item-h">
+          <h3>Milano Pizzeria — Restaurant-Plattform</h3>
+          <span class="tag live">In Produktion</span>
+          <span class="when">2026</span>
+        </div>
+        <ul>
+          <li>Für einen Betrieb in Duisburg entworfen, gebaut und deployed.</li>
+          <li>Reservierung wird auf der Seite zusammengestellt und vorausgefüllt an WhatsApp
+              übergeben — bewusst statt eines Buchungs-Backends, weil der Betrieb kein
+              Personal für ein Dashboard hat.</li>
+          <li>Deutschsprachig, mobile-first, mit Impressum und Datenschutz nach DSGVO;
+              Security-Header an der Edge.</li>
+        </ul>
+        <div class="stack"><b>Next.js · TypeScript · Tailwind CSS · Vercel (fra1)</b> — milano-pizzeria-duisburg.dev</div>
+      </div>
+
+      <div class="item">
+        <div class="item-h">
+          <h3>ChoumarOS — objektbasierte Plattform</h3>
+          <span class="tag privat">Privat · 87 Commits</span>
+          <span class="when">2026</span>
+        </div>
+        <ul>
+          <li>Objekt-Engine mit Relationen, Versionen und Event-Timeline; geschichtet in
+              domain / application / infrastructure / features.</li>
+          <li>Grounded AI, dauerhafter Automations-Worker, privater Datei-Speicher, PWA.</li>
+          <li>End-to-End-Tests; sechs Quality Gates vor jedem Release
+              (format, lint, typecheck, test, e2e, build).</li>
+        </ul>
+        <div class="stack"><b>Next.js · TypeScript · Drizzle ORM · PostgreSQL · Supabase · Zod · Playwright · Vitest</b></div>
+      </div>
+
+      <div class="item">
+        <div class="item-h">
+          <h3>Portfolio — choumar.is-a.dev</h3>
+          <span class="when">2026</span>
+        </div>
+        <ul>
+          <li>Eigenbau ohne Framework, zweisprachig (DE/EN), HTTPS auf eigener Domain;
+              verifizierte Search Console, Sitemap, strukturierte Daten, Indexierung ohne Fehler.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Studium</h2>
+      <div class="edu">
+        <div class="edu-h">
+          <h3>B.Sc. Software Engineering</h3>
+          <span class="when">seit 2023 · 6. Fachsemester</span>
+        </div>
+        <p>Universität Duisburg-Essen, Campus Essen</p>
+        <p><b>Inhalte u.&nbsp;a.:</b> Requirements Engineering, Software-Architekturen,
+           Datenbanksysteme, Algorithmen, Qualitätssicherung, Maschinelles Lernen,
+           Cybersicherheit, Mensch-Computer-Interaktion.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Stärken</h2>
+      <ul class="staerken">
+        <li><b>87</b> Commits an einem System, das mir niemand aufgetragen hat — Ausdauer.</li>
+        <li><b>6</b> Quality Gates vor jedem Release — Sorgfalt, auch wenn es spät wird.</li>
+        <li><b>3</b> Sprachen im Alltag und in der Arbeit.</li>
+        <li><b>1</b> System, das echte Kunden bedient — ich weiß, was „fertig“ heißt.</li>
+      </ul>
+      <div class="gesucht">
+        <b>Gesucht:</b> Werkstudenten- oder Praktikumsstelle im Ruhrgebiet (Essen, Duisburg,
+        Dortmund, Bochum, Mülheim, Gelsenkirchen) oder remote — ab sofort.
+      </div>
+    </section>
+  </main>
+
+  <div class="foot">
+    <span>Mohamad Ali Choumar · Lebenslauf</span>
+    <span id="stand">Essen, 2026</span>
+  </div>
+</div>
+
+<script>
+  /* Assembled at runtime: a harvester reading the source finds neither. */
+  var TEL = ["+49", "157", "52123177"].join(" ");
+  var ML  = ["choumarmohamadali", "gmail.com"].join("@");
+  document.getElementById("tel").textContent = TEL;
+  var ma = document.getElementById("mail");
+  ma.textContent = ML; ma.href = "mailto:" + ML;
+
+  var d = new Date();
+  var m = ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"];
+  document.getElementById("stand").textContent = "Essen, " + m[d.getMonth()] + " " + d.getFullYear();
+</script>
+</body>
+</html>

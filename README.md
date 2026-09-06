@@ -1,89 +1,59 @@
-# 👋 Hi, I'm Mohamad Ali Choumar
+# choumar.is-a.dev
 
-## Software Engineering Student | Full-Stack Developer
+Portfolio of **Mohamad Ali Choumar** — Software Engineering student at the
+University of Duisburg-Essen, Essen, Germany.
 
-Welcome to my personal portfolio repository.
+🌐 **[choumar.is-a.dev](https://choumar.is-a.dev)** · 🇩🇪 German / English
 
-This website showcases my projects, technical skills and experience as a Software
-Engineering student at the University of Duisburg-Essen. It is the central place
-where I present my work and how I build it.
-
-🇩🇪 **Ich spreche fließend Deutsch** und bin für Werkstudenten- oder Praktikumsstellen
-im Ruhrgebiet verfügbar.
-
-## 🌐 Live Website
-
-👉 https://choumar.is-a.dev
-
-## ✨ Features
-
-- Responsive design
-- Modern UI/UX
-- Project showcase
-- Skills overview
-- Contact section with vCard QR code
-- Custom domain on GitHub Pages
-
-## 🛠 Tech Stack
-
-**Working with**
-
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=ts,js,react,nextjs,java,python,postgres,html,css&perline=9" />
-</p>
-
-**Used in projects**
-
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=supabase,docker,mysql,tailwind,git,github,vercel,vscode&perline=8" />
-</p>
-
-## 📂 Featured Projects
-
-### 🍕 Milano Pizzeria — Live Restaurant Platform
-
-Restaurant platform built and deployed for a business in Duisburg. German-language,
-mobile-first, and legally compliant for the German market (Impressum + Datenschutz
-per DSGVO). Guests assemble a table reservation on the site, which is handed off
-pre-filled to WhatsApp so they only have to press send.
-
-**Stack:** Next.js (App Router) · TypeScript · WhatsApp deep-link integration · Vercel
-
-🌐 https://milano-pizzeria-duisburg.dev
+🇩🇪 **Ich spreche fließend Deutsch** und suche eine Werkstudenten- oder
+Praktikumsstelle im Ruhrgebiet.
 
 ---
 
-### 🧩 ChoumarOS — Personal Digital Operating System *(private)*
+## What is here
 
-A layered full-stack platform designed and built from scratch across 87 commits:
-a universal object engine with relations, versioning and an event timeline, plus
-grounded AI, a durable automation worker, private file storage and PWA support.
-Covered by an end-to-end test suite with enforced quality gates.
+Eleven sections, each built around one idea rather than a generic card grid:
 
-**Stack:** Next.js · TypeScript · Drizzle ORM · PostgreSQL · Supabase · Zod · Playwright · Vitest
+| Section | What it is |
+|---|---|
+| **Anlagenschema** | A live schematic of the real projects, languages and tools, and the actual relations between them. Hovering a node lights its connections. |
+| **Prüfstand** | Nine claims, each attached to something checkable — commit counts, quality gates, a system in production. |
+| **Projekte** | Milano Pizzeria (live), ChoumarOS (private), a Verein website in progress. |
+| **Studienverlauf** | The official B.Sc. Software Engineering course plan, colour-coded by discipline. |
+| **Werkzeugwand** | Tools on a shadow board, each marked with where it was actually used. No percentage bars. |
+| **Leitstand** | How the work is done: specify → execute → verify → answer for it. |
+| **Sprachen** | Placed on the CEFR scale, not on invented dots. |
+| **Prüfprotokoll** | The site's own search configuration, as an inspection report. |
+| **Kontakt** | A work-order form and a nameplate with a vCard QR. |
 
----
+## Built with
 
-### 💼 Personal Portfolio
+Plain HTML, CSS and JavaScript — no framework, no build step. The animated
+background and the schematic are Canvas 2D. Fonts are Bricolage Grotesque and
+IBM Plex. Hosted on GitHub Pages over HTTPS on a custom domain.
 
-This site — a hand-built, responsive portfolio served over HTTPS on a custom domain.
+Roughly **244 KB** in total, down from 993 KB before the rebuild — the previous
+version loaded 601 KB of Three.js for a decorative background alone.
 
-🌐 https://choumar.is-a.dev
+## Structure
 
-## 🎯 Goals
+```
+index.html         the portfolio
+cv.html            the CV — one A4 page, print to PDF from the page itself
+datenschutz.html   privacy notice (DSGVO)
+404.html
+assets/app.css     design tokens and every section
+assets/app.js      schematic, terminal, i18n, interactions, contact form
+kontakt-endpoint/  serverless function behind the contact form (deploys separately)
+```
 
-- Build real, production-ready full-stack applications
-- Deepen backend expertise — databases, architecture and automated testing
-- Keep growing frontend and UI/UX skills
-- Contribute to open-source projects
+## Contact form
 
-## 📫 Contact
+The form posts to a small serverless function that relays the message to
+e-mail and stores nothing. If that endpoint is unreachable for any reason the
+form does not dead-end — it offers a pre-filled mail draft instead, so a
+visitor can always get through. See `kontakt-endpoint/README.md`.
 
-- Portfolio: https://choumar.is-a.dev
-- LinkedIn: https://www.linkedin.com/in/mohamad-ali-choumar-b425693a9/
-- GitHub: https://github.com/MAliChoumar
-- Email: choumarmohamadali@gmail.com
+## Licence
 
----
-
-© Mohamad Ali Choumar
+MIT — see [LICENSE](LICENSE).

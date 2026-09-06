@@ -1,0 +1,1068 @@
+/* ══════════════════════════════════════════════════════════════════
+   WERK — Mohamad Ali Choumar
+   Steel, copper, patina. A committed single visual world:
+   an industrial control surface from the Ruhrgebiet.
+   ══════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ground */
+  --schacht:    #0B1114;
+  --schacht-2:  #111A1E;
+  --schacht-3:  #162226;
+  --schacht-4:  #1D2B30;
+
+  /* text */
+  --rohstahl:   #C9CDD1;
+  --rohstahl-hi:#E6E9EB;
+  --beton:      #8A9196;
+  --beton-dim:  #5A6469;
+
+  /* accents */
+  --kupfer:     #C0714A;
+  --kupfer-hi:  #D98A5F;
+  --kupfer-lo:  #7A4630;
+  --kupfer-a12: rgba(192,113,74,.12);
+  --kupfer-a25: rgba(192,113,74,.25);
+  --gruenspan:  #4E8C7D;
+  --gruenspan-hi:#68A897;
+  --signal:     #E8B93A;
+  --oxid:       #A5543C;
+  --messing:    #B39355;
+
+  /* type */
+  --f-display: "Bricolage Grotesque", "Arial Narrow", Impact, sans-serif;
+  --f-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", monospace;
+
+  /* scale */
+  --s1: 4px;  --s2: 8px;  --s3: 12px; --s4: 16px;
+  --s5: 24px; --s6: 32px; --s7: 48px; --s8: 72px; --s9: 112px;
+
+  --rail: 56px;
+  --pad: clamp(18px, 5vw, 64px);
+  --maxw: 1320px;
+
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--schacht);
+  color: var(--rohstahl);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+::selection { background: var(--kupfer); color: var(--schacht); }
+
+:focus-visible {
+  outline: 2px solid var(--kupfer);
+  outline-offset: 3px;
+}
+
+.skip {
+  position: absolute; left: -9999px; top: 0; z-index: 999;
+  background: var(--kupfer); color: var(--schacht);
+  padding: 10px 16px; font-family: var(--f-mono); font-size: 13px;
+}
+.skip:focus { left: 8px; top: 8px; }
+
+/* ─── shared type ─────────────────────────────────────────── */
+
+.eyebrow {
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--f-mono);
+  font-size: 11px; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--kupfer);
+  margin: 0 0 var(--s4);
+}
+.eyebrow::before {
+  content: ""; width: 34px; height: 1px; background: var(--kupfer-lo);
+  flex: none;
+}
+
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; }
+
+h2.title {
+  font-variation-settings: "wdth" 86, "opsz" 60;
+  font-weight: 800;
+  font-size: clamp(2rem, 5.2vw, 3.4rem);
+  line-height: .95;
+  letter-spacing: -.02em;
+  color: var(--rohstahl-hi);
+  margin: 0 0 var(--s5);
+}
+h2.title em { display: block; font-style: normal; color: var(--kupfer); }
+
+.lede {
+  max-width: 62ch;
+  color: var(--beton);
+  font-size: clamp(15px, 1.6vw, 17px);
+  margin: 0 0 var(--s6);
+}
+.lede strong, .em { color: var(--rohstahl-hi); font-weight: 500; }
+.k { color: var(--kupfer); }
+
+/* ─── layout ──────────────────────────────────────────────── */
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad); }
+
+.section {
+  position: relative;
+  padding: var(--s9) 0;
+  border-top: 1px solid var(--schacht-3);
+}
+.section:first-of-type { border-top: 0; }
+
+.two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: start;
+}
+
+/* ─── nav rail ────────────────────────────────────────────── */
+
+.progress {
+  position: fixed; top: 0; left: 0; height: 2px; width: 0;
+  background: linear-gradient(90deg, var(--kupfer-lo), var(--kupfer), var(--signal));
+  z-index: 60;
+}
+
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 55;
+  display: flex; align-items: center; gap: var(--s4);
+  padding: 12px var(--pad);
+  background: rgba(11,17,20,.82);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--schacht-3);
+  font-family: var(--f-mono);
+  font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--beton);
+}
+.brand { color: var(--rohstahl-hi); font-weight: 500; letter-spacing: .24em; text-decoration: none; }
+.brand b { color: var(--kupfer); font-weight: 500; }
+.spring { flex: 1 1 auto; }
+
+.status {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--gruenspan);
+}
+.led {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gruenspan);
+  box-shadow: 0 0 0 3px rgba(78,140,125,.16);
+  animation: breathe 3.4s var(--ease) infinite;
+}
+@keyframes breathe { 0%,100%{opacity:1} 50%{opacity:.45} }
+
+.langtog { display: flex; border: 1px solid var(--schacht-4); }
+.langtog button {
+  appearance: none; background: none; border: 0; cursor: pointer;
+  padding: 4px 9px;
+  font: inherit; letter-spacing: .16em;
+  color: var(--beton-dim);
+  transition: color .18s, background .18s;
+}
+.langtog button[aria-pressed="true"] { background: var(--rohstahl); color: var(--schacht); }
+.langtog button:hover { color: var(--rohstahl); }
+
+.cmdk-btn {
+  appearance: none; cursor: pointer;
+  background: none; border: 1px solid var(--schacht-4);
+  color: var(--beton-dim); font: inherit; letter-spacing: .1em;
+  padding: 4px 10px;
+  transition: color .18s, border-color .18s;
+}
+.cmdk-btn:hover { color: var(--rohstahl); border-color: var(--kupfer-lo); }
+
+.navlinks { display: flex; gap: 2px; }
+.navlinks a {
+  padding: 4px 10px; text-decoration: none; color: var(--beton-dim);
+  transition: color .18s;
+}
+.navlinks a:hover, .navlinks a.on { color: var(--kupfer); }
+@media (max-width: 1180px) { .navlinks { display: none; } }
+
+/* mobile sheet */
+.burger {
+  display: none; appearance: none; cursor: pointer;
+  background: none; border: 1px solid var(--schacht-4); color: var(--rohstahl);
+  padding: 6px 10px; font: inherit; letter-spacing: .14em;
+}
+@media (max-width: 1180px) { .burger { display: inline-block; } }
+
+.sheet {
+  position: fixed; inset: 0; z-index: 70;
+  background: rgba(11,17,20,.97);
+  backdrop-filter: blur(18px);
+  display: none;
+  flex-direction: column;
+  padding: 80px var(--pad) var(--pad);
+  overflow-y: auto;
+}
+.sheet[data-open="true"] { display: flex; }
+.sheet a {
+  display: flex; align-items: baseline; gap: 14px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--schacht-3);
+  text-decoration: none;
+  font-family: var(--f-display);
+  font-variation-settings: "wdth" 88;
+  font-size: 22px; font-weight: 600;
+  color: var(--rohstahl);
+}
+.sheet a span {
+  font-family: var(--f-mono); font-size: 11px; color: var(--kupfer);
+  letter-spacing: .16em;
+}
+.sheet-close {
+  position: absolute; top: 14px; right: var(--pad);
+  appearance: none; background: none; border: 1px solid var(--schacht-4);
+  color: var(--rohstahl); padding: 6px 12px; cursor: pointer;
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .14em;
+}
+
+/* ─── cursor ──────────────────────────────────────────────── */
+
+.cur-dot, .cur-ring {
+  position: fixed; top: 0; left: 0; z-index: 90;
+  pointer-events: none;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+}
+.cur-dot { width: 6px; height: 6px; background: var(--kupfer); margin: -3px 0 0 -3px; }
+.cur-ring {
+  width: 30px; height: 30px; margin: -15px 0 0 -15px;
+  border: 1px solid var(--kupfer-a25);
+  transition: width .22s var(--ease), height .22s var(--ease),
+              margin .22s var(--ease), border-color .22s;
+}
+.cur-ring[data-hot="true"] {
+  width: 52px; height: 52px; margin: -26px 0 0 -26px;
+  border-color: var(--kupfer);
+}
+@media (hover: none), (pointer: coarse) {
+  .cur-dot, .cur-ring { display: none; }
+}
+
+/* click ripple */
+.ripple {
+  position: fixed; z-index: 89; pointer-events: none;
+  border: 1px solid var(--kupfer);
+  border-radius: 50%;
+  animation: ripple .62s var(--ease) forwards;
+}
+@keyframes ripple {
+  from { width: 0; height: 0; margin: 0; opacity: .9; }
+  to   { width: 180px; height: 180px; margin: -90px 0 0 -90px; opacity: 0; }
+}
+
+/* ─── hero ────────────────────────────────────────────────── */
+
+.hero {
+  position: relative;
+  padding: calc(var(--rail) + var(--s8)) 0 var(--s8);
+  overflow: hidden;
+}
+.hero::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(120% 80% at 80% 0%, var(--kupfer-a12), transparent 58%),
+    radial-gradient(80% 70% at 0% 100%, rgba(78,140,125,.09), transparent 62%);
+  pointer-events: none;
+}
+.hero-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 27rem) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 56px);
+  align-items: center;
+}
+h1.name {
+  font-variation-settings: "wdth" 82, "opsz" 96;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 6.6vw, 4.6rem);
+  line-height: .88;
+  letter-spacing: -.025em;
+  color: var(--rohstahl-hi);
+}
+h1.name em { display: block; font-style: normal; color: var(--kupfer); }
+
+.hero-lede { max-width: 34ch; color: var(--beton); margin: var(--s4) 0 0; font-size: 15px; }
+
+.specs { margin: var(--s5) 0 0; border-top: 1px solid var(--schacht-3); }
+.spec {
+  display: flex; gap: 14px; align-items: baseline;
+  padding: 9px 0; border-bottom: 1px solid var(--schacht-3);
+  font-family: var(--f-mono); font-size: 12.5px;
+}
+.spec dt {
+  flex: 0 0 8rem; color: var(--beton-dim);
+  font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+}
+.spec dd { margin: 0; color: var(--rohstahl); font-variant-numeric: tabular-nums; }
+.spec dd .ar { font-family: var(--f-body); }
+
+.cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin: var(--s5) 0 0; }
+.btn {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 11px 18px;
+  border: 1px solid var(--kupfer-lo);
+  background: transparent; color: var(--rohstahl-hi);
+  font-family: var(--f-mono); font-size: 12px;
+  letter-spacing: .12em; text-transform: uppercase; text-decoration: none;
+  cursor: pointer;
+  transition: background .2s, border-color .2s, color .2s, transform .2s var(--ease);
+}
+.btn:hover { background: var(--kupfer); border-color: var(--kupfer); color: var(--schacht); transform: translateY(-2px); }
+.btn.primary { background: var(--kupfer); border-color: var(--kupfer); color: var(--schacht); font-weight: 500; }
+.btn.primary:hover { background: var(--kupfer-hi); border-color: var(--kupfer-hi); }
+
+/* ─── plate (shared machined surface) ─────────────────────── */
+
+.plate {
+  position: relative;
+  border: 1px solid var(--schacht-3);
+  background: linear-gradient(158deg, rgba(17,26,30,.94), rgba(11,17,20,.94));
+  box-shadow: inset 0 1px 0 rgba(201,205,209,.05);
+}
+.plate-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--schacht-3);
+  font-family: var(--f-mono); font-size: 10px;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--beton-dim);
+}
+
+/* ─── Anlagenschema ───────────────────────────────────────── */
+
+.schema { min-height: 460px; display: flex; flex-direction: column; }
+.stage { position: relative; flex: 1; min-height: 340px; }
+.stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+.node {
+  position: absolute; top: 0; left: 0;
+  transform: translate(-50%, -50%);
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 4px 9px 4px 7px;
+  border: 1px solid var(--schacht-3);
+  background: rgba(11,17,20,.88);
+  color: var(--beton);
+  font-family: var(--f-mono); font-size: 11px;
+  white-space: nowrap; cursor: pointer;
+  transition: color .18s, border-color .18s, background .18s, opacity .18s;
+}
+.node:hover, .node:focus-visible, .node.on {
+  color: var(--rohstahl-hi); border-color: var(--kupfer-lo);
+  background: rgba(29,43,48,.96);
+}
+.node .pip { width: 5px; height: 5px; border-radius: 50%; background: var(--beton-dim); flex: none; }
+.node[data-kind="system"] { font-size: 12px; color: var(--rohstahl); border-color: var(--kupfer-lo); }
+.node[data-kind="system"] .pip { background: var(--kupfer); }
+.node[data-kind="sprache"] .pip { background: var(--gruenspan); }
+.node[data-live] .pip { background: var(--signal); box-shadow: 0 0 0 3px rgba(232,185,58,.16); }
+.node.dim { opacity: .26; }
+
+.readout { border-top: 1px solid var(--schacht-3); padding: 13px 14px 16px; min-height: 104px; }
+.readout .kind {
+  font-family: var(--f-mono); font-size: 10px;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--kupfer);
+}
+.readout .kind .live { color: var(--signal); }
+.readout h3 {
+  font-variation-settings: "wdth" 92; font-size: 17px; font-weight: 700;
+  margin: 3px 0 0; color: var(--rohstahl-hi);
+}
+.readout p { margin: 7px 0 0; font-size: 13.5px; line-height: 1.55; color: var(--beton); max-width: 66ch; }
+.readout .rel { margin: 9px 0 0; font-family: var(--f-mono); font-size: 11px; color: var(--beton-dim); }
+.readout .rel b { color: var(--gruenspan); font-weight: 400; }
+
+/* ─── photo plate ─────────────────────────────────────────── */
+
+.portrait { position: relative; overflow: hidden; }
+.portrait img { width: 100%; filter: grayscale(.55) contrast(1.06); }
+.portrait::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(220px 220px at var(--mx,70%) var(--my,30%),
+              rgba(192,113,74,.34), transparent 62%);
+  mix-blend-mode: overlay;
+}
+.tick { position: absolute; width: 14px; height: 14px; border: 1px solid var(--kupfer); }
+.tick.tl { top: 8px; left: 8px; border-right: 0; border-bottom: 0; }
+.tick.tr { top: 8px; right: 8px; border-left: 0; border-bottom: 0; }
+.tick.bl { bottom: 8px; left: 8px; border-right: 0; border-top: 0; }
+.tick.br { bottom: 8px; right: 8px; border-left: 0; border-top: 0; }
+.portrait-cap {
+  padding: 9px 12px; border-top: 1px solid var(--schacht-3);
+  font-family: var(--f-mono); font-size: 10px;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--beton-dim);
+  display: flex; justify-content: space-between;
+}
+
+/* ─── Prüfstand ───────────────────────────────────────────── */
+
+.bench {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
+  gap: 14px;
+}
+.pos {
+  position: relative;
+  padding: 18px 18px 20px;
+  border: 1px solid var(--schacht-3);
+  border-top-color: var(--schacht-4);
+  background: linear-gradient(168deg, #131E22, #0D1518);
+  box-shadow: inset 0 1px 0 rgba(201,205,209,.06), 0 1px 0 rgba(0,0,0,.5);
+  transform-style: preserve-3d;
+  transition: box-shadow .25s;
+  overflow: hidden;
+}
+.pos::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(200px 160px at var(--mx,-100px) var(--my,-100px),
+              rgba(201,205,209,.09), transparent 70%);
+}
+.pos:hover { box-shadow: inset 0 1px 0 rgba(201,205,209,.1), 0 12px 30px rgba(0,0,0,.55); }
+.pos .pled {
+  position: absolute; top: 16px; right: 16px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--kupfer-lo);
+  transition: background .25s, box-shadow .25s;
+}
+.pos:hover .pled { background: var(--kupfer); box-shadow: 0 0 0 4px var(--kupfer-a12); }
+.pos .fig {
+  font-family: var(--f-display);
+  font-variation-settings: "wdth" 76;
+  font-size: 44px; font-weight: 800; line-height: 1;
+  color: var(--kupfer);
+  font-variant-numeric: tabular-nums;
+}
+.pos .unit {
+  font-family: var(--f-mono); font-size: 10px;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--beton-dim);
+  margin-top: 3px;
+}
+.pos h3 {
+  font-variation-settings: "wdth" 92;
+  font-size: 15px; font-weight: 700; letter-spacing: .01em;
+  color: var(--rohstahl-hi);
+  margin: 14px 0 0;
+}
+.pos.nofig h3 { font-size: 20px; margin-top: 0; }
+.pos p { margin: 8px 0 0; font-size: 13.5px; line-height: 1.55; color: var(--beton); }
+
+/* ─── Werkzeugwand ────────────────────────────────────────── */
+
+.board {
+  padding: var(--s5);
+  border: 1px solid var(--schacht-3);
+  background:
+    radial-gradient(circle at 1px 1px, rgba(201,205,209,.055) 1px, transparent 1.4px) 0 0/18px 18px,
+    linear-gradient(160deg, #101A1E, #0B1114);
+}
+.zone { margin-bottom: var(--s6); }
+.zone:last-child { margin-bottom: 0; }
+.zone-h {
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--f-mono); font-size: 10px;
+  letter-spacing: .2em; text-transform: uppercase; color: var(--kupfer);
+  margin-bottom: 13px;
+}
+.zone-h::after { content: ""; flex: 1; height: 1px; background: var(--schacht-3); }
+.tools { display: flex; flex-wrap: wrap; gap: 9px; }
+.tool {
+  position: relative;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 13px;
+  border: 1px solid var(--schacht-4);
+  background: linear-gradient(170deg, #162327, #101A1E);
+  color: var(--rohstahl);
+  font-family: var(--f-mono); font-size: 12.5px;
+  cursor: default;
+  transition: transform .24s var(--ease), box-shadow .24s var(--ease),
+              border-color .24s, color .24s;
+}
+.tool:hover, .tool:focus-visible {
+  transform: translate3d(0,-7px,0);
+  box-shadow: 0 12px 22px rgba(0,0,0,.6);
+  border-color: var(--kupfer-lo);
+  color: var(--rohstahl-hi);
+}
+.tool .prov { font-size: 9px; color: var(--beton-dim); letter-spacing: .1em; }
+.tool[data-p="built"] .prov { color: var(--kupfer); }
+.tool[data-p="project"] .prov { color: var(--messing); }
+.tool[data-p="study"] .prov { color: var(--beton-dim); }
+.tool[data-live] { border-color: rgba(232,185,58,.34); }
+.tool .where {
+  position: absolute; left: 0; right: 0; top: calc(100% + 6px);
+  font-size: 10px; color: var(--kupfer); letter-spacing: .06em;
+  opacity: 0; transition: opacity .2s; pointer-events: none; white-space: nowrap;
+}
+.tool:hover .where, .tool:focus-visible .where { opacity: 1; }
+.legend {
+  display: flex; flex-wrap: wrap; gap: 18px; margin-top: var(--s5);
+  padding-top: var(--s4); border-top: 1px solid var(--schacht-3);
+  font-family: var(--f-mono); font-size: 10.5px; color: var(--beton-dim);
+  letter-spacing: .06em;
+}
+
+/* ─── Leitstand ───────────────────────────────────────────── */
+
+.loop { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--schacht-3); border: 1px solid var(--schacht-3); }
+.step { position: relative; padding: 20px 18px 22px; background: var(--schacht-2); overflow: hidden; }
+.step .n {
+  font-family: var(--f-mono); font-size: 10px; letter-spacing: .2em;
+  color: var(--kupfer); text-transform: uppercase;
+}
+.step h3 {
+  font-variation-settings: "wdth" 88; font-size: 17px; font-weight: 700;
+  color: var(--rohstahl-hi); margin: 6px 0 0;
+}
+.step p { margin: 8px 0 0; font-size: 13px; line-height: 1.55; color: var(--beton); }
+.step::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
+  background: var(--kupfer); transform: scaleX(0); transform-origin: left;
+}
+.loop.run .step::after { animation: sweep 5.2s linear infinite; }
+.loop.run .step:nth-child(1)::after { animation-delay: 0s; }
+.loop.run .step:nth-child(2)::after { animation-delay: 1.3s; }
+.loop.run .step:nth-child(3)::after { animation-delay: 2.6s; }
+.loop.run .step:nth-child(4)::after { animation-delay: 3.9s; }
+@keyframes sweep {
+  0%   { transform: scaleX(0); opacity: 1; }
+  25%  { transform: scaleX(1); opacity: 1; }
+  40%  { transform: scaleX(1); opacity: 0; }
+  100% { transform: scaleX(0); opacity: 0; }
+}
+
+.channels { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 12px; margin-top: var(--s5); }
+.chan { padding: 16px 16px 18px; border: 1px solid var(--schacht-3); background: var(--schacht-2); }
+.chan .cname {
+  font-family: var(--f-mono); font-size: 12px; letter-spacing: .1em;
+  color: var(--rohstahl-hi);
+}
+.chan .crole {
+  font-family: var(--f-mono); font-size: 10px; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--kupfer); margin-top: 3px;
+}
+.chan p { margin: 9px 0 0; font-size: 13px; line-height: 1.55; color: var(--beton); }
+
+/* ─── projects ────────────────────────────────────────────── */
+
+.projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); gap: 16px; }
+.proj {
+  position: relative; padding: 22px 22px 24px;
+  border: 1px solid var(--schacht-3);
+  background: linear-gradient(165deg, #131E22, #0C1417);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s;
+  overflow: hidden;
+}
+.proj::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(260px 200px at var(--mx,-200px) var(--my,-200px),
+              rgba(192,113,74,.14), transparent 68%);
+}
+.proj:hover { border-color: var(--kupfer-lo); box-shadow: 0 16px 40px rgba(0,0,0,.6); }
+.proj .ptop { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.badge {
+  font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .18em;
+  text-transform: uppercase; padding: 4px 8px; border: 1px solid currentColor;
+}
+.badge.live { color: var(--signal); }
+.badge.privat { color: var(--beton-dim); }
+.badge.wip { color: var(--messing); }
+.proj h3 {
+  font-variation-settings: "wdth" 88; font-size: clamp(19px, 2.2vw, 23px);
+  font-weight: 700; color: var(--rohstahl-hi); line-height: 1.15;
+}
+.proj p { margin: 10px 0 0; font-size: 14px; line-height: 1.6; color: var(--beton); }
+.proj ul { margin: 12px 0 0; padding: 0 0 0 16px; color: var(--beton); font-size: 13.5px; line-height: 1.65; }
+.proj ul li::marker { color: var(--kupfer-lo); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.chip {
+  font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .04em;
+  padding: 4px 8px; border: 1px solid var(--schacht-4); color: var(--beton);
+}
+.plink {
+  display: inline-flex; align-items: center; gap: 7px; margin-top: 16px;
+  font-family: var(--f-mono); font-size: 12px; letter-spacing: .1em;
+  color: var(--kupfer); text-decoration: none;
+  border-bottom: 1px solid var(--kupfer-lo); padding-bottom: 2px;
+}
+.plink:hover { color: var(--kupfer-hi); border-color: var(--kupfer-hi); }
+
+/* ─── Bohrkern (curriculum) ───────────────────────────────── */
+
+.core-wrap { display: grid; grid-template-columns: minmax(190px, 250px) minmax(0,1fr); gap: clamp(20px,3vw,40px); align-items: start; }
+.core { border: 1px solid var(--schacht-3); }
+.strat {
+  position: relative; width: 100%;
+  display: flex; align-items: center; gap: 12px;
+  padding: 17px 14px;
+  background: linear-gradient(96deg, #131E22, #0E171A);
+  border-bottom: 1px solid var(--schacht-3);
+  color: var(--beton);
+  font-family: var(--f-mono); font-size: 12px;
+  text-align: left; cursor: pointer;
+  appearance: none; border-left: 0; border-right: 0; border-top: 0;
+  transition: background .22s, color .22s;
+}
+.strat:last-child { border-bottom: 0; }
+.strat:hover, .strat.on { background: #1A2A2F; color: var(--rohstahl-hi); }
+.strat::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: var(--schacht-4); transition: background .22s;
+}
+.strat.on::before { background: var(--kupfer); }
+.strat[data-now]::before { background: var(--signal); }
+.strat[data-now] { color: var(--rohstahl-hi); }
+.strat .now {
+  margin-left: auto; font-size: 9px; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--signal);
+}
+.mods { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap: 9px; }
+.mod {
+  padding: 12px 14px; border: 1px solid var(--schacht-3);
+  border-left: 2px solid var(--fach, var(--beton-dim));
+  background: var(--schacht-2);
+  font-size: 13.5px; line-height: 1.45; color: var(--rohstahl);
+}
+.mod small {
+  display: block; margin-top: 5px;
+  font-family: var(--f-mono); font-size: 9.5px;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--beton-dim);
+}
+.fach-legend { display: flex; flex-wrap: wrap; gap: 14px; margin-top: var(--s5); font-family: var(--f-mono); font-size: 10.5px; color: var(--beton-dim); }
+.fach-legend i { display: inline-block; width: 9px; height: 9px; margin-right: 6px; vertical-align: -1px; }
+
+/* ─── Journey ─────────────────────────────────────────────── */
+
+.rail-wrap { position: relative; padding-left: 92px; }
+.rail-line {
+  position: absolute; left: 60px; top: 6px; bottom: 6px; width: 1px;
+  background: var(--schacht-4);
+}
+.rail-fill {
+  position: absolute; left: 60px; top: 6px; width: 1px; height: 0;
+  background: linear-gradient(180deg, var(--kupfer), var(--signal));
+}
+.study {
+  position: absolute; left: 55px; top: 6px; width: 11px;
+  background: repeating-linear-gradient(180deg, var(--schacht-4) 0 6px, transparent 6px 12px);
+  border-radius: 6px;
+}
+.ev { position: relative; margin-bottom: var(--s7); }
+.ev:last-child { margin-bottom: 0; }
+.ev .yr {
+  position: absolute; left: -92px; top: 1px; width: 56px; text-align: right;
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em;
+  color: var(--kupfer);
+}
+.ev .mk {
+  position: absolute; left: -37px; top: 5px;
+  width: 11px; height: 11px; border-radius: 50%;
+  background: var(--kupfer); box-shadow: 0 0 0 4px rgba(192,113,74,.14);
+}
+.ev.open .mk {
+  border-radius: 0; background: none;
+  border: 1px solid var(--signal); border-right: 0;
+  width: 9px; height: 13px; top: 4px;
+  box-shadow: none;
+}
+.ev.bg .mk { display: none; }
+.ev h3 { font-variation-settings: "wdth" 90; font-size: 19px; font-weight: 700; color: var(--rohstahl-hi); }
+.ev.bg h3 { color: var(--beton); font-size: 16px; }
+.ev p { margin: 7px 0 0; font-size: 14px; line-height: 1.6; color: var(--beton); max-width: 60ch; }
+
+/* ─── CEFR rail ───────────────────────────────────────────── */
+
+.cefr { position: relative; margin-top: var(--s5); padding: 0 0 var(--s6); }
+.cefr-line { position: relative; height: 1px; background: var(--schacht-4); margin: 46px 0 0; }
+.cefr-tick {
+  position: absolute; top: -5px; width: 1px; height: 11px; background: var(--schacht-4);
+}
+.cefr-tick span {
+  position: absolute; top: 16px; left: 50%; transform: translateX(-50%);
+  font-family: var(--f-mono); font-size: 10px; letter-spacing: .14em; color: var(--beton-dim);
+}
+.marker {
+  position: absolute; top: -12px; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center;
+  transition: left 1.1s var(--ease);
+  cursor: default;
+}
+.marker .pin { width: 13px; height: 13px; border-radius: 50%; border: 2px solid var(--schacht); }
+.marker .lbl {
+  position: absolute; bottom: 20px; white-space: nowrap;
+  font-family: var(--f-mono); font-size: 12px; letter-spacing: .08em;
+}
+.marker .prov2 {
+  position: absolute; top: 22px; white-space: nowrap;
+  font-size: 11.5px; color: var(--beton-dim);
+  opacity: 0; transition: opacity .24s;
+}
+.marker:hover .prov2, .marker:focus-within .prov2 { opacity: 1; }
+@media (max-width: 720px) {
+  .marker .prov2 { opacity: 1; position: static; margin-top: 8px; white-space: normal; text-align: center; max-width: 30ch; }
+  .cefr { padding-bottom: var(--s9); }
+}
+
+/* ─── Prüfprotokoll ───────────────────────────────────────── */
+
+.proto { position: relative; padding: var(--s5); }
+.stamp {
+  position: absolute; top: 22px; right: 22px;
+  padding: 9px 14px; border: 2px solid var(--kupfer);
+  color: var(--kupfer); text-align: center;
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .2em;
+  transform: rotate(-8deg) scale(1);
+  line-height: 1.35;
+}
+.stamp small { display: block; font-size: 9px; letter-spacing: .12em; color: var(--kupfer-lo); }
+.stamp.press { animation: press .7s var(--ease) both; }
+@keyframes press {
+  0%   { transform: rotate(-26deg) scale(2.1); opacity: 0; }
+  60%  { transform: rotate(-6deg)  scale(.94); opacity: 1; }
+  100% { transform: rotate(-8deg)  scale(1);   opacity: 1; }
+}
+.checks { margin: var(--s5) 0 0; padding: 0; list-style: none; max-width: 62ch; }
+.checks li {
+  display: flex; gap: 12px; align-items: baseline;
+  padding: 10px 0; border-bottom: 1px solid var(--schacht-3);
+  font-family: var(--f-mono); font-size: 12.5px; color: var(--rohstahl);
+}
+.checks li i { color: var(--gruenspan); font-style: normal; flex: none; width: 14px; }
+.checks li[data-open] i { color: var(--signal); }
+.checks li[data-open] { color: var(--beton); }
+.checks li b { font-weight: 400; color: var(--beton-dim); margin-left: auto; padding-left: 14px; }
+
+/* ─── Kontakt ─────────────────────────────────────────────── */
+
+.kontakt { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,1fr); gap: clamp(20px,3vw,40px); align-items: start; }
+.form-body { padding: var(--s5); }
+.field { margin-bottom: var(--s4); }
+.field label {
+  display: block; margin-bottom: 6px;
+  font-family: var(--f-mono); font-size: 10px;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--beton-dim);
+}
+.field input, .field textarea {
+  width: 100%; padding: 11px 13px;
+  background: var(--schacht); color: var(--rohstahl-hi);
+  border: 1px solid var(--schacht-4);
+  font-family: var(--f-mono); font-size: 13.5px;
+  transition: border-color .2s;
+}
+.field input:focus, .field textarea:focus { border-color: var(--kupfer); outline: none; }
+.field textarea { resize: vertical; min-height: 128px; line-height: 1.6; }
+.hp { position: absolute; left: -9999px; opacity: 0; height: 0; }
+.topics { display: flex; flex-wrap: wrap; gap: 7px; }
+.topic {
+  appearance: none; cursor: pointer;
+  padding: 7px 12px; border: 1px solid var(--schacht-4);
+  background: none; color: var(--beton);
+  font-family: var(--f-mono); font-size: 11.5px; letter-spacing: .06em;
+  transition: all .18s;
+}
+.topic[aria-pressed="true"] { border-color: var(--kupfer); color: var(--kupfer); background: var(--kupfer-a12); }
+.privacy { font-size: 11.5px; color: var(--beton-dim); margin: var(--s4) 0 var(--s4); line-height: 1.55; }
+.privacy a { color: var(--beton); }
+
+.formmsg { margin-top: var(--s4); font-family: var(--f-mono); font-size: 12.5px; line-height: 1.6; }
+.formmsg[data-state="ok"] { color: var(--gruenspan); }
+.formmsg[data-state="err"] { color: var(--signal); }
+.formmsg a { color: var(--kupfer); }
+
+.eingang {
+  margin-top: var(--s4); padding: 14px 16px;
+  border: 2px solid var(--gruenspan); color: var(--gruenspan);
+  font-family: var(--f-mono); font-size: 12px; letter-spacing: .14em;
+  text-align: center; animation: press .7s var(--ease) both;
+}
+.eingang b { display: block; font-size: 16px; letter-spacing: .24em; font-weight: 500; }
+.eingang small { display: block; margin-top: 5px; font-size: 10px; color: var(--beton); letter-spacing: .1em; }
+
+/* nameplate */
+.karte { padding: var(--s5); text-align: center; position: relative; }
+.rivet { position: absolute; width: 7px; height: 7px; border-radius: 50%; background: var(--schacht-4); box-shadow: inset 0 1px 0 rgba(201,205,209,.16); }
+.rivet.a { top: 12px; left: 12px; } .rivet.b { top: 12px; right: 12px; }
+.rivet.c { bottom: 12px; left: 12px; } .rivet.d { bottom: 12px; right: 12px; }
+.karte-id {
+  font-family: var(--f-display); font-variation-settings: "wdth" 84;
+  font-size: 22px; font-weight: 800; letter-spacing: .02em; color: var(--rohstahl-hi);
+}
+.karte-sub { font-family: var(--f-mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--kupfer); margin-top: 4px; }
+.qrtabs { display: flex; justify-content: center; gap: 4px; margin: var(--s4) 0; }
+.qrtab {
+  appearance: none; cursor: pointer; padding: 6px 12px;
+  border: 1px solid var(--schacht-4); background: none; color: var(--beton-dim);
+  font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase;
+  transition: all .18s;
+}
+.qrtab[aria-pressed="true"] { background: var(--rohstahl); color: var(--schacht); border-color: var(--rohstahl); }
+.qrbox {
+  display: inline-block; padding: 14px; background: #E8EAEB;
+  border: 1px solid var(--schacht-4);
+}
+.qrbox canvas, .qrbox img { display: block; width: 190px; height: 190px; }
+.karte-note { font-family: var(--f-mono); font-size: 11px; color: var(--beton-dim); margin-top: var(--s3); }
+.direct { margin-top: var(--s5); padding-top: var(--s4); border-top: 1px solid var(--schacht-3); display: flex; flex-direction: column; gap: 9px; }
+.direct a {
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--f-mono); font-size: 12.5px; color: var(--rohstahl);
+  text-decoration: none; padding: 7px 0;
+  border-bottom: 1px solid var(--schacht-3);
+  transition: color .18s;
+}
+.direct a:last-child { border-bottom: 0; }
+.direct a:hover { color: var(--kupfer); }
+.direct a span { font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--beton-dim); }
+
+/* ─── footer ──────────────────────────────────────────────── */
+
+footer {
+  border-top: 1px solid var(--schacht-3);
+  padding: var(--s6) 0 var(--s7);
+  font-family: var(--f-mono); font-size: 11.5px; color: var(--beton-dim);
+}
+.foot { display: flex; flex-wrap: wrap; gap: var(--s4); align-items: baseline; }
+.foot-links { display: flex; flex-wrap: wrap; gap: var(--s4); margin-left: auto; }
+.foot-links a { color: var(--beton); text-decoration: none; transition: color .18s; }
+.foot-links a:hover { color: var(--kupfer); }
+.colophon { margin-top: 8px; color: var(--beton-dim); }
+
+/* ─── command palette ─────────────────────────────────────── */
+
+.cmdk {
+  position: fixed; inset: 0; z-index: 80;
+  background: rgba(11,17,20,.86); backdrop-filter: blur(10px);
+  display: none; align-items: flex-start; justify-content: center;
+  padding: 12vh 16px 16px;
+}
+.cmdk[data-open="true"] { display: flex; }
+.cmdk-panel { width: min(560px, 100%); border: 1px solid var(--schacht-4); background: var(--schacht-2); }
+.cmdk-panel input {
+  width: 100%; padding: 15px 18px; background: none; border: 0;
+  border-bottom: 1px solid var(--schacht-3);
+  color: var(--rohstahl-hi); font-family: var(--f-mono); font-size: 14px;
+}
+.cmdk-panel input:focus { outline: none; }
+.cmdk-list { max-height: 46vh; overflow-y: auto; }
+.cmdk-list button {
+  display: flex; width: 100%; gap: 12px; align-items: baseline;
+  padding: 11px 18px; background: none; border: 0; cursor: pointer;
+  text-align: left; color: var(--rohstahl);
+  font-family: var(--f-mono); font-size: 13px;
+}
+.cmdk-list button:hover, .cmdk-list button[data-sel] { background: var(--schacht-4); color: var(--kupfer); }
+.cmdk-list button i { font-style: normal; font-size: 10px; letter-spacing: .16em; color: var(--beton-dim); margin-left: auto; }
+
+/* ─── scroll reveal (visible at rest, animates as arrival) ── */
+
+.rise { transform: none; opacity: 1; }
+/* Only JS arms the reveal, and only when it can also undo it. Content is never
+   parked invisible waiting on an observer. */
+.rise.armed { transform: translateY(14px); opacity: .001;
+  transition: transform .7s var(--ease), opacity .7s var(--ease); }
+.rise.armed.in { transform: none; opacity: 1; }
+
+/* ─── responsive ──────────────────────────────────────────── */
+
+@media (max-width: 980px) {
+  .hero-grid, .two-col, .core-wrap, .kontakt { grid-template-columns: 1fr; }
+  .loop { grid-template-columns: 1fr 1fr; }
+  .section { padding: var(--s8) 0; }
+}
+/* topbar breathing room on small screens */
+@media (max-width: 860px) {
+  .topbar .status, .topbar .cmdk-btn { display: none; }
+  .topbar { gap: 10px; padding: 10px var(--pad); }
+}
+@media (max-width: 460px) {
+  .brand { letter-spacing: .16em; font-size: 11px; }
+  .langtog button { padding: 4px 7px; }
+}
+
+@media (max-width: 620px) {
+  .loop { grid-template-columns: 1fr; }
+  .node { font-size: 9.5px; padding: 3px 6px 3px 5px; }
+  .node[data-kind="system"] { font-size: 10.5px; }
+  .schema { min-height: 400px; }
+  .stage { min-height: 300px; }
+  .rail-wrap { padding-left: 66px; }
+  .rail-line, .rail-fill { left: 42px; }
+  .study { left: 37px; }
+  .ev .yr { left: -66px; width: 40px; font-size: 10px; }
+  .ev .mk { left: -29px; }
+  .spec dt { flex-basis: 6.4rem; }
+  .stamp { position: static; display: inline-block; margin-bottom: var(--s4); transform: rotate(-3deg); }
+}
+
+/* ─── reduced motion ──────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+  .rise { transform: none; opacity: 1; }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   ATMOSPHÄRE — the layer the first build was missing
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ─── living background field ─────────────────────────────── */
+#bgfx {
+  position: fixed; inset: 0; z-index: 0;
+  /* A canvas is a replaced element: inset:0 alone leaves it at its intrinsic
+     attribute size, so the field would render at devicePixelRatio scale and
+     overflow. The explicit size is what actually stretches it. */
+  width: 100%; height: 100%;
+  pointer-events: none; display: block;
+}
+body > *:not(#bgfx) { position: relative; z-index: 1; }
+
+/* ─── depth behind every section ──────────────────────────── */
+.section::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: -1;
+  background-image:
+    linear-gradient(rgba(22,34,38,.55) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(22,34,38,.55) 1px, transparent 1px);
+  background-size: 104px 104px;
+  mask-image: radial-gradient(120% 90% at 50% 40%, #000 20%, transparent 78%);
+  -webkit-mask-image: radial-gradient(120% 90% at 50% 40%, #000 20%, transparent 78%);
+}
+.section::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: -1;
+  background: radial-gradient(52% 46% at var(--pool, 82%) 12%, rgba(192,113,74,.10), transparent 62%);
+}
+.section:nth-child(even)::after {
+  background: radial-gradient(52% 46% at var(--pool, 14%) 22%, rgba(78,140,125,.10), transparent 62%);
+}
+
+/* ─── glow on interaction — everywhere ────────────────────── */
+.btn:hover, .btn:focus-visible {
+  box-shadow: 0 0 0 1px var(--kupfer), 0 8px 28px rgba(192,113,74,.34), 0 0 44px rgba(192,113,74,.18);
+}
+.pos:hover  { border-color: var(--kupfer-lo);
+  box-shadow: inset 0 1px 0 rgba(201,205,209,.1), 0 14px 34px rgba(0,0,0,.6), 0 0 40px rgba(192,113,74,.13); }
+.proj:hover { box-shadow: 0 18px 44px rgba(0,0,0,.62), 0 0 54px rgba(192,113,74,.15); }
+.tool:hover, .tool:focus-visible { box-shadow: 0 12px 22px rgba(0,0,0,.6), 0 0 26px rgba(192,113,74,.24); }
+.chip { transition: border-color .2s, color .2s, box-shadow .2s; }
+.chip:hover { border-color: var(--kupfer-lo); color: var(--rohstahl-hi); box-shadow: 0 0 18px rgba(192,113,74,.16); }
+.node:hover, .node.on { box-shadow: 0 0 22px rgba(192,113,74,.26); }
+.mod { transition: border-color .2s, box-shadow .2s, transform .2s var(--ease); }
+.mod:hover { box-shadow: 0 0 24px rgba(0,0,0,.5); transform: translateX(3px); }
+.strat.on { box-shadow: inset 0 0 30px rgba(192,113,74,.09); }
+.marker:hover .pin { box-shadow: 0 0 0 6px rgba(192,113,74,.16), 0 0 22px currentColor; }
+.direct a:hover { text-shadow: 0 0 18px rgba(192,113,74,.5); }
+.plate { transition: box-shadow .35s var(--ease); }
+
+/* ─── portrait: floating, lit, badged ─────────────────────── */
+.photo-wrap {
+  position: relative;
+  max-width: 400px; margin: 0 auto;
+  animation: float 7.5s var(--ease) infinite;
+}
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-16px); } }
+
+.photo-wrap::before {
+  content: ""; position: absolute; inset: -3px; z-index: 0;
+  background: linear-gradient(115deg,
+    var(--kupfer) 0%, var(--gruenspan) 22%, var(--signal) 40%,
+    var(--kupfer) 60%, var(--gruenspan) 82%, var(--kupfer) 100%);
+  background-size: 320% 320%;
+  filter: blur(11px); opacity: .48;
+  animation: slidelight 9s linear infinite;
+}
+@keyframes slidelight {
+  0%   { background-position:   0% 50%; }
+  100% { background-position: 320% 50%; }
+}
+
+.photo-plate { position: relative; z-index: 1; background: var(--schacht); border: 1px solid var(--schacht-4); }
+.portrait { aspect-ratio: 3 / 4; }
+.portrait img { width: 100%; height: 100%; object-fit: cover; }
+
+.ph-badge {
+  position: absolute; top: 14px; right: 14px; z-index: 3;
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 6px 11px;
+  background: rgba(11,17,20,.86); border: 1px solid var(--gruenspan);
+  color: var(--gruenspan);
+  font-family: var(--f-mono); font-size: 10px;
+  letter-spacing: .16em; text-transform: uppercase;
+  box-shadow: 0 0 22px rgba(78,140,125,.24);
+}
+.ph-chip {
+  position: absolute; left: -14px; bottom: 46px; z-index: 3;
+  padding: 9px 14px;
+  background: rgba(17,26,30,.95); border: 1px solid var(--kupfer-lo);
+  box-shadow: 0 10px 28px rgba(0,0,0,.6), 0 0 30px rgba(192,113,74,.16);
+}
+.ph-chip small {
+  display: block; font-family: var(--f-mono); font-size: 9px;
+  letter-spacing: .2em; text-transform: uppercase; color: var(--beton-dim);
+}
+.ph-chip b {
+  display: block; margin-top: 2px;
+  font-family: var(--f-display); font-variation-settings: "wdth" 90;
+  font-size: 17px; font-weight: 700; color: var(--kupfer);
+}
+@media (max-width: 620px) { .ph-chip { left: 6px; bottom: 54px; } }
+
+/* ─── whoami terminal ─────────────────────────────────────── */
+.term-shell { position: relative; max-width: 780px; }
+.term-shell::before {
+  content: ""; position: absolute; inset: -2px; z-index: 0;
+  background: linear-gradient(100deg,
+    transparent 0%, var(--kupfer) 18%, var(--signal) 30%,
+    var(--gruenspan) 42%, transparent 60%, transparent 100%);
+  background-size: 260% 260%;
+  filter: blur(7px); opacity: 0;
+  transition: opacity 1s var(--ease);
+  animation: slidelight 5.5s linear infinite;
+}
+.term-shell.live::before { opacity: .9; }
+.term {
+  position: relative; z-index: 1;
+  background: #080D10; border: 1px solid var(--schacht-4);
+}
+.term-bar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 11px 14px; border-bottom: 1px solid var(--schacht-3);
+  font-family: var(--f-mono); font-size: 11px; color: var(--beton-dim);
+}
+.term-bar i { width: 10px; height: 10px; border-radius: 50%; display: block; }
+.term-bar .t { margin: 0 auto; letter-spacing: .1em; }
+.term-body {
+  padding: 20px 20px 26px; min-height: 340px;
+  font-family: var(--f-mono); font-size: 13.5px; line-height: 1.85;
+  white-space: pre-wrap; word-break: break-word;
+}
+.term-body .cmd { color: var(--rohstahl-hi); }
+.term-body .cmd::before { content: "$ "; color: var(--kupfer); }
+.term-body .out { color: var(--beton); }
+.term-body .ok  { color: var(--gruenspan); }
+.term-body .warn{ color: var(--signal); }
+.term-body .lnk { color: var(--kupfer); }
+.caret {
+  display: inline-block; width: 8px; height: 15px; vertical-align: -2px;
+  background: var(--kupfer); animation: blink 1.05s steps(2) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+@media (max-width: 620px) { .term-body { font-size: 11.5px; padding: 15px 14px 20px; min-height: 300px; } }
