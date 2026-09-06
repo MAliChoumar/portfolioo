@@ -591,7 +591,7 @@ function renderDirect() {
   var rows = [
     ["E-Mail", mail(), "mailto:" + mail()],
     ["GitHub", "MAliChoumar", "https://github.com/MAliChoumar"],
-    ["LinkedIn", "Mohamad Ali Choumar", "https://www.linkedin.com/in/mohamad-ali-choumar-b425693a9/"]
+    ["LinkedIn", "Mohamad Ali Choumar", "https://www.linkedin.com/in/mohamadalichoumar/"]
   ];
   rows.forEach(function (r) {
     var a = el("a", "", "<span>" + esc(r[0]) + "</span>" + esc(r[1]));
@@ -722,7 +722,7 @@ function cmdkItems() {
   });
   out.push({ label: lang === "de" ? "Lebenslauf" : "CV", hint: "↗", act: function () { location.href = "cv.html"; } });
   out.push({ label: "GitHub", hint: "↗", act: function () { open("https://github.com/MAliChoumar", "_blank", "noopener"); } });
-  out.push({ label: "LinkedIn", hint: "↗", act: function () { open("https://www.linkedin.com/in/mohamad-ali-choumar-b425693a9/", "_blank", "noopener"); } });
+  out.push({ label: "LinkedIn", hint: "↗", act: function () { open("https://www.linkedin.com/in/mohamadalichoumar/", "_blank", "noopener"); } });
   out.push({ label: lang === "de" ? "Sprache wechseln" : "Switch language", hint: lang === "de" ? "EN" : "DE",
     act: function () { (lang === "de" ? $("#btnEn") : $("#btnDe")).click(); } });
   return out;
@@ -755,7 +755,7 @@ addEventListener("keydown", function (e) {
 
 var qrMode = "vcard";
 var VCARD = "BEGIN:VCARD\nVERSION:3.0\nN:Choumar;Mohamad Ali;;;\nFN:Mohamad Ali Choumar\nTITLE:Software Engineering Student\nEMAIL;TYPE=INTERNET:" + mail() + "\nURL:https://choumar.is-a.dev/\nADR;TYPE=HOME:;;;Essen;;;Germany\nEND:VCARD";
-var QRDATA = { vcard: VCARD, site: "https://choumar.is-a.dev/", li: "https://www.linkedin.com/in/mohamad-ali-choumar-b425693a9/" };
+var QRDATA = { vcard: VCARD, site: "https://choumar.is-a.dev/", li: "https://www.linkedin.com/in/mohamadalichoumar/" };
 
 function buildQrTabs() {
   var g = $("#qrtabs"); g.innerHTML = "";
