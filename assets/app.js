@@ -204,8 +204,8 @@ var CHANNELS = [
 ];
 
 var EVENTS = [
-  { cls:"bg", yr:"2024 →", de:{h:"B.Sc. Software Engineering · Uni Duisburg-Essen", p:"Läuft seit 2024, aktuell im sechsten Fachsemester, Abschluss voraussichtlich 2028."},
-    en:{h:"B.Sc. Software Engineering · University of Duisburg-Essen", p:"Running since 2024, currently in the sixth semester, expected finish 2028."} },
+  { cls:"bg", yr:"2024 →", de:{h:"B.Sc. Software Engineering · Uni Duisburg-Essen", p:"Läuft seit 2024. Fünf Semester abgeschlossen, ab Oktober 2026 im sechsten Fachsemester; Abschluss voraussichtlich 2028."},
+    en:{h:"B.Sc. Software Engineering · University of Duisburg-Essen", p:"Running since 2024. Five semesters done, in the sixth from October 2026; expected finish 2028."} },
   { yr:"2026", de:{h:"Milano Pizzeria geht live", p:"Zum ersten Mal bedient mein Code einen echten Betrieb, mit einem echten Kunden auf der anderen Seite."},
     en:{h:"Milano Pizzeria goes live", p:"The first time my code serves a real business, with a real client on the other side."} },
   { yr:"2026", de:{h:"ChoumarOS · 87 Commits", p:"Geschichtete Architektur, End-to-End getestet. Niemand hat es beauftragt."},
@@ -249,7 +249,7 @@ var T = {
   "schema.head":"System schematic",
   "eb.about":"About me",
   "about.h":"No job title yet.<em>Systems that run.</em>",
-  "about.p1":"I'm in my sixth semester of Software Engineering at the University of Duisburg-Essen. I understand a subject once I've built something with it that other people actually use.",
+  "about.p1":"I start my sixth semester of Software Engineering at the University of Duisburg-Essen in October 2026. I understand a subject once I've built something with it that other people actually use.",
   "about.p2":"Two systems came out of that. <strong class=\"em\">Milano Pizzeria</strong> runs in production for a business in Duisburg — in German, mobile-first, with Impressum and Datenschutz, and a reservation that arrives pre-filled in WhatsApp. <strong class=\"em\">ChoumarOS</strong> is a layered platform of 87 commits: an object engine with relations, versions and an event timeline, covered by end-to-end tests.",
   "about.p3":"I built both by <strong class=\"em\">directing AI agents</strong>: writing the specification, driving the execution, verifying the result myself. The tools change every few months — specifying a system precisely and checking that it holds does not.",
   "about.p4":"I speak German fluently, Arabic natively, and work in English. I'm looking for a working-student or internship place in the Ruhr area, on a team I can learn from.",
@@ -260,7 +260,7 @@ var T = {
   "bench.lede":"Every position hangs on something verifiable. Anyone can write adjectives.",
   "eb.work":"Projects", "work.h":"Two systems.<em>One runs in production.</em>",
   "eb.study":"Course of study", "study.h":"What the degree<em>covers.</em>",
-  "study.lede":"The official course plan of the B.Sc. Software Engineering at the University of Duisburg-Essen. I'm in the sixth semester.",
+  "study.lede":"The official course plan of the B.Sc. Software Engineering at the University of Duisburg-Essen. Five semesters are behind me; the sixth starts in October 2026.",
   "eb.tools":"Tool wall", "tools.h":"The tools that<em>are actually on the board.</em>",
   "tools.lede":"No percentage bars. Instead of a self-assessment, each tool says where I have used it.",
   "eb.ai":"Control desk", "ai.h":"I don't write every line.<em>I answer for every line.</em>",
