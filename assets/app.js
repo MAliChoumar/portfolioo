@@ -204,8 +204,8 @@ var CHANNELS = [
 ];
 
 var EVENTS = [
-  { cls:"bg", yr:"2023 →", de:{h:"B.Sc. Software Engineering · Uni Duisburg-Essen", p:"Läuft seit 2023, aktuell im sechsten Fachsemester."},
-    en:{h:"B.Sc. Software Engineering · University of Duisburg-Essen", p:"Running since 2023, currently in the sixth semester."} },
+  { cls:"bg", yr:"2024 →", de:{h:"B.Sc. Software Engineering · Uni Duisburg-Essen", p:"Läuft seit 2024, aktuell im sechsten Fachsemester, Abschluss voraussichtlich 2028."},
+    en:{h:"B.Sc. Software Engineering · University of Duisburg-Essen", p:"Running since 2024, currently in the sixth semester, expected finish 2028."} },
   { yr:"2026", de:{h:"Milano Pizzeria geht live", p:"Zum ersten Mal bedient mein Code einen echten Betrieb, mit einem echten Kunden auf der anderen Seite."},
     en:{h:"Milano Pizzeria goes live", p:"The first time my code serves a real business, with a real client on the other side."} },
   { yr:"2026", de:{h:"ChoumarOS · 87 Commits", p:"Geschichtete Architektur, End-to-End getestet. Niemand hat es beauftragt."},
