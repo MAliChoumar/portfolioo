@@ -107,8 +107,8 @@
   .profil { margin: 0 0 4.4mm; font-size: 8.8pt; line-height: 1.45; color: var(--ink-2); }
   .profil strong { color: var(--ink); font-weight: 600; }
 
-  .main > section { margin-bottom: 4.2mm; }
-  .item { margin-bottom: 3.4mm; page-break-inside: avoid; }
+  .main > section { margin-bottom: 3.6mm; }
+  .item { margin-bottom: 3mm; page-break-inside: avoid; }
   .item:last-child { margin-bottom: 0; }
   .item-h { display: flex; align-items: baseline; gap: 2mm; }
   .item-h h3 {
@@ -264,13 +264,29 @@
     <p class="profil">
       Software-Engineering-Student im sechsten Semester an der Universität Duisburg-Essen.
       Ich baue Systeme, die tatsächlich benutzt werden — <strong>eines läuft seit 2026 in
-      Produktion für einen Betrieb in Duisburg</strong>. Stack: TypeScript, Next.js,
-      PostgreSQL. Komplexe Systeme entwickle ich, indem ich <strong>KI-Agenten gezielt
-      führe</strong>: spezifizieren, ausführen lassen, selbst prüfen.
+      Produktion für einen Betrieb in Duisburg</strong>, und aktuell arbeite ich
+      <strong>bezahlt in einem Entwicklerteam</strong> an einer SaaS-Anwendung. Stack:
+      TypeScript, Next.js, PostgreSQL. Komplexe Systeme entwickle ich, indem ich
+      <strong>KI-Agenten gezielt führe</strong>: spezifizieren, ausführen lassen, selbst prüfen.
     </p>
 
     <section>
-      <h2>Projekte</h2>
+      <h2>Praxis</h2>
+
+      <div class="item">
+        <div class="item-h">
+          <h3>SaaS-Anwendung — Projektmitarbeit im Team</h3>
+          <span class="tag live">Bezahlt &middot; im Team</span>
+          <span class="when">Juli – Okt. 2026</span>
+        </div>
+        <ul>
+          <li>Mitarbeit in einem kleinen Entwicklerteam an einer KI-gestützt gebauten
+              SaaS-Anwendung; Auftraggeber und Produkt sind nicht öffentlich.</li>
+          <li>Fehleranalyse und -behebung in bestehender Codebasis, Funktionen gemeinsam
+              weiterentwickelt, Ziele im Team abgestimmt — meine erste Arbeit im Team
+              statt allein.</li>
+        </ul>
+      </div>
 
       <div class="item">
         <div class="item-h">
@@ -279,12 +295,12 @@
           <span class="when">2026</span>
         </div>
         <ul>
-          <li>Für einen Betrieb in Duisburg entworfen, gebaut und deployed.</li>
+          <li>Bezahlter Kundenauftrag: für einen Betrieb in Duisburg entworfen, gebaut und
+              deployed. Deutschsprachig, mobile-first, mit Impressum und Datenschutz nach
+              DSGVO; Security-Header an der Edge.</li>
           <li>Reservierung wird auf der Seite zusammengestellt und vorausgefüllt an WhatsApp
               übergeben — bewusst statt eines Buchungs-Backends, weil der Betrieb kein
               Personal für ein Dashboard hat.</li>
-          <li>Deutschsprachig, mobile-first, mit Impressum und Datenschutz nach DSGVO;
-              Security-Header an der Edge.</li>
         </ul>
         <div class="stack"><b>Next.js · TypeScript · Tailwind CSS · Vercel (fra1)</b> — milano-pizzeria-duisburg.dev</div>
       </div>
@@ -297,24 +313,14 @@
         </div>
         <ul>
           <li>Objekt-Engine mit Relationen, Versionen und Event-Timeline; geschichtet in
-              domain / application / infrastructure / features.</li>
-          <li>Grounded AI, dauerhafter Automations-Worker, privater Datei-Speicher, PWA.</li>
+              domain / application / infrastructure / features. Grounded AI, dauerhafter
+              Automations-Worker, PWA.</li>
           <li>End-to-End-Tests; sechs Quality Gates vor jedem Release
               (format, lint, typecheck, test, e2e, build).</li>
         </ul>
         <div class="stack"><b>Next.js · TypeScript · Drizzle ORM · PostgreSQL · Supabase · Zod · Playwright · Vitest</b></div>
       </div>
 
-      <div class="item">
-        <div class="item-h">
-          <h3>Portfolio — choumar.is-a.dev</h3>
-          <span class="when">2026</span>
-        </div>
-        <ul>
-          <li>Eigenbau ohne Framework, zweisprachig (DE/EN), HTTPS auf eigener Domain;
-              verifizierte Search Console, Sitemap, strukturierte Daten, Indexierung ohne Fehler.</li>
-        </ul>
-      </div>
     </section>
 
     <section>
@@ -341,7 +347,8 @@
       </ul>
       <div class="gesucht">
         <b>Gesucht:</b> Werkstudenten- oder Praktikumsstelle im Ruhrgebiet (Essen, Duisburg,
-        Dortmund, Bochum, Mülheim, Gelsenkirchen) oder remote — ab sofort.
+        Dortmund, Bochum, Mülheim, Gelsenkirchen) oder remote — bis zu 20 Std./Woche,
+        <b>ab dem 12.10.2026</b>.
       </div>
     </section>
   </main>
