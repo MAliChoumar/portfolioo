@@ -687,7 +687,7 @@ h1.name em { display: block; font-style: normal; color: var(--kupfer); }
 
 /* ─── CEFR rail ───────────────────────────────────────────── */
 
-.cefr { position: relative; margin-top: var(--s5); padding: 0 0 var(--s6); }
+.cefr { position: relative; margin-top: var(--s5); padding: 0 0 var(--s8); }
 .cefr-line { position: relative; height: 1px; background: var(--schacht-4); margin: 46px 0 0; }
 .cefr-tick {
   position: absolute; top: -5px; width: 1px; height: 11px; background: var(--schacht-4);
@@ -708,14 +708,33 @@ h1.name em { display: block; font-style: normal; color: var(--kupfer); }
   font-family: var(--f-mono); font-size: 12px; letter-spacing: .08em;
 }
 .marker .prov2 {
-  position: absolute; top: 22px; white-space: nowrap;
+  position: absolute; top: 44px; left: 50%; transform: translateX(-50%);
+  width: max-content; max-width: 220px; white-space: normal; text-align: center; line-height: 1.5;
   font-size: 11.5px; color: var(--beton-dim);
-  opacity: 0; transition: opacity .24s;
+  opacity: 0; transition: opacity .24s; pointer-events: none;
 }
 .marker:hover .prov2, .marker:focus-within .prov2 { opacity: 1; }
 @media (max-width: 720px) {
-  .marker .prov2 { opacity: 1; position: static; margin-top: 8px; white-space: normal; text-align: center; max-width: 30ch; }
-  .cefr { padding-bottom: var(--s9); }
+  .cefr-line {
+    height: auto; background: none;
+  }
+  .cefr-line::before {
+    content: ""; display: block; height: 1px; background: var(--schacht-4); margin-bottom: 34px;
+  }
+  .marker {
+    position: static; top: auto; transform: none; transition: none;
+    display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: flex-start;
+    column-gap: var(--s2); row-gap: var(--s2);
+    padding: var(--s3) 0; border-bottom: 1px solid var(--schacht-4);
+  }
+  .marker:last-of-type { border-bottom: 0; }
+  .marker .lbl { position: static; bottom: auto; }
+  .marker .prov2 {
+    position: static; opacity: 1; left: auto; transform: none;
+    flex-basis: 100%; width: auto; max-width: none;
+    white-space: normal; text-align: left;
+  }
+  .cefr { padding-bottom: var(--s6); }
 }
 
 /* ─── Prüfprotokoll ───────────────────────────────────────── */
