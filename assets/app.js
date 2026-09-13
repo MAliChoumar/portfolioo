@@ -547,7 +547,7 @@ function renderCefr() {
   var line = $("#cefrLine");
   var stops = CEFR.concat([lang === "de" ? "Muttersprache" : "Native"]);
   stops.forEach(function (s, i) {
-    var t = el("div", "cefr-tick", "<span>" + esc(s) + "</span>");
+    var t = el("div", "cefr-tick" + (i === stops.length - 1 ? " cefr-tick-last" : ""), "<span>" + esc(s) + "</span>");
     t.style.left = (i / (stops.length - 1) * 100) + "%";
     line.appendChild(t);
   });
@@ -555,6 +555,7 @@ function renderCefr() {
     var m = el("div", "marker");
     m.tabIndex = 0;
     m.innerHTML = '<span class="lbl" style="color:' + lg.col + '">' + esc(lg.name) + '</span>' +
+                  '<span class="lvl">' + esc(stops[lg.lvl]) + '</span>' +
                   '<span class="pin" style="background:' + lg.col + '"></span>' +
                   '<span class="prov2">' + esc(L(lg)) + '</span>';
     m.style.left = "0%";
