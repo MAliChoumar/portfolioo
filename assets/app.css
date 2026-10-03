@@ -589,6 +589,10 @@ h1.name em { display: block; font-style: normal; color: var(--kupfer); }
 .proj p { margin: 10px 0 0; font-size: 14px; line-height: 1.6; color: var(--beton); }
 .proj ul { margin: 12px 0 0; padding: 0 0 0 16px; color: var(--beton); font-size: 13.5px; line-height: 1.65; }
 .proj ul li::marker { color: var(--kupfer-lo); }
+.pshots { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 14px; }
+.pshots a { display: block; border: 1px solid var(--schacht-4); line-height: 0; }
+.pshots a:hover, .pshots a:focus-visible { border-color: var(--kupfer-lo); }
+.pshots img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
 .chip {
   font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .04em;

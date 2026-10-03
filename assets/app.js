@@ -100,6 +100,7 @@ var PROJECTS = [
     chips:["Next.js","TypeScript","Tailwind","WhatsApp Deep Link","Vercel · fra1"] },
   { badge:"live", badgeT:{de:"Live · kostenlos für Studierende",en:"Live · free for students"},
     h:"ChoumarOS", link:"https://choumaros.de/",
+    shots:[["desktop-01-mission-control",{de:"Mission Control: Kurse, Fristen und Projekte auf einen Blick",en:"Mission control: courses, deadlines and projects at a glance"}],["desktop-02-study",{de:"Studium: Module und Semesterplan",en:"Study: modules and semester plan"}],["desktop-04-graph",{de:"Wissensgraph: verknüpfte Kurse, Notizen und Dateien",en:"Knowledge graph: linked courses, notes and files"}],["desktop-05-library",{de:"Bibliothek: alle Dateien und Inhalte",en:"Library: every file and its content"}]],
     linkT:{de:"Live ansehen",en:"View live"},
     de:{p:"Eine Plattform für Studierende: Kurse, Projekte, Notizen, Dateien und Bewerbungen als verknüpfte Objekte an einem Ort. Live auf choumaros.de, im Microsoft Store veröffentlicht, die Android-App im geschlossenen Test bei Google Play. Offene Registrierung, kostenlos, in Deutsch, Englisch und Arabisch mit echtem Rechts-nach-links. Allein entworfen, gebaut, getestet und betrieben — kein Auftrag, sondern die Frage, ob ich ein System dieser Größe sauber halte.",
         li:["Architektur: Next.js 16 mit striktem TypeScript ohne any, Schichten app → application → domain ← infrastructure, PostgreSQL als einzige Quelle der Wahrheit. Rund 67.000 Zeilen in 479 Dateien, 207 Commits, 24 dokumentierte Architekturentscheidungen (ADRs), 18 Datenbank-Migrationen.",
@@ -470,7 +471,9 @@ function renderProjects() {
     var title = typeof p.h === "string" ? p.h : L(p.h);
     var li = d.li.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("");
     c.innerHTML = '<div class="ptop"><span class="badge ' + p.badge + '">' + esc(L(p.badgeT)) + '</span></div>' +
-      '<h3>' + esc(title) + '</h3><p>' + esc(d.p) + '</p><ul>' + li + '</ul>' +
+      '<h3>' + esc(title) + '</h3><p>' + esc(d.p) + '</p>' +
+      (p.shots ? '<div class="pshots">' + p.shots.map(function (x) { var src = "assets/choumaros/" + lang + "/" + x[0] + ".webp"; return '<a href="' + src + '" target="_blank" rel="noopener"><img src="' + src + '" alt="' + esc(L(x[1])) + '" width="1280" height="720" loading="lazy" decoding="async"></a>'; }).join("") + '</div>' : "") +
+      '<ul>' + li + '</ul>' +
       '<div class="chips">' + p.chips.map(function (x) { return '<span class="chip">' + esc(x) + '</span>'; }).join("") + '</div>' +
       (p.link ? '<a class="plink" href="' + p.link + '" target="_blank" rel="noopener">' + esc(L(p.linkT)) + ' ↗</a>' : "");
     tilt(c); g.appendChild(c);
