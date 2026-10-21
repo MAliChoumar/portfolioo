@@ -6,7 +6,7 @@ University of Duisburg-Essen, Essen, Germany.
 🌐 **[choumar.is-a.dev](https://choumar.is-a.dev)** · 🇩🇪 German / English
 
 🇩🇪 **Ich spreche fließend Deutsch** und suche eine Werkstudenten- oder
-Praktikumsstelle im Ruhrgebiet.
+Teilzeitstelle im Ruhrgebiet.
 
 ---
 
@@ -18,7 +18,7 @@ Eleven sections, each built around one idea rather than a generic card grid:
 |---|---|
 | **Anlagenschema** | A live schematic of the real projects, languages and tools, and the actual relations between them. Hovering a node lights its connections. |
 | **Prüfstand** | Nine claims, each attached to something checkable — commit counts, quality gates, a system in production. |
-| **Projekte** | Milano Pizzeria (live), ChoumarOS (live at choumaros.de, Microsoft Store), a Verein website in progress. |
+| **Projekte** | Milano Pizzeria (live), ChoumarOS (live at choumaros.de, Microsoft Store). |
 | **Studienverlauf** | The official B.Sc. Software Engineering course plan, colour-coded by discipline. |
 | **Werkzeugwand** | Tools on a shadow board, each marked with where it was actually used. No percentage bars. |
 | **Leitstand** | How the work is done: specify → execute → verify → answer for it. |
