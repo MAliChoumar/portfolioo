@@ -192,7 +192,7 @@ h2.title em { display: block; font-style: normal; color: var(--kupfer); }
   transition: color .18s;
 }
 .navlinks a:hover, .navlinks a.on { color: var(--kupfer); }
-@media (max-width: 1180px) { .navlinks { display: none; } }
+@media (max-width: 1400px) { .navlinks { display: none; } }
 
 /* mobile sheet */
 .burger {
@@ -200,7 +200,7 @@ h2.title em { display: block; font-style: normal; color: var(--kupfer); }
   background: none; border: 1px solid var(--schacht-4); color: var(--rohstahl);
   padding: 6px 10px; font: inherit; letter-spacing: .14em;
 }
-@media (max-width: 1180px) { .burger { display: inline-block; } }
+@media (max-width: 1400px) { .burger { display: inline-block; } }
 
 .sheet {
   position: fixed; inset: 0; z-index: 70;
@@ -560,7 +560,7 @@ h1.name em { display: block; font-style: normal; color: var(--kupfer); }
 
 /* ─── projects ────────────────────────────────────────────── */
 
-.projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); gap: 16px; }
+.projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px,100%),1fr)); gap: 16px; }
 .proj {
   position: relative; padding: 22px 22px 24px;
   border: 1px solid var(--schacht-3);
@@ -781,6 +781,7 @@ h1.name em { display: block; font-style: normal; color: var(--kupfer); }
 /* ─── Kontakt ─────────────────────────────────────────────── */
 
 .kontakt { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,1fr); gap: clamp(20px,3vw,40px); align-items: start; }
+.kontakt > * { min-width: 0; }
 .form-body { padding: var(--s5); }
 .field { margin-bottom: var(--s4); }
 .field label {
