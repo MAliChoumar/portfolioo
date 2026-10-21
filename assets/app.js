@@ -273,7 +273,7 @@ var T = {
   "about.p1":"I start my sixth semester of Software Engineering at the University of Duisburg-Essen in October 2026. I understand a subject once I've built something with it that other people actually use.",
   "about.p2":"Two systems came out of that. <strong class=\"em\">Milano Pizzeria</strong> runs in production for a business in Duisburg — in German, mobile-first, with Impressum and Datenschutz, and a reservation that arrives pre-filled in WhatsApp. <strong class=\"em\">ChoumarOS</strong> is a platform for students, live at choumaros.de and in the Microsoft Store: 216 commits, a layered architecture, 815 automated tests plus 347 browser test runs, and AI answers that always show their sources.",
   "about.p3":"I built both by <strong class=\"em\">directing AI agents</strong>: writing the specification, driving the execution, verifying the result myself. The tools change every few months — specifying a system precisely and checking that it holds does not.",
-  "about.p4":"I speak German fluently, Arabic natively, and work in English. I'm looking for a working-student or part-time place in the Ruhr area, on a team I can learn from.",
+  "about.p4":"From July to early October 2026 I worked in a paid team on an existing SaaS product. I speak German fluently, Arabic natively, and work in English. I'm looking for a working-student or part-time place in the Ruhr area, on a team I can learn from.",
   "eb.whoami":"whoami", "whoami.h":"The short version —<em>in the terminal.</em>",
   "ph.badge":"Available", "ph.focus":"Focus",
   "eb.bench":"Test bench · 09 positions",
