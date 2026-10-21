@@ -1097,3 +1097,8 @@ body > *:not(#bgfx) { position: relative; z-index: 1; }
 }
 @keyframes blink { 50% { opacity: 0; } }
 @media (max-width: 620px) { .term-body { font-size: 11.5px; padding: 15px 14px 20px; min-height: 300px; } }
+
+/* Teamprojekt-Karte: Meta-Zeile, Hinweis, Bedeutung */
+.proj .pmeta { margin: 8px 0 0; font-family: var(--f-mono); font-size: 11px; letter-spacing: .06em; color: var(--beton-dim); }
+.proj .pnote { margin: 12px 0 0; font-size: 12.5px; font-style: italic; color: var(--beton-dim); }
+.proj .pmean { margin: 14px 0 0; padding-left: 12px; border-left: 2px solid var(--kupfer-lo); font-size: 13.5px; color: var(--rohstahl-hi); }

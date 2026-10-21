@@ -16,8 +16,8 @@ var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { retu
 
 var NODES = [
   { id:"os", label:"ChoumarOS", kind:"system", x:.30, y:.22, live:1, go:"#work",
-    de:{m:"System · live · 207 Commits", t:"Plattform für Studierende auf choumaros.de und im Microsoft Store. Geschichtete Architektur, 751 automatisierte Tests und 163 Browser-Tests, KI-Antworten nur mit Quellen."},
-    en:{m:"System · live · 207 commits", t:"A platform for students at choumaros.de and in the Microsoft Store. Layered architecture, 751 automated tests and 163 browser tests, AI answers only with sources."} },
+    de:{m:"System · live · 216 Commits", t:"Plattform für Studierende auf choumaros.de und im Microsoft Store. Geschichtete Architektur, 815 automatisierte Tests und 347 Browser-Testläufe, KI-Antworten nur mit Quellen."},
+    en:{m:"System · live · 216 commits", t:"A platform for students at choumaros.de and in the Microsoft Store. Layered architecture, 815 automated tests and 347 browser test runs, AI answers only with sources."} },
   { id:"mp", label:"Milano Pizzeria", kind:"system", x:.71, y:.72, live:1, go:"#work",
     de:{m:"System · in Produktion", t:"Restaurant-Plattform für einen Betrieb in Duisburg. Gäste stellen die Reservierung auf der Seite zusammen; sie wird vorausgefüllt an WhatsApp übergeben — sie drücken nur noch Senden."},
     en:{m:"System · in production", t:"Restaurant platform for a business in Duisburg. Guests assemble a reservation on the site; it is handed to WhatsApp pre-filled, so they only press send."} },
@@ -54,7 +54,7 @@ var NODES = [
   { id:"ar", label:"العربية", kind:"sprache", x:.21, y:.94, go:"#lang",
     de:{m:"Muttersprache", t:"Muttersprache."},
     en:{m:"Native language", t:"Native language."} },
-  { id:"en", label:"English A2", kind:"sprache", x:.70, y:.94, go:"#lang",
+  { id:"en", label:"English B1", kind:"sprache", x:.70, y:.94, go:"#lang",
     de:{m:"Sprache · Grundlagen", t:"Dokumentation und Code auf Englisch; im Gespräch noch im Aufbau."},
     en:{m:"Language · elementary", t:"Documentation and code in English; conversation still developing."} },
   { id:"ai", label:"KI-Agenten", kind:"tech", x:.73, y:.37, go:"#ai",
@@ -65,12 +65,12 @@ var EDGES = [["os","ts"],["os","next"],["os","pg"],["os","dz"],["os","sb"],["os"
   ["mp","ts"],["mp","next"],["mp","vc"],["mp","de"],["mp","ai"],["pg","dz"],["ts","next"],["ar","de"],["de","en"]];
 
 var BENCH = [
-  { fig:"207", unit:{de:"Commits",en:"commits"},
-    de:{h:"Ausdauer", p:"ChoumarOS hat mir niemand aufgetragen. Ich bin 207 Commits drangeblieben, bis es live war — weil ich es richtig haben wollte, nicht nur fertig."},
-    en:{h:"Endurance", p:"Nobody assigned me ChoumarOS. I kept going for 207 commits until it was live — because I wanted it right, not just finished."} },
+  { fig:"216", unit:{de:"Commits",en:"commits"},
+    de:{h:"Ausdauer", p:"ChoumarOS hat mir niemand aufgetragen. Ich bin 216 Commits drangeblieben, bis es live war — weil ich es richtig haben wollte, nicht nur fertig."},
+    en:{h:"Endurance", p:"Nobody assigned me ChoumarOS. I kept going for 216 commits until it was live — because I wanted it right, not just finished."} },
   { fig:"6", unit:{de:"Quality Gates",en:"quality gates"},
-    de:{h:"Sorgfalt", p:"format · lint · typecheck · test · e2e · build — alle sechs laufen durch, bevor etwas rausgeht; bei ChoumarOS heißt das 914 Tests, keiner übersprungen. Die Regel habe ich mir selbst gesetzt, und ich überspringe sie auch nicht, wenn es spät wird."},
-    en:{h:"Care", p:"format · lint · typecheck · test · e2e · build — all six pass before anything ships; for ChoumarOS that means 914 tests, none skipped. I set that rule for myself, and I don't skip it when it gets late."} },
+    de:{h:"Sorgfalt", p:"format · lint · typecheck · test · e2e · build — alle sechs laufen durch, bevor etwas rausgeht; bei ChoumarOS heißt das 815 Tests und 347 Browser-Testläufe, keiner übersprungen. Die Regel habe ich mir selbst gesetzt, und ich überspringe sie auch nicht, wenn es spät wird."},
+    en:{h:"Care", p:"format · lint · typecheck · test · e2e · build — all six pass before anything ships; for ChoumarOS that means 815 tests and 347 browser test runs, none skipped. I set that rule for myself, and I don't skip it when it gets late."} },
   { fig:"2", unit:{de:"Systeme live",en:"systems live"},
     de:{h:"Ausgeliefert", p:"Milano Pizzeria bedient einen echten Betrieb in Duisburg, ChoumarOS ist offen für alle Studierenden — im Web und im Microsoft Store. Ich weiß, was „fertig“ heißt, wenn jemand darauf angewiesen ist."},
     en:{h:"Shipped", p:"Milano Pizzeria serves a real business in Duisburg, ChoumarOS is open to every student — on the web and in the Microsoft Store. I know what “done” means when someone depends on it."} },
@@ -102,30 +102,35 @@ var PROJECTS = [
     h:"ChoumarOS", link:"https://choumaros.de/",
     shots:[["desktop-01-mission-control",{de:"Mission Control: Kurse, Fristen und Projekte auf einen Blick",en:"Mission control: courses, deadlines and projects at a glance"}],["desktop-02-study",{de:"Studium: Module und Semesterplan",en:"Study: modules and semester plan"}],["desktop-04-graph",{de:"Wissensgraph: verknüpfte Kurse, Notizen und Dateien",en:"Knowledge graph: linked courses, notes and files"}],["desktop-05-library",{de:"Bibliothek: alle Dateien und Inhalte",en:"Library: every file and its content"}]],
     linkT:{de:"Live ansehen",en:"View live"},
-    de:{p:"Eine Plattform für Studierende: Kurse, Projekte, Notizen, Dateien und Bewerbungen als verknüpfte Objekte an einem Ort. Live auf choumaros.de, im Microsoft Store veröffentlicht, die Android-App im geschlossenen Test bei Google Play. Offene Registrierung, kostenlos, in Deutsch, Englisch und Arabisch mit echtem Rechts-nach-links. Allein entworfen, gebaut, getestet und betrieben — kein Auftrag, sondern die Frage, ob ich ein System dieser Größe sauber halte.",
-        li:["Architektur: Next.js 16 mit striktem TypeScript ohne any, Schichten app → application → domain ← infrastructure, PostgreSQL als einzige Quelle der Wahrheit. Rund 67.000 Zeilen in 479 Dateien, 207 Commits, 24 dokumentierte Architekturentscheidungen (ADRs), 18 Datenbank-Migrationen.",
-            "Testen als Arbeitsweise: 751 automatisierte Tests — Unit- und Integrationstests gegen eine echte PostgreSQL-Datenbank, keiner übersprungen — dazu 163 Browser-Tests mit Playwright, Barrierefreiheits-Prüfungen mit axe-core und Läufe in Firefox und WebKit. Nichts geht live, bevor Format, Lint (0 Warnungen), Typecheck, Tests und Build grün sind.",
+    de:{p:"Eine Plattform für Studierende: Kurse, Projekte, Notizen, Dateien und Bewerbungen als verknüpfte Objekte an einem Ort. Live auf choumaros.de, im Microsoft Store veröffentlicht; die Android-App hat den geschlossenen Test bei Google Play abgeschlossen, die Freigabe ist beantragt. Offene Registrierung, kostenlos, in Deutsch, Englisch und Arabisch mit echtem Rechts-nach-links. Allein entworfen, gebaut, getestet und betrieben — kein Auftrag, sondern die Frage, ob ich ein System dieser Größe sauber halte.",
+        li:["Architektur: Next.js 16 mit striktem TypeScript ohne any, Schichten app → application → domain ← infrastructure, PostgreSQL als einzige Quelle der Wahrheit. Rund 86.000 Zeilen in 587 Dateien, 216 Commits, 25 dokumentierte Architekturentscheidungen (ADRs), 19 Datenbank-Migrationen.",
+            "Testen als Arbeitsweise: 815 automatisierte Tests — Unit- und Integrationstests gegen eine echte PostgreSQL-Datenbank, keiner übersprungen — dazu 347 Browser-Testläufe mit Playwright (aus 75 Testdefinitionen). Die ganze Suite läuft in Edge, ein Teil — Handy-Layout, Barrierefreiheit nach WCAG 2.2 AA mit axe-core und Seitentitel — zusätzlich in Firefox und WebKit. Nichts geht live, bevor Format, Lint (0 Warnungen), Typecheck, Tests und Build grün sind.",
             "Sicherheit: Row-Level Security auf jeder Tabelle, eine zentrale Rechte-Policy, Content-Security-Policy, keine Secrets im Repository, npm audit bei 0. Ein Datenleck zwischen zwei Studierenden fand mein eigener Audit — geschlossen am selben Tag.",
             "KI mit Quellen statt Behauptungen: Der Assistent (Gemini) antwortet nur aus den eigenen Daten der Nutzer:innen und zeigt jede Quelle; semantische Suche über pgvector. Abgerufene Inhalte gelten als nicht vertrauenswürdig (Schutz vor Prompt Injection), und die KI darf niemals Daten verändern.",
-            "Für echte Menschen gebaut: Den Studienplan liest die App aus einem Foto — Texterkennung per WebAssembly direkt auf dem Gerät, nichts verlässt das Handy. Konto-Löschung nach DSGVO, verschlüsselte tägliche Backups, Reichweitenmessung ohne Cookies, Navigation nach gezieltem Profiling 3–8× schneller.",
-            "Wie ich mit KI arbeite: KI-Agenten (Claude Code) sind mein Werkzeug, nicht mein Ersatz. Ich schreibe Anforderungen und Architekturentscheidungen, steuere die Umsetzung, prüfe jeden Diff und stehe für das Ergebnis gerade. Die Tests sind der Beweis — nicht das Versprechen des Modells.",
-            "Als Nächstes: öffentlicher Start bei Google Play (Oktober 2026), Kalender-Sync für Vorlesungen und Prüfungen, Karteikarten mit verteilter Wiederholung, ein Prüfungs-Countdown und das Teilen von Kursen mit Kommiliton:innen — danach der Start an Hochschulen."]},
-    en:{p:"A platform for students: courses, projects, notes, files and job applications as linked objects in one place. Live at choumaros.de, published in the Microsoft Store, the Android app in closed testing on Google Play. Open registration, free, in German, English and Arabic with real right-to-left. Designed, built, tested and run on my own — not a commission, but the question whether I can hold a system of this size together cleanly.",
-        li:["Architecture: Next.js 16 with strict TypeScript and no any, layered app → application → domain ← infrastructure, PostgreSQL as the single source of truth. About 67,000 lines in 479 files, 207 commits, 24 documented architecture decisions (ADRs), 18 database migrations.",
-            "Testing as a way of working: 751 automated tests — unit and integration tests against a real PostgreSQL database, none skipped — plus 163 browser tests with Playwright, accessibility checks with axe-core and runs in Firefox and WebKit. Nothing ships before format, lint (0 warnings), typecheck, tests and build are green.",
+            "Für echte Menschen gebaut: Den Studienplan liest die App aus einem Foto — die Texterkennung läuft direkt auf dem Gerät und das Foto verlässt es nicht; nur die Modulnamen gehen zur Rechtschreibkorrektur an eine KI, und jede Zeile prüfen die Studierenden vor dem Speichern. Das Lesen funktioniert gut bei gedruckten Tabellen und Listen, ist aber nicht perfekt: Credits müssen oft von Hand ergänzt werden. Konto-Löschung nach DSGVO, verschlüsselte tägliche Backups, Reichweitenmessung ohne Cookies, Navigation nach gezieltem Profiling 3–8× schneller.",
+            "Wie ich mit KI arbeite: Den Großteil des Codes habe ich mit KI-Coding-Agenten (Claude Code) erstellt. Anforderungen, Produkt- und Architekturentscheidungen und jede Freigabe lagen bei mir; ich habe auf echten Geräten getestet, konkrete Mängel gemeldet und jede Migration für die Produktion freigegeben. Nicht jede Zeile habe ich von Hand gelesen — abgesichert ist das Ergebnis über sechs Prüfungen pro Release und meine eigenen End-to-End-Prüfungen. Die Tests sind der Beweis — nicht das Versprechen des Modells.",
+            "Neu im Herbst 2026: Karteikarten mit verteilter Wiederholung; ein Prüfungs-Countdown mit Kalender-Export als .ics-Datei (kein Zwei-Wege-Abgleich); das Teilen eines Kurses per Link — gespeichert wird nur ein SHA-256 des Links, er lässt sich widerrufen, geteilte Inhalte lassen sich melden. Fällt das Hauptmodell der KI aus, übernehmen ein zweites kostenloses Modell und eine lokale Engine mit einfacheren Antworten.",
+            "Als Nächstes: der öffentliche Start bei Google Play. Der geschlossene Test ist abgeschlossen (12 Tester, 14 Tage), die Freigabe für die Veröffentlichung ist seit dem 16. Oktober 2026 beantragt und steht noch aus."]},
+    en:{p:"A platform for students: courses, projects, notes, files and job applications as linked objects in one place. Live at choumaros.de, published in the Microsoft Store; the Android app has finished its closed test on Google Play and public release is requested. Open registration, free, in German, English and Arabic with real right-to-left. Designed, built, tested and run on my own — not a commission, but the question whether I can hold a system of this size together cleanly.",
+        li:["Architecture: Next.js 16 with strict TypeScript and no any, layered app → application → domain ← infrastructure, PostgreSQL as the single source of truth. About 86,000 lines in 587 files, 216 commits, 25 documented architecture decisions (ADRs), 19 database migrations.",
+            "Testing as a way of working: 815 automated tests — unit and integration tests against a real PostgreSQL database, none skipped — plus 347 browser test runs with Playwright (from 75 test definitions). The full suite runs in Edge; a subset — phone layout, accessibility to WCAG 2.2 AA with axe-core, and page titles — also runs in Firefox and WebKit. Nothing ships before format, lint (0 warnings), typecheck, tests and build are green.",
             "Security: row-level security on every table, one central capability policy, a Content-Security-Policy, no secrets in the repository, npm audit at 0. A data leak between two students was found by my own audit — closed the same day.",
             "AI with sources, not claims: the assistant (Gemini) answers only from the user's own data and shows every source; semantic search via pgvector. Retrieved content is treated as untrusted (prompt-injection defence), and the AI may never change data.",
-            "Built for real people: the app reads the course plan from a photo — text recognition in WebAssembly on the device itself, nothing leaves the phone. GDPR account deletion, encrypted daily backups, analytics without cookies, navigation 3–8× faster after targeted profiling.",
-            "How I work with AI: AI agents (Claude Code) are my tool, not my replacement. I write the requirements and architecture decisions, steer the implementation, review every diff and answer for the result. The tests are the proof — not the model's promise.",
-            "Next: public launch on Google Play (October 2026), calendar sync for lectures and exams, spaced-repetition flashcards, an exam countdown and sharing courses with classmates — then the launch at universities."]},
+            "Built for real people: the app reads the course plan from a photo — text recognition runs on the device itself and the photo never leaves it; only the module names go to an AI for spelling repair, and students check every row before saving. It works well on printed tables and lists but is not perfect: credit values often have to be typed in. GDPR account deletion, encrypted daily backups, analytics without cookies, navigation 3–8× faster after targeted profiling.",
+            "How I work with AI: I built most of the code with AI coding agents (Claude Code). The requirements, the product and architecture decisions and every release approval were mine; I tested on real devices, reported concrete defects and approved every production migration. I did not read every line by hand — the result is secured by six checks per release and my own end-to-end checks. The tests are the proof — not the model's promise.",
+            "New in autumn 2026: spaced-repetition flashcards; an exam countdown with calendar export as an .ics file (not a two-way sync); and sharing a course by link — only a SHA-256 of the link is stored, it can be revoked, and shared content can be reported. If the primary AI model fails, a second free model and a local engine take over with simpler answers.",
+            "Next: the public launch on Google Play. The closed test is complete (12 testers, 14 days); the request for production access was filed on 16 October 2026 and is still pending."]},
     chips:["Next.js 16","TypeScript","PostgreSQL","Supabase","Drizzle ORM","Zod","Gemini","pgvector","Playwright","Vitest","axe-core","Vercel · fra1"] },
-  { badge:"wip", badgeT:{de:"In Arbeit",en:"In progress"},
-    h:{de:"Website für einen Verein",en:"Website for an association"},
-    de:{p:"Ein deutscher Verein, dessen Mitglieder jährlich einzahlen; stirbt ein Mitglied, trägt der Verein die Überführung in das Heimatland. Baubeginn in Kürze.",
-        li:["Mitgliederdaten und Todesmeldungen sind besonders schützenswert — Datenschutz ist hier keine Formalie, sondern die eigentliche Anforderung.","Datensparsamkeit, klare Löschfristen und eine Sprache, die dem Anlass angemessen ist.","Name und Ansichten folgen, sobald der Verein zugestimmt hat."]},
-    en:{p:"A German association whose members contribute annually; when a member dies, the association covers repatriation to their home country. Building starts shortly.",
-        li:["Member records and death notifications are sensitive personal data — privacy here is not a formality, it is the actual requirement.","Data minimisation, clear retention limits, and language appropriate to the occasion.","Name and screenshots follow once the association has agreed."]},
-    chips:["Next.js","TypeScript","DSGVO"] }
+  { badge:"privat", badgeT:{de:"Vertraulich · NDA",en:"Confidential · NDA"},
+    h:{de:"Teamprojekt: Weiterentwicklung eines SaaS-Produkts",en:"Team project: further development of a SaaS product"},
+    de:{meta:"Juli bis Anfang Oktober 2026 · bezahlt · Python · Git · Team",
+        p:"In einem bezahlten Team habe ich drei Monate an einem bestehenden SaaS-Produkt mitgearbeitet. Mein Vorgehen: Zuerst habe ich mich in den bestehenden Code eingearbeitet, dann Fehler eingegrenzt und behoben und Funktionen weiterentwickelt. Änderungen habe ich mit Tests abgesichert, mit Git nachvollziehbar versioniert und im Team abgestimmt.",
+        note:"Kunde und Produkt sind vertraulich (NDA), daher ohne Screenshots und Code.",
+        mean:"Hier habe ich gelernt, sicher in fremdem Code zu arbeiten und Änderungen im Team abzustimmen."},
+    en:{meta:"July to early October 2026 · paid · Python · Git · Team",
+        p:"In a paid team I spent three months contributing to an existing SaaS product. My approach: first I got to know the existing code, then I isolated and fixed bugs and developed features further. I secured my changes with tests, versioned them traceably with Git and agreed them with the team.",
+        note:"Client and product are confidential (NDA), so there are no screenshots or code.",
+        mean:"Here I learned to work safely in code that is not my own and to coordinate changes within a team."} }
 ];
 
 var FACH = {
@@ -200,8 +205,8 @@ var LOOP = [
              en:{h:"Specify", p:"I write the specification first: what the system must do, what it must never do, and how I will know it is right."} },
   { n:"02", de:{h:"Ausführen", p:"Ich führe den Agenten in Schritten hindurch und korrigiere in dem Moment, in dem das Ergebnis von der Spezifikation abweicht."},
              en:{h:"Execute", p:"I drive the agent through it in steps and correct course the moment the output drifts from the spec."} },
-  { n:"03", de:{h:"Prüfen", p:"Ich lese jeden Diff. Sechs Gates laufen durch, bevor etwas rausgeht: format · lint · typecheck · unit · e2e · build."},
-             en:{h:"Verify", p:"I read every diff. Six gates pass before anything ships: format · lint · typecheck · unit · e2e · build."} },
+  { n:"03", de:{h:"Prüfen", p:"Ich teste auf echten Geräten und prüfe die Ergebnisse Ende-zu-Ende. Sechs Gates laufen durch, bevor etwas rausgeht: format · lint · typecheck · unit · e2e · build. Nicht jede Zeile lese ich von Hand — die Tests sind der Beweis."},
+             en:{h:"Verify", p:"I test on real devices and check the results end to end. Six gates pass before anything ships: format · lint · typecheck · unit · e2e · build. I do not read every line by hand — the tests are the proof."} },
   { n:"04", de:{h:"Verantworten", p:"Es geht unter meinem Namen raus. Wenn es um zwei Uhr nachts bricht, repariere ich es."},
              en:{h:"Answer for it", p:"It goes out under my name. If it breaks at 2am, I fix it."} }
 ];
@@ -222,15 +227,17 @@ var EVENTS = [
     en:{h:"B.Sc. Software Engineering · University of Duisburg-Essen", p:"Running since 2024. Five semesters done, in the sixth from October 2026; expected finish 2028."} },
   { yr:"2026", de:{h:"Milano Pizzeria geht live", p:"Zum ersten Mal bedient mein Code einen echten Betrieb, mit einem echten Kunden auf der anderen Seite."},
     en:{h:"Milano Pizzeria goes live", p:"The first time my code serves a real business, with a real client on the other side."} },
-  { yr:"2026", de:{h:"ChoumarOS geht live", p:"Offene Registrierung, drei Sprachen, Microsoft Store; die Android-App im Test bei Google Play. 751 automatisierte Tests und 163 Browser-Tests, keiner übersprungen."},
-    en:{h:"ChoumarOS goes live", p:"Open registration, three languages, Microsoft Store; the Android app in testing on Google Play. 751 automated tests and 163 browser tests, none skipped."} },
-  { cls:"open", yr:"Jetzt", yrEn:"Now", de:{h:"Bereit für den nächsten Schritt", p:"Ich suche eine Werkstudenten- oder Praktikumsstelle im Ruhrgebiet, in einem Team, von dem ich lernen kann."},
-    en:{h:"Ready for the next step", p:"Looking for a Werkstudent or internship place in the Ruhrgebiet, on a team I can learn from."} }
+  { yr:"2026", de:{h:"ChoumarOS geht live", p:"Offene Registrierung, drei Sprachen, Microsoft Store; die Android-App hat den geschlossenen Test bei Google Play abgeschlossen, die Freigabe ist beantragt. 815 automatisierte Tests und 347 Browser-Testläufe, keiner übersprungen."},
+    en:{h:"ChoumarOS goes live", p:"Open registration, three languages, Microsoft Store; the Android app has finished its closed test on Google Play, public release requested. 815 automated tests and 347 browser test runs, none skipped."} },
+  { yr:"2026", de:{h:"Bezahltes Teamprojekt (Python, Git)", p:"Juli bis Anfang Oktober 2026."},
+    en:{h:"Paid team project (Python, Git)", p:"July to early October 2026."} },
+  { cls:"open", yr:"Jetzt", yrEn:"Now", de:{h:"Bereit für den nächsten Schritt", p:"Ich suche eine Werkstudenten- oder Teilzeitstelle im Ruhrgebiet, in einem Team, von dem ich lernen kann."},
+    en:{h:"Ready for the next step", p:"Looking for a Werkstudent or part-time place in the Ruhrgebiet, on a team I can learn from."} }
 ];
 
 var CEFR = ["A1","A2","B1","B2","C1","C2"];
 var LANGS = [
-  { name:"English", lvl:1, col:"var(--rohstahl)", de:"Dokumentation, Code und diese Seite.", en:"Documentation, code and this site." },
+  { name:"English", lvl:2, col:"var(--rohstahl)", de:"Dokumentation, Code und diese Seite.", en:"Documentation, code and this site." },
   { name:"Deutsch", lvl:4, col:"var(--kupfer)", de:"Studium, Alltag und die gesamte Milano-Plattform inklusive Impressum und Datenschutz.", en:"Studies, daily life, and the whole Milano platform including Impressum and Datenschutz." },
   { name:"العربية", lvl:6, col:"var(--gruenspan)", de:"Muttersprache.", en:"Native language." }
 ];
@@ -256,23 +263,23 @@ var T = {
   "hero.lede":"Software engineering student who <strong class=\"em\">builds real systems</strong> — one runs in production for a business in Duisburg, one is a platform for students, live at choumaros.de.",
   "spec.studium":"Degree", "spec.studium.v":"B.Sc. University of Duisburg-Essen · 6th semester",
   "spec.studium.long":"B.Sc. Software Engineering · University of Duisburg-Essen",
-  "spec.sprachen":"Languages", "spec.sprachen.long":"German C1 · <span class=\"ar\">العربية</span> native · English A2",
-  "spec.stack":"Stack", "spec.status":"Status", "spec.status.v":"Working student · internship · available now",
+  "spec.sprachen":"Languages", "spec.sprachen.long":"German C1 · <span class=\"ar\">العربية</span> native · English B1",
+  "spec.stack":"Stack", "spec.status":"Status", "spec.status.v":"Working student · part-time · available now",
   "spec.ort":"Location", "spec.ort.v":"Essen · Ruhr area · remote possible",
   "cta.contact":"Send a message", "cta.work":"See the projects",
   "schema.head":"System schematic",
   "eb.about":"About me",
   "about.h":"No job title yet.<em>Systems that run.</em>",
   "about.p1":"I start my sixth semester of Software Engineering at the University of Duisburg-Essen in October 2026. I understand a subject once I've built something with it that other people actually use.",
-  "about.p2":"Two systems came out of that. <strong class=\"em\">Milano Pizzeria</strong> runs in production for a business in Duisburg — in German, mobile-first, with Impressum and Datenschutz, and a reservation that arrives pre-filled in WhatsApp. <strong class=\"em\">ChoumarOS</strong> is a platform for students, live at choumaros.de and in the Microsoft Store: 207 commits, a layered architecture, 751 automated tests plus 163 browser tests, and AI answers that always show their sources.",
+  "about.p2":"Two systems came out of that. <strong class=\"em\">Milano Pizzeria</strong> runs in production for a business in Duisburg — in German, mobile-first, with Impressum and Datenschutz, and a reservation that arrives pre-filled in WhatsApp. <strong class=\"em\">ChoumarOS</strong> is a platform for students, live at choumaros.de and in the Microsoft Store: 216 commits, a layered architecture, 815 automated tests plus 347 browser test runs, and AI answers that always show their sources.",
   "about.p3":"I built both by <strong class=\"em\">directing AI agents</strong>: writing the specification, driving the execution, verifying the result myself. The tools change every few months — specifying a system precisely and checking that it holds does not.",
-  "about.p4":"I speak German fluently, Arabic natively, and work in English. I'm looking for a working-student or internship place in the Ruhr area, on a team I can learn from.",
+  "about.p4":"I speak German fluently, Arabic natively, and work in English. I'm looking for a working-student or part-time place in the Ruhr area, on a team I can learn from.",
   "eb.whoami":"whoami", "whoami.h":"The short version —<em>in the terminal.</em>",
   "ph.badge":"Available", "ph.focus":"Focus",
   "eb.bench":"Test bench · 09 positions",
   "bench.h":"What I bring —<em>and how you can check it.</em>",
   "bench.lede":"Every position hangs on something verifiable. Anyone can write adjectives.",
-  "eb.work":"Projects", "work.h":"Two systems.<em>One runs in production.</em>",
+  "eb.work":"Projects", "work.h":"Two systems of my own.<em>Plus a team project.</em>",
   "eb.study":"Course of study", "study.h":"What the degree<em>covers.</em>",
   "study.lede":"The official course plan of the B.Sc. Software Engineering at the University of Duisburg-Essen. Five semesters are behind me; the sixth starts in October 2026.",
   "eb.tools":"Tool wall", "tools.h":"The tools that<em>are actually on the board.</em>",
@@ -296,7 +303,7 @@ var T = {
   "foot.impressum":"Legal notice", "foot.datenschutz":"Privacy",
   "stamp.date":"06.09.2026"
 };
-var TOPICS = { de:["Werkstudent","Praktikum","Projekt","Anderes"], en:["Working student","Internship","Project","Other"] };
+var TOPICS = { de:["Werkstudent","Teilzeit","Projekt","Anderes"], en:["Working student","Part-time","Project","Other"] };
 var UI = {
   de:{ sending:"Wird gesendet …", okTitle:"EINGEGANGEN", okSub:"Ich melde mich zurück.",
        errH:"Die Nachricht ging nicht raus.", errP:"Schreiben Sie mir bitte direkt an",
@@ -327,9 +334,9 @@ $$("[data-i18n]").forEach(function (n) { ORIG[n.getAttribute("data-i18n")] = n.i
 
 var META = {
   de: { t: "Mohamad Ali Choumar — Software Engineering, Essen",
-        d: "Mohamad Ali Choumar — Software-Engineering-Student an der Universität Duisburg-Essen. Baut Systeme, die in Produktion laufen. TypeScript, Next.js, PostgreSQL. Verfügbar für Werkstudent und Praktikum im Ruhrgebiet." },
+        d: "Mohamad Ali Choumar — Software-Engineering-Student an der Universität Duisburg-Essen. Baut Systeme, die in Produktion laufen. TypeScript, Next.js, PostgreSQL. Verfügbar für Werkstudent und Teilzeit im Ruhrgebiet." },
   en: { t: "Mohamad Ali Choumar — Software Engineering, Essen",
-        d: "Mohamad Ali Choumar — software engineering student at the University of Duisburg-Essen. Builds systems that run in production. TypeScript, Next.js, PostgreSQL. Available for working-student and internship roles in the Ruhr area." }
+        d: "Mohamad Ali Choumar — software engineering student at the University of Duisburg-Essen. Builds systems that run in production. TypeScript, Next.js, PostgreSQL. Available for working-student and part-time roles in the Ruhr area." }
 };
 function applyLang() {
   document.documentElement.lang = lang;
@@ -469,12 +476,12 @@ function renderProjects() {
   PROJECTS.forEach(function (p) {
     var d = L(p), c = el("div", "proj rise");
     var title = typeof p.h === "string" ? p.h : L(p.h);
-    var li = d.li.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("");
+    var li = (d.li || []).map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("");
     c.innerHTML = '<div class="ptop"><span class="badge ' + p.badge + '">' + esc(L(p.badgeT)) + '</span></div>' +
-      '<h3>' + esc(title) + '</h3><p>' + esc(d.p) + '</p>' +
+      '<h3>' + esc(title) + '</h3>' + (d.meta ? '<p class="pmeta">' + esc(d.meta) + '</p>' : "") + '<p>' + esc(d.p) + '</p>' + (d.note ? '<p class="pnote">' + esc(d.note) + '</p>' : "") + (d.mean ? '<p class="pmean">' + esc(d.mean) + '</p>' : "") +
       (p.shots ? '<div class="pshots">' + p.shots.map(function (x) { var src = "assets/choumaros/" + lang + "/" + x[0] + ".webp"; return '<a href="' + src + '" target="_blank" rel="noopener"><img src="' + src + '" alt="' + esc(L(x[1])) + '" width="1280" height="720" loading="lazy" decoding="async"></a>'; }).join("") + '</div>' : "") +
-      '<ul>' + li + '</ul>' +
-      '<div class="chips">' + p.chips.map(function (x) { return '<span class="chip">' + esc(x) + '</span>'; }).join("") + '</div>' +
+      (li ? '<ul>' + li + '</ul>' : "") +
+      (p.chips ? '<div class="chips">' + p.chips.map(function (x) { return '<span class="chip">' + esc(x) + '</span>'; }).join("") + '</div>' : "") +
       (p.link ? '<a class="plink" href="' + p.link + '" target="_blank" rel="noopener">' + esc(L(p.linkT)) + ' ↗</a>' : "");
     tilt(c); g.appendChild(c);
   });
@@ -811,7 +818,7 @@ function buildKarte(qrSrc) {
   g.fillStyle = "#C0714A"; g.font = "500 20px 'IBM Plex Mono', monospace";
   g.fillText("SOFTWARE ENGINEERING · ESSEN", 66, 168);
   g.fillStyle = "#8A9196"; g.font = "400 22px 'IBM Plex Mono', monospace";
-  [mail(), "choumar.is-a.dev", "github.com/MAliChoumar", "Deutsch C1 · English A2 · Arabic native"]
+  [mail(), "choumar.is-a.dev", "github.com/MAliChoumar", "Deutsch C1 · English B1 · Arabic native"]
     .forEach(function (t, i) { g.fillText(t, 66, 260 + i * 42); });
   g.fillStyle = "#E8EAEB"; g.fillRect(w - 320, h - 320, 254, 254);
   try { g.drawImage(qrSrc, w - 308, h - 308, 230, 230); } catch (e) {}
@@ -989,7 +996,7 @@ var TERM = {
     ["lnk", "choumaros.de"], ["ok", "  ✓ live · offen für alle Studierenden"],
     ["gap", ""],
     ["cmd", "git log --oneline choumaros | wc -l"],
-    ["out", "207"],
+    ["out", "216"],
     ["gap", ""],
     ["cmd", "./ship --check"],
     ["ok", "format ✓   lint ✓   typecheck ✓   test ✓   e2e ✓   build ✓"],
@@ -998,7 +1005,7 @@ var TERM = {
     ["out", "Werkzeuge wechseln. Präzise spezifizieren und prüfen bleibt."],
     ["gap", ""],
     ["cmd", "status"],
-    ["warn", "verfügbar — Werkstudent / Praktikum · Ruhrgebiet"]
+    ["warn", "verfügbar — Werkstudent / Teilzeit · Ruhrgebiet"]
   ],
   en: [
     ["cmd", "whoami"],
@@ -1012,7 +1019,7 @@ var TERM = {
     ["lnk", "choumaros.de"], ["ok", "  ✓ live · open to every student"],
     ["gap", ""],
     ["cmd", "git log --oneline choumaros | wc -l"],
-    ["out", "207"],
+    ["out", "216"],
     ["gap", ""],
     ["cmd", "./ship --check"],
     ["ok", "format ✓   lint ✓   typecheck ✓   test ✓   e2e ✓   build ✓"],
@@ -1021,7 +1028,7 @@ var TERM = {
     ["out", "Tools change. Specifying precisely and verifying does not."],
     ["gap", ""],
     ["cmd", "status"],
-    ["warn", "available — working student / internship · Ruhr area"]
+    ["warn", "available — working student / part-time · Ruhr area"]
   ]
 };
 
