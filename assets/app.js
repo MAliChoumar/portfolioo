@@ -231,8 +231,8 @@ var EVENTS = [
     en:{h:"ChoumarOS goes live", p:"Open registration, three languages, Microsoft Store; the Android app installs from Chrome (choumaros.de/android), Google Play is in preparation. 820 automated tests and 355 browser test runs, none skipped."} },
   { yr:"2026", de:{h:"Bezahltes Teamprojekt (Python, Git)", p:"Juli bis Anfang Oktober 2026."},
     en:{h:"Paid team project (Python, Git)", p:"July to early October 2026."} },
-  { cls:"open", yr:"Jetzt", yrEn:"Now", de:{h:"Bereit für den nächsten Schritt", p:"Ich suche eine Werkstudenten- oder Teilzeitstelle im Ruhrgebiet, in einem Team, von dem ich lernen kann."},
-    en:{h:"Ready for the next step", p:"Looking for a Werkstudent or part-time place in the Ruhrgebiet, on a team I can learn from."} }
+  { cls:"open", yr:"Nov. 2026", yrEn:"Nov 2026", de:{h:"Neues Kapitel: Tackle Deals", p:"Werkstudent für Online-Marketing & KI-Creatives – remote. Bild- und Video-Creatives mit generativer KI für Kampagnen mit echtem Mediabudget."},
+    en:{h:"New chapter: Tackle Deals", p:"Working student in Online Marketing & AI Creatives – remote. Image and video creatives with generative AI for campaigns with real media budget."} }
 ];
 
 var CEFR = ["A1","A2","B1","B2","C1","C2"];
@@ -256,7 +256,7 @@ var CHECKS = [
 
 var T = {
   "skip":"Skip to content",
-  "menu":"Menu", "close":"Close", "status":"Available · working student",
+  "menu":"Menu", "close":"Close", "status":"Working student · Tackle Deals",
   "nav.about":"About", "nav.whoami":"whoami", "nav.bench":"Test bench", "nav.work":"Projects", "nav.study":"Degree",
   "nav.tools":"Tools", "nav.ai":"Method", "nav.path":"Path", "nav.lang":"Languages",
   "nav.seo":"Findability", "nav.kontakt":"Contact",
@@ -264,18 +264,18 @@ var T = {
   "spec.studium":"Degree", "spec.studium.v":"B.Sc. University of Duisburg-Essen · 6th semester",
   "spec.studium.long":"B.Sc. Software Engineering · University of Duisburg-Essen",
   "spec.sprachen":"Languages", "spec.sprachen.long":"German C1 · <span class=\"ar\">العربية</span> native · English B1",
-  "spec.stack":"Stack", "spec.status":"Status", "spec.status.v":"Working student · part-time · available now",
+  "spec.stack":"Stack", "spec.status":"Status", "spec.status.v":"Working student · Online Marketing & AI Creatives · from Nov 2026",
   "spec.ort":"Location", "spec.ort.v":"Essen · Ruhr area · remote possible",
   "cta.contact":"Send a message", "cta.work":"See the projects",
   "schema.head":"System schematic",
   "eb.about":"About me",
-  "about.h":"No job title yet.<em>Systems that run.</em>",
+  "about.h":"Now with a job title.<em>And systems that run.</em>",
   "about.p1":"I start my sixth semester of Software Engineering at the University of Duisburg-Essen in October 2026. I understand a subject once I've built something with it that other people actually use.",
   "about.p2":"Two systems came out of that. <strong class=\"em\">Milano Pizzeria</strong> runs in production for a business in Duisburg — in German, mobile-first, with Impressum and Datenschutz, and a reservation that arrives pre-filled in WhatsApp. <strong class=\"em\">ChoumarOS</strong> is a platform for students, live at choumaros.de and in the Microsoft Store: 225 commits, a layered architecture, 820 automated tests plus 355 browser test runs, and AI answers that always show their sources.",
   "about.p3":"I built both by <strong class=\"em\">directing AI agents</strong>: writing the specification, driving the execution, verifying the result myself. The tools change every few months — specifying a system precisely and checking that it holds does not.",
-  "about.p4":"From July to early October 2026 I worked in a paid team on an existing SaaS product. I speak German fluently, Arabic natively, and work in English. I'm looking for a working-student or part-time place in the Ruhr area, on a team I can learn from.",
+  "about.p4":"From July to early October 2026 I worked in a paid team on an existing SaaS product. I speak German fluently, Arabic natively, and work in English. From November 2026 I'm a working student in Online Marketing & AI Creatives at Tackle Deals – remote, using generative AI for image and video ads.",
   "eb.whoami":"whoami", "whoami.h":"The short version —<em>in the terminal.</em>",
-  "ph.badge":"Available", "ph.focus":"Focus",
+  "ph.badge":"Working student", "ph.focus":"Focus",
   "eb.bench":"Test bench · 09 positions",
   "bench.h":"What I bring —<em>and how you can check it.</em>",
   "bench.lede":"Every position hangs on something verifiable. Anyone can write adjectives.",
@@ -334,9 +334,9 @@ $$("[data-i18n]").forEach(function (n) { ORIG[n.getAttribute("data-i18n")] = n.i
 
 var META = {
   de: { t: "Mohamad Ali Choumar — Software Engineering, Essen",
-        d: "Mohamad Ali Choumar — Software-Engineering-Student an der Universität Duisburg-Essen. Baut Systeme, die in Produktion laufen. TypeScript, Next.js, PostgreSQL. Verfügbar für Werkstudent und Teilzeit im Ruhrgebiet." },
+        d: "Mohamad Ali Choumar — Software-Engineering-Student an der Universität Duisburg-Essen. Baut Systeme, die in Produktion laufen. TypeScript, Next.js, PostgreSQL. Ab November 2026 Werkstudent für Online-Marketing & KI-Creatives bei Tackle Deals." },
   en: { t: "Mohamad Ali Choumar — Software Engineering, Essen",
-        d: "Mohamad Ali Choumar — software engineering student at the University of Duisburg-Essen. Builds systems that run in production. TypeScript, Next.js, PostgreSQL. Available for working-student and part-time roles in the Ruhr area." }
+        d: "Mohamad Ali Choumar — software engineering student at the University of Duisburg-Essen. Builds systems that run in production. TypeScript, Next.js, PostgreSQL. From November 2026 working student in Online Marketing & AI Creatives at Tackle Deals." }
 };
 function applyLang() {
   document.documentElement.lang = lang;
@@ -1005,7 +1005,7 @@ var TERM = {
     ["out", "Werkzeuge wechseln. Präzise spezifizieren und prüfen bleibt."],
     ["gap", ""],
     ["cmd", "status"],
-    ["warn", "verfügbar — Werkstudent / Teilzeit · Ruhrgebiet"]
+    ["ok", "  ✓ Werkstudent · Online-Marketing & KI-Creatives @ Tackle Deals · ab Nov. 2026"]
   ],
   en: [
     ["cmd", "whoami"],
@@ -1028,7 +1028,7 @@ var TERM = {
     ["out", "Tools change. Specifying precisely and verifying does not."],
     ["gap", ""],
     ["cmd", "status"],
-    ["warn", "available — working student / part-time · Ruhr area"]
+    ["ok", "  ✓ working student · Online Marketing & AI Creatives @ Tackle Deals · from Nov 2026"]
   ]
 };
 
