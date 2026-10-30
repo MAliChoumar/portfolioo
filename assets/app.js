@@ -275,7 +275,7 @@ var T = {
   "about.p3":"I built both by <strong class=\"em\">directing AI agents</strong>: writing the specification, driving the execution, verifying the result myself. The tools change every few months — specifying a system precisely and checking that it holds does not.",
   "about.p4":"From July to early October 2026 I worked in a paid team on an existing SaaS product. I speak German fluently, Arabic natively, and work in English. From November 2026 I'm a working student in Online Marketing & AI Creatives at Tackle Deals – remote, using generative AI for image and video ads.",
   "eb.whoami":"whoami", "whoami.h":"The short version —<em>in the terminal.</em>",
-  "ph.badge":"Working student", "ph.focus":"Focus",
+  "ph.badge":"Working student", "ph.focus":"Focus", "ph.focus.v":"Full-Stack · AI Creatives",
   "eb.bench":"Test bench · 09 positions",
   "bench.h":"What I bring —<em>and how you can check it.</em>",
   "bench.lede":"Every position hangs on something verifiable. Anyone can write adjectives.",
